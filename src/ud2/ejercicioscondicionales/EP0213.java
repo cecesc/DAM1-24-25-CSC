@@ -23,14 +23,20 @@ public class EP0213 {
         kilosPorAnimal = sc.nextInt();
         sc.close();
 
-        if (comidaDiaria >= kilosPorAnimal) {
-
+        if (numAnimales <= 0 || kilosPorAnimal <= 0) {
+            System.out.println("El número de animales y la cantidad de comida por animales deben ser mayores que 0");
 
         } else {
-            System.out.println("La comida no da para todos los animales");
-            System.out.println("La ración que le corresponde a cada animal es de : " + );
+            double comidaNecesaria = numAnimales * kilosPorAnimal;
+
+            if (comidaDiaria >= comidaNecesaria) {
+                System.out.println("Hay comida suficiente para tods los animales");
+            } else {
+                double racionPorAnimal = comidaDiaria / numAnimales;
+                System.out.println("No hay suficiente comida. Cada animal recibirá: " + racionPorAnimal + " kilos.");
+
+            }
         }
 
-        
     }
 }

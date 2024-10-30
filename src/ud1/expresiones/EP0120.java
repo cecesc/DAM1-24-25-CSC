@@ -1,10 +1,11 @@
-package expresiones;
+package ud1.expresiones;
 
 import java.util.Scanner;
 
 public class EP0120 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        double descuento;
         System.out.println("¿Cuántas entradas infantiles va a comprar?");
         int entrInf = sc.nextInt();
         System.out.println("¿Cuántas entradas adultos va a comprar?");
@@ -15,7 +16,7 @@ public class EP0120 {
         double precioAdult = entrAdul * 20;
         double importeTotal = precioAdult + precioInf;
     
-        double descuento = (importeTotal >= 100) ? importeTotal * 0.5 :importeTotal;
+        descuento = (importeTotal >= 100) ? importeTotal * 0.5 :importeTotal;
         System.out.println("El importe total a cobrar es: " + importeTotal + " euros");
     
     }

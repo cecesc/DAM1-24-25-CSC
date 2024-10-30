@@ -1,4 +1,4 @@
-package expresiones;
+package ud1.expresiones;
 
     /* Realice un programa que intercambie los valores de dos variables */
 

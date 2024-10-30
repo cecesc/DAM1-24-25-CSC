@@ -15,6 +15,8 @@ public class EP0211 {
 
         if (num < 0 || num > 9999) {
             System.out.println("Número fuera de rango");
+        }else{
+            String capicua;
         }
 
         

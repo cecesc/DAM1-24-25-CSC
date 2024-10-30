@@ -1,4 +1,4 @@
-package expresiones;
+package ud1.expresiones;
 
 import java.util.Scanner;
 

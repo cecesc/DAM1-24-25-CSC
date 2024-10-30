@@ -1,3 +1,6 @@
+/*Pedir el día, mes y año de una fecha e indicar si la fecha es correcta. Hay que
+tener en cuenta que existen meses con 28, 30 y 31 días (no se considerarán los años
+bisiestos) */
 package ud2.ejercicios;
 
 import java.util.Scanner;
@@ -10,9 +13,9 @@ public class E0212 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Introduza un día: ");
         dia = sc.nextInt();
-        System.out.print("Introduza un día: ");
+        System.out.print("Introduza un mes: ");
         mes = sc.nextInt();
-        System.out.print("Introduza un día: ");
+        System.out.print("Introduza un año: ");
         anho = sc.nextInt();
         sc.close();
 
@@ -35,14 +38,12 @@ public class E0212 {
             default:
                 fechaValida = false;
         }
-        
-        
+
         if (fechaValida) {
             System.out.println("La fecha es válida: " + dia + "/" + mes + "/" + anho);
         } else {
             System.out.println("La fecha es incorrecta.");
         }
-
 
     }
 }
