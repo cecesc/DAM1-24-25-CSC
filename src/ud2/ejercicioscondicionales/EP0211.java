@@ -15,10 +15,24 @@ public class EP0211 {
 
         if (num < 0 || num > 9999) {
             System.out.println("Número fuera de rango");
-        }else{
-            String capicua;
-        }
+        } else {
+            // Almacenar el número original para compararlo después
+            int originalNum = num;
+            int reversedNum = 0;
 
-        
+            // Invertir el número
+            while (num > 0) {
+                int digit = num % 10; // Obtener el último dígito
+                reversedNum = reversedNum * 10 + digit; // Construir el número invertido
+                num /= 10; // Eliminar el último dígito
+            }
+
+            // Comparar el número original con el número invertido
+            if (originalNum == reversedNum) {
+                System.out.println("El número " + originalNum + " es capicúa.");
+            } else {
+                System.out.println("El número " + originalNum + " no es capicúa.");
+            }
+        }
     }
 }
