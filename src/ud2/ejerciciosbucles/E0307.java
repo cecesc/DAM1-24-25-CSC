@@ -1,3 +1,4 @@
+// Escribir todos los múltiplos de 7 menores que 100.
 package ud2.ejerciciosbucles;
 
 public class E0307 {

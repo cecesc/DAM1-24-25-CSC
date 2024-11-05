@@ -1,4 +1,4 @@
-package ud2.ejercicioscondicionales;
+/*package ud2.ejercicioscondicionales;
 
 import java.util.Scanner;
 
@@ -16,3 +16,5 @@ double resultado = base*altura;
 }    
 }
 //(b*(a-c))/2
+
+*/

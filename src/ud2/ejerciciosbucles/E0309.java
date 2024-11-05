@@ -1,3 +1,6 @@
+/* Implementar una aplicación que pida al usuario un número comprendido entre 1 y
+10. Hay que mostrar la tabla de multiplicar de dicho número, asegurándose de que el
+número introducido se encuentra en el rango establecido. */
 package ud2.ejerciciosbucles;
 
 import java.util.Scanner;

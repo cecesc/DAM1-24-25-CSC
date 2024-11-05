@@ -1,3 +1,4 @@
+// Pedir diez números enteros por teclado y mostrar la media. (Amplía codificando el número de números como una constante.)
 package ud2.ejerciciosbucles;
 
 import java.util.Scanner;

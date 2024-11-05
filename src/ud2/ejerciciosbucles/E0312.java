@@ -1,3 +1,4 @@
+// Pedir 5 calificaciones de alumnos y decir al final si hay algún suspenso.
 package ud2.ejerciciosbucles;
 
 import java.util.Scanner;
