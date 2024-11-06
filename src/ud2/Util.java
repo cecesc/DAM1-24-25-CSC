@@ -12,8 +12,10 @@ public class Util {
         return anho % 400 == 0 || (anho % 4 == 0 && anho % 100 != 0);
     }
 
-  /*   static float esCasi0(int anho) {
-        return  }*/
+    static boolean esCasiCero(double n) {
+        return   n > -1 && n < 0 || n > 0 && n < 1;
+    }
+       
 
     static int mayor(int a, int b) {
          
@@ -38,8 +40,16 @@ public class Util {
          else 
             System.out.println("No es bisiesto");
 
+
             System.out.println(mayor(14, 5));
             System.out.println(mayor(8, 1));
+
+
+        if (esCasiCero(n)) {
+            System.out.println("El número " + n + " es casi-cero.");
+        } else {
+            System.out.println("El número " + n + " no es casi-cero.");
+        }    
     }
 
 }
