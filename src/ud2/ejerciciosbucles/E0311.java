@@ -18,3 +18,17 @@ public class E0311 {
         sc.close();
     }
 }
+
+/*FORMA 2
+ * System.out.print("Introduce un número para calcular su factorial: ");
+    int numero = sc.nextInt();
+    sc.close();
+
+    int factorial =1;
+    for (int i =2;1 i <= n; i++){
+    factorial * = i;
+    }
+
+    System.out.printf("El factorial es %s es %s %n", n,factorial);
+
+ */
