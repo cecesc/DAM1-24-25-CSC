@@ -151,7 +151,7 @@ public class Util {
      
       Scanner sc = new Scanner(System.in);
       System.out.println(numCifras(9984));
-     
+     sc.close();
 
 
         /* double notaDouble =6.7;
