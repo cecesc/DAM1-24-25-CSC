@@ -14,6 +14,10 @@ public class Supermercado {
         System.out.print("Introduzca la unidades que se llevará: ");
         unidad = sc.nextInt();
       
+        double unidadTotal = precio * unidad;
+
+        System.out.println("Su total es de: " + unidadTotal);
+
         System.out.print("Introduzca con que va a pagar (1-Pagar en efectivo  2-Pagar con Tarjeta): ");
         pagar = sc.nextInt();
 
