@@ -147,44 +147,31 @@ public class Util {
     }
     
     public static void main(String[] args) {
-      
-     
-      Scanner sc = new Scanner(System.in);
-      System.out.println(numCifras(9984));
-     sc.close();
-
-
-        /* double notaDouble =6.7;
-        / * System.out.println(notaEnTexto(notaDouble));
-         * double notaInt =8;
-         * System.out.println(notaEnTexto(notaInt));
-         * 
-         * System.out.println("Numero / Año: ");
-         * int n = sc.nextInt();
-         * sc.close();
-         * 
-         * if (esPar(n))
-         * System.out.println("Es Par");
-         * else
-         * System.out.println("Es impar");
-         * 
-         * if (esBisiesto(n))
-         * System.out.println("Es bisiesto");
-         * else
-         * System.out.println("No es bisiesto");
-         * 
-         * System.out.println(mayor(14, 5));
-         * System.out.println(mayor(8, 1));
-         * 
-         * if (esCasiCero(n)) {
-         * System.out.println("El número " + n + " es casi-cero.");
-         * } else {
-         * System.out.println("El número " + n + " no es casi-cero.");
-         * }
-         * }
-         * 
-         * imprimirTrianguloRectangulo(6);
-           imprimirTrianguloRectanguloInverso(7);
-         */
+            imprimirTrianguloRectangulo(6);
+    
+            imprimirTrianguloRectanguloInverso(8);
+    
+            double notaDouble = 6.7;
+            System.out.println(notaEnTexto((int) notaDouble));
+            int notaInt = 8;
+            System.out.println(notaEnTexto(notaInt));
+    
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Número / Anho: ");
+            int n = sc.nextInt();
+            sc.close();
+    
+            if (esPar(n))
+                System.out.println("Es Par");
+            else
+                System.out.println("Es Impar");
+    
+            if (esBisiesto(n))
+                System.out.println("Es Bisiesto");
+            else
+                System.out.println("NO es bisiesto");
+    
+            System.out.println(mayor(4, 17));
+            System.out.println(mayor(8, 1));
     }
 }
