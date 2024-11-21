@@ -7,25 +7,29 @@ import org.junit.Test;
 public class DuracionBombillas {
 
     public static String causaFinBombilla(int maxHoras, int maxEncendidos, int maxHorasEncendida) {
-        String causaMuerte = "";
-        int horas = 0, encendidos = 0;
-
-        if (horas == maxHoras) {
-            System.out.println("La causa de la muerte de la bombilla fueron HORAS");
-            if (encendidos == maxEncendidos) {
-                System.out.println("La causa de la muerte de la bombilla fue los ENCENDIDOS");
-                if (horas == maxHoras && encendidos == maxEncendidos) {
-                    System.out.println("La causa de la muerte de la bombilla fue las HORAS + ENCENDIDOS");
-                }
-            }
+        if (maxHoras <= 0 || maxEncendidos <= 0 || maxHorasEncendida <= 0 || maxHorasEncendida > 10) {
+            return "ERROR";
         }
-        return causaMuerte;
+
+        int horasPorEncendido = maxHorasEncendida;
+        int totalHorasEncendida = maxEncendidos * horasPorEncendido;
+
+        boolean horasLimiteAlcanzado = totalHorasEncendida >= maxHoras;
+        boolean encendidosLimiteAlcanzado = maxEncendidos <= (maxHoras / horasPorEncendido);
+
+        if (horasLimiteAlcanzado && encendidosLimiteAlcanzado) {
+            return "ENCENDIDOS + HORAS";
+        } else if (horasLimiteAlcanzado) {
+            return "HORAS";
+        } else if (encendidosLimiteAlcanzado) {
+            return "ENCENDIDOS";
+        }
+
+        return "Ninguna causa";
     }
 
     public static void main(String[] args) {
-        int maxHoras = 0, maxEncendidos = 0, maxHorasEncendida = 0;
-        System.out.println(causaFinBombilla(maxHoras, maxEncendidos, maxHorasEncendida));
-
+        System.out.println(causaFinBombilla(0, 0, 0));
     }
 
     @Test

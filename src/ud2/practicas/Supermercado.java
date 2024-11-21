@@ -57,6 +57,7 @@ public class Supermercado {
         double centimosRedondeados = Math.round(centimos);
 
         System.out.println("Desglose de cambio:");
+        System.out.println();
         System.out.println("Billetes de 50: " + billetes50);
         System.out.println("Billetes de 20: " + billetes20);
         System.out.println("Billetes de 10: " + billetes10);
@@ -82,7 +83,7 @@ public class Supermercado {
         do {
             try {
                 System.out.println(
-                        "Bienvenido a la caja del supermercado! Introduzca el precio del producto y las unidades. Cuando finalice pulse -1.");
+                        "Introduzca el precio del producto y las unidades. Cuando finalice pulse -1.");
                 while (precioProducto != -1) {
                     System.out.print("Introduce el precio del producto: ");
                     precioProducto = sc.nextDouble();

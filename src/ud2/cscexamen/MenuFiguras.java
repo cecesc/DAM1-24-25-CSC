@@ -14,7 +14,7 @@ public class MenuFiguras {
         System.out.println("0. SALIR");
         opcion = sc.nextInt();
 
-        if (opcion > 0 && opcion < 2) {
+        if (opcion < 0 && opcion > 2) {
             System.out.print("Opción inválida");
         } else {
             switch (opcion) {
