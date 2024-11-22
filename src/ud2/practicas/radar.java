@@ -1,6 +1,5 @@
 package ud2.practicas;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import java.util.Scanner;
@@ -68,7 +67,7 @@ public class Radar {
     }
 
     @Test
-    void testImc() {
+    void testRadar() {
         assert excesoVelocidade(10, 600, 60) == 0;
         assert excesoVelocidade(10, 600, 50) == 10;
         assert excesoVelocidade(10, 600, 30) == 30;

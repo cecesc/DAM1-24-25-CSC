@@ -128,7 +128,7 @@ public class Supermercado {
             continuarCompra = sc.nextInt() == 1;
         } while (continuarCompra);
 
-        System.out.println("Gracias por su compra. Que tenga un buen día!");
+        System.out.println("Gracias por su compra.");
         sc.close();
     }
 }
