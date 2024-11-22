@@ -10,13 +10,13 @@ public class Supermercado {
     public static void metodoPago(int menuPago) {
         switch (menuPago) {
             case 1:
-                System.out.println("Pago con tarjeta. Compra finalizada.");
+                System.out.println("Has elegido pagar con tarjeta. Compra finalizada.");
                 break;
             case 2:
-                System.out.println("Pago con efectivo");
+                System.out.println("Has elegido pagar en efectivo.");
                 break;
             default:
-                System.out.println("Método de pago introducido incorrectamente");
+                System.out.println("Método de pago introducido incorrectamente. Por favor, elige 1 o 2.");
                 break;
         }
     }
@@ -25,7 +25,7 @@ public class Supermercado {
         Scanner sc = new Scanner(System.in);
         do {
             if (efectivoCliente < totalCompra) {
-                System.out.print("La cantidad entregada no es suficiente. Introduzca otra cantidad: ");
+                System.out.print("La cantidad entregada es insuficiente. Por favor, introduce una cantidad mayor: ");
                 efectivoCliente = sc.nextDouble();
             }
         } while (efectivoCliente < totalCompra);
@@ -33,7 +33,7 @@ public class Supermercado {
         sc.close();
 
         if (efectivoCliente == totalCompra) {
-            System.out.println("Pago exacto. No hay cambio");
+            System.out.println("Has pagado la cantidad exacta. No hay cambio que devolver.");
         } else {
             System.out.printf("Su cambio es de: %.2f euros \n", efectivoCliente - totalCompra);
         }
@@ -56,7 +56,7 @@ public class Supermercado {
         double centimos = cambio * 10;
         double centimosRedondeados = Math.round(centimos);
 
-        System.out.println("Desglose de cambio:");
+        System.out.println("Desglose de cambio: ");
         System.out.println();
         System.out.println("Billetes de 50: " + billetes50);
         System.out.println("Billetes de 20: " + billetes20);
@@ -91,9 +91,7 @@ public class Supermercado {
                     udProducto = sc.nextInt();
 
                     precioTotal += calcularPrecioTotal(precioProducto, udProducto);
-                    System.out.printf("Total artículos: %.2f euros \n", precioTotal);
-
-                    System.out.printf("El total de la compra es de: %.2f euros \n", precioTotal);
+                    System.out.printf("Total acumulado de artículos: %.2f euros \n", precioTotal);
                 }
 
                 do {
@@ -110,7 +108,7 @@ public class Supermercado {
                             double efectivoCliente = sc.nextDouble();
 
                             while (efectivoCliente < precioTotal) {
-                                System.out.print("La cantidad entregada no es suficiente. Introduzca otra cantidad: ");
+                                System.out.print("La cantidad entregada es insuficiente. Por favor, introduce una cantidad mayor: ");
                                 efectivoCliente = sc.nextDouble();
                             }
                             ;

@@ -52,8 +52,6 @@ public class CalculadoraHumana {
                 System.out.println(num1 + " - " + num2);
                 resultado = num1 - num2;
                 break;
-            default:
-                break;
         }
         return resultado;
     }
