@@ -37,6 +37,7 @@ public class MenuFiguras {
                     int fila = sc.nextInt();
                     System.out.print("Introduzca un número entre 2 y 20 para la columna: ");
                     int columna = sc.nextInt();
+                    
                     for (int i = 0; i < fila; i++) {
                         for (int j = 0; j < columna; j++) {
                             System.out.print("* ");
