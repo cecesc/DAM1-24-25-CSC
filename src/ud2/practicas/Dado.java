@@ -39,11 +39,11 @@ public class Dado {
         }
 
         System.out.println("RESULTADOS:");
-        System.out.printf("Ha salido 1: %d veces ( %.2f", cara1, (double)(cara1 * 100/1000)); System.out.println("%)");
-        System.out.printf("Ha salido 2: %d veces ( %.2f", cara2, (double)(cara2 * 100/1000)); System.out.println("%)");
-        System.out.printf("Ha salido 3: %d veces ( %.2f", cara3, (double)(cara3 * 100/1000)); System.out.println("%)");
-        System.out.printf("Ha salido 4: %d veces ( %.2f", cara4, (double)(cara4 * 100/1000)); System.out.println("%)");
-        System.out.printf("Ha salido 5: %d veces ( %.2f", cara5, (double)(cara5 * 100/1000)); System.out.println("%)");
-        System.out.printf("Ha salido 6: %d veces ( %.2f", cara6, (double)(cara6 * 100/1000)); System.out.println("%)");
+        System.out.printf("Ha salido 1: %d veces ( %.2f%%)\n", cara1, (double)(cara1 * 100) / NUM_LANZAMIENTOS);
+        System.out.printf("Ha salido 2: %d veces ( %.2f%%)\n", cara2, (double)(cara2 * 100) / NUM_LANZAMIENTOS);
+        System.out.printf("Ha salido 3: %d veces ( %.2f%%)\n", cara3, (double)(cara3 * 100) / NUM_LANZAMIENTOS);
+        System.out.printf("Ha salido 4: %d veces ( %.2f%%)\n", cara4, (double)(cara4 * 100) / NUM_LANZAMIENTOS);
+        System.out.printf("Ha salido 5: %d veces ( %.2f%%)\n", cara5, (double)(cara5 * 100) / NUM_LANZAMIENTOS);
+        System.out.printf("Ha salido 6: %d veces ( %.2f%%)\n", cara6, (double)(cara6 * 100) / NUM_LANZAMIENTOS);
     }
 }
