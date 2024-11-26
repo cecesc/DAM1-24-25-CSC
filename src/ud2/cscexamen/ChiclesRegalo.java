@@ -1,7 +1,6 @@
 //Autor: Celia Sanmartín Chapela
 package ud2.cscexamen;
 
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.Test;
 
@@ -11,7 +10,7 @@ public class ChiclesRegalo {
         if (chiclesComprados < 0 || envoltoriosNecesarios < 0 || chiclesGratis < 0) {
             return -1;
         }
-       
+
         if (envoltoriosNecesarios == 0) {
             return chiclesComprados;
         }
@@ -36,7 +35,7 @@ public class ChiclesRegalo {
     public static void main(String[] args) {
         System.out.println(totalChicles(0, 0, 0));
     }
-    
+
     @Test
     public void ChiclesRegaloTest() {
         assertEquals(31, totalChicles(25, 5, 1));
@@ -58,4 +57,3 @@ public class ChiclesRegalo {
 
     }
 }
-
