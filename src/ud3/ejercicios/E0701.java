@@ -11,10 +11,21 @@
 package ud3.ejercicios;
 
 public class E0701 {
-    private float dni;
-    private String nombreTitular;
-    private double saldo;
-    private int edad;
-        Mascota perro = new Mascota(float dni, String nombreTitular, double saldo);
+    public static void main(String[] args) {
+        
     }
+
+    public class Mascota {
+        private float dni;
+        private String nombreTitular;
+        private double saldo;
+
+            Mascota perro = new Mascota();
+
+            
+
+            }
+        }
+        
+ 
 
