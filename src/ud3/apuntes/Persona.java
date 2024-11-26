@@ -6,8 +6,8 @@ public class Persona {
     private String apellido1;
     private String apellido2;
     private int edad;
-    private double estatura = 1.60;
-    private final String dni = null;
+    //private double estatura = 1.80;
+    //private final String dni = null;
 
     public static int contadorPersonas;
 
@@ -42,5 +42,4 @@ public class Persona {
     public static void incrementarContador() {
         contadorPersonas++;
     }
-
 }
