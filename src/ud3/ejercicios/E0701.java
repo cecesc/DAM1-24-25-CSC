@@ -12,20 +12,20 @@ package ud3.ejercicios;
 
 public class E0701 {
     public static void main(String[] args) {
-        
+        CuentaCorriente cc= new CuentaCorriente("53713575k", "Maripepi");
+        cc.mostrarInfo();
+
+        cc.ingresaDinero(200);
+        cc.mostrarInfo();
+
+        System.out.println(cc.sacarDinero(100));
+        cc.mostrarInfo();
+
+        cc.ingresaDinero(-200);
+        cc.mostrarInfo();
+
+        System.out.println("Fin");
     }
+}
 
-    public class Mascota {
-        private float dni;
-        private String nombreTitular;
-        private double saldo;
-
-            Mascota perro = new Mascota();
-
-            
-
-            }
-        }
-        
- 
-
+   
