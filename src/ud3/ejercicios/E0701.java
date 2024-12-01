@@ -12,20 +12,18 @@ package ud3.ejercicios;
 
 public class E0701 {
     public static void main(String[] args) {
-        CuentaCorriente cc= new CuentaCorriente("53713575k", "Maripepi");
-        cc.mostrarInfo();
+        CuentaCorriente cc = new CuentaCorriente("55555555Z", "Pepe");
+        cc.mostrar();
 
-        cc.ingresaDinero(200);
-        cc.mostrarInfo();
+        cc.ingresarDinero(200);
+        cc.mostrar();
 
         System.out.println(cc.sacarDinero(100));
-        cc.mostrarInfo();
+        cc.mostrar();
 
-        cc.ingresaDinero(-200);
-        cc.mostrarInfo();
+        cc.ingresarDinero(-200);
+        cc.mostrar();
 
-        System.out.println("Fin");
+        System.out.println("FIN");
     }
 }
-
-   
