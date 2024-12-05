@@ -1,4 +1,4 @@
-package ud3.ejercicios;
+package ud3.apuntes;
 
 import java.util.Scanner;
 
@@ -21,6 +21,6 @@ public class EjemploEnum {
         Persona pp = new Persona("Marta", "MUJER");
 
         System.out.println("FIN");
-
+        sc.close();
     }
 }
