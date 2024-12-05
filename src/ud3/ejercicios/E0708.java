@@ -11,5 +11,15 @@ public class E0708 {
     miRadio.display();
     miRadio.sintonizarMemoria1();
     miRadio.display();
+
+    Sintonizador miRadioError = null;
+        try {
+            miRadioError = new Sintonizador(20);    
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println(miRadioError);
+    }
    } 
-}
+
