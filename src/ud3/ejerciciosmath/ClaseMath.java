@@ -1,7 +1,5 @@
 package ud3.ejerciciosmath;
 
-import java.math.BigDecimal;
-import java.util.Random;
 import java.util.Scanner;
 
 public class ClaseMath {
