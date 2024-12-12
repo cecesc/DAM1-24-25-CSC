@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class Ejemplo2While {
     public static void main(String[] args) {
         int N; //variable que contiene el número de asteriscos a mostrar
-        int contador = 0; //variable para contar los asteriscos que se han mostrado                         
+        int dor = 0; //variable para r los asteriscos que se han mostrado                         
         
         Scanner sc = new Scanner(System.in);
         System.out.print("Introduce número de asteriscos a mostrar: ");
         N = sc.nextInt(); //leemos el número total de asteriscos a mostrar
         
-        while (contador < N){ //inicio del bucle while                                                      
+        while (dor < N){ //inicio del bucle while                                                      
                System.out.print("*");
-               contador++;
+               dor++;
         }  //fin del bucle while
         sc.close();
 

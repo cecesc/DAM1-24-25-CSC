@@ -1,24 +1,24 @@
-package ud2.ejemplos;
+package ud2.cscexamenrec;
 
 public class CosteViaje {
     public static void main(String[] args) {
-        double km = 20; // Cambia este valor por la cantidad de kilómetros de tu viaje.
-        byte combustible = 2; // 0 = Gasolina, 1 = Diesel, 2 = Electricidad
-        double consumoMedio = 15.0; // Cambia este valor por el consumo medio de tu coche.
+        double km = 100; 
+        byte combustible = 2; 
+        double consumoMedio = 15.0;
 
         double coste = costeViaje(km, combustible, consumoMedio);
         System.out.println("El coste del viaje es: " + coste + " euros.");
     }
 
 
-    public static double costeViaje(double km, byte combustible, double consumoMedio) {
-        final double PRECIO_LITRO_GASOLINA = 1.638;
-        final double PRECIO_LITRO_DIESEL = 1.626;
-        final double PRECIO_KWH = 0.1692;
+    public static double costeViaje(double km, byte tipoCombustible, double consumoMedio) {
+        final double PRECIO_LITRO_GASOLINA = 1.521;
+        final double PRECIO_LITRO_DIESEL = 1.435;
+        final double PRECIO_KWH = 0.16591;
 
         double costeTotal = 0.0;
 
-        switch (combustible) {
+        switch (tipoCombustible) {
             case 0: // Gasolina
                 costeTotal = (km / 100.0) * consumoMedio * PRECIO_LITRO_GASOLINA;
                 break;
