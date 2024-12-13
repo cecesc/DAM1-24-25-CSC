@@ -15,6 +15,8 @@ Donde los valores coloreados se sustituyan por la latitud y longitud del punto.
 
 public String urlOpenStreetMaps();
 */
+package ud3.ejerciciosclases;
+
 
 import java.time.LocalDateTime;
 
@@ -27,7 +29,7 @@ public class Viaje {
 
     // Constructor que permite crear un viaje con todos sus atributos
     public Viaje(User conductor, PuntoGeografico origen, PuntoGeografico destino, LocalDateTime fechaHora, int plazas) {
-        this.con ductor = conductor;
+        this.conductor = conductor;
         this.origen = origen;
         this.destino = destino;
         this.fechaHora = fechaHora;

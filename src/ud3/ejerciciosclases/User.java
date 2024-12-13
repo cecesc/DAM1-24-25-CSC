@@ -9,6 +9,8 @@ Un constructor como el anterior pero que acepte sólo el username y lo cree con 
 
 Sobreescribe (overrride) el método toString() para que al imprimir un objeto de clase User imprima el valor de su atributo username.*/
 
+package ud3.ejerciciosclases;
+
 import java.time.LocalDateTime;
 
 public class User {

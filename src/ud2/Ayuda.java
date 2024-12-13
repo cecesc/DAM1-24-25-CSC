@@ -1,13 +1,12 @@
 package ud2;
 
-import java.util.Scanner;
 
 public class Ayuda {
     public static void main(String[] args) {
 
     // entradas > 1 entradas tienen que ser mayor que uno 
 
-
+/* 
     //Triangulo inverso
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n - i; j++) {
@@ -101,5 +100,6 @@ public class Ayuda {
 
         System.out.println("El número ingresado es: " + numero);
         scanner.close();
+*/}
 }
-}
+

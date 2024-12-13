@@ -60,6 +60,8 @@ Donde los valores coloreados se sustituyan por la latitud y longitud del punto.
 
 public String urlNominatimJson();*/
 
+package ud3.ejerciciosclases;
+
 import java.util.Random;
 
 public class PuntoGeografico {
@@ -78,6 +80,15 @@ public class PuntoGeografico {
         this.latitud = latitud;
         this.longitud = longitud;
         this.etiqueta = etiqueta;
+    }
+
+
+    public double getLatitud() {
+        return latitud;
+    }
+
+    public double getLongitud() {
+        return longitud;
     }
 
     // Constructor por defecto
@@ -116,5 +127,7 @@ public class PuntoGeografico {
     // Método para generar URL de Nominatim en formato JSON
     public String urlNominatimJson() {
         return "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + latitud + "&lon=" + longitud;
+    
+    
     }
 }
