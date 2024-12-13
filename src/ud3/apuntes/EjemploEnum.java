@@ -16,7 +16,6 @@ public class EjemploEnum {
             System.out.println("Por fin es viernes!!!");
         }
 
-
         Persona p = new Persona("Pepe", Sexo.HOMBRE);
         Persona pp = new Persona("Marta", "MUJER");
 

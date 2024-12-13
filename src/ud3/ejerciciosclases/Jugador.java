@@ -8,6 +8,7 @@ Crea getters que permitan recuperar los atributos de los jugadores. Crea un mét
 Crea un pequeño programa principal con ejemplos de uso de la clase Jugador.
 */
 
+package ud3.ejerciciosclases;
 
 // Enumerado para las posiciones en el campo
 enum Posicion {
@@ -73,15 +74,13 @@ class Jugador {
         System.out.println("Estatura: " + estatura + " m");
         System.out.println("-----------------------------");
     }
-}
-
-// Clase principal
-public class Main {
+    // Clase principal
     public static void main(String[] args) {
         // Crear jugadores
         Jugador jugador1 = new Jugador("Juan Pérez"); // Jugador solo con nombre
         Jugador jugador2 = new Jugador("Carlos López", Posicion.DEFENSA); // Jugador con nombre y posición
-        Jugador jugador3 = new Jugador("12345678A", "María García", Posicion.CENTROCAMPISTA, 1.70); // Jugador con todos los datos
+        Jugador jugador3 = new Jugador("12345678A", "María García", Posicion.CENTROCAMPISTA, 1.70); // Jugador con todos
+                                                                                                    // los datos
 
         // Mostrar fichas de los jugadores
         System.out.println("Fichas de los jugadores:");
@@ -94,4 +93,7 @@ public class Main {
         System.out.println("Después de cambiar la posición de María García:");
         jugador3.mostrarFicha(); // Mostrar ficha actualizada del jugador 3
     }
+
 }
+
+
