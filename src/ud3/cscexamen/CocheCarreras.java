@@ -15,8 +15,7 @@ public class CocheCarreras {
 
     public CocheCarreras(String nombre, int velocidadMax, int maxTurbos, int maxAutonomia) {
         if (velocidadMax < 1 || velocidadMax > 100) {
-            throw new IllegalArgumentException(
-                    "La velocidad máxmima debe estar comprendida entre 1 y 100 metros por segundo.");
+            throw new IllegalArgumentException( "La velocidad máxmima debe estar comprendida entre 1 y 100 metros por segundo.");
         }
         if (maxTurbos < 1) {
             throw new IllegalArgumentException("El número de turbos no puede ser negativo.");
