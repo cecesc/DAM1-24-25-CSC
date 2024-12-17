@@ -10,7 +10,6 @@ Crea un pequeño programa principal con ejemplos de uso de la clase Jugador.
 
 package ud3.ejerciciosclases;
 
-// Enumerado para las posiciones en el campo
 enum Posicion {
     PORTERO,
     DEFENSA,
@@ -18,25 +17,24 @@ enum Posicion {
     DELANTERO
 }
 
-// Clase Jugador
 class Jugador {
-    private String dni; // DNI del jugador
-    private String nombre; // Nombre del jugador
-    private Posicion posicion; // Posición del jugador en el campo
-    private double estatura; // Estatura del jugador
+    private String dni;
+    private String nombre; 
+    private Posicion posicion;
+    private double estatura; 
 
-    // Constructor para crear un jugador solo con nombre
+    
     public Jugador(String nombre) {
         this.nombre = nombre;
     }
 
-    // Constructor para crear un jugador con nombre y posición
+    
     public Jugador(String nombre, Posicion posicion) {
         this.nombre = nombre;
         this.posicion = posicion;
     }
 
-    // Constructor para crear un jugador con todos los datos
+    
     public Jugador(String dni, String nombre, Posicion posicion, double estatura) {
         this.dni = dni;
         this.nombre = nombre;
@@ -44,7 +42,7 @@ class Jugador {
         this.estatura = estatura;
     }
 
-    // Métodos getters para acceder a los atributos
+    
     public String getDni() {
         return dni;
     }
@@ -61,12 +59,12 @@ class Jugador {
         return estatura;
     }
 
-    // Método para cambiar la posición del jugador
+    
     public void cambiarPosicion(Posicion nuevaPosicion) {
         this.posicion = nuevaPosicion;
     }
 
-    // Método para mostrar la ficha del jugador
+    
     public void mostrarFicha() {
         System.out.println("DNI: " + (dni != null ? dni : "No disponible"));
         System.out.println("Nombre: " + nombre);
@@ -74,26 +72,22 @@ class Jugador {
         System.out.println("Estatura: " + estatura + " m");
         System.out.println("-----------------------------");
     }
-    // Clase principal
+
     public static void main(String[] args) {
-        // Crear jugadores
-        Jugador jugador1 = new Jugador("Juan Pérez"); // Jugador solo con nombre
-        Jugador jugador2 = new Jugador("Carlos López", Posicion.DEFENSA); // Jugador con nombre y posición
-        Jugador jugador3 = new Jugador("12345678A", "María García", Posicion.CENTROCAMPISTA, 1.70); // Jugador con todos
-                                                                                                    // los datos
+        Jugador jugador1 = new Jugador("Juan Pérez"); 
+        Jugador jugador2 = new Jugador("Carlos López", Posicion.DEFENSA); 
+        Jugador jugador3 = new Jugador("12345678A", "María García", Posicion.CENTROCAMPISTA, 1.70); 
+                                                                                                 
 
-        // Mostrar fichas de los jugadores
         System.out.println("Fichas de los jugadores:");
-        jugador1.mostrarFicha(); // Mostrar ficha del jugador 1
-        jugador2.mostrarFicha(); // Mostrar ficha del jugador 2
-        jugador3.mostrarFicha(); // Mostrar ficha del jugador 3
+        jugador1.mostrarFicha(); 
+        jugador2.mostrarFicha(); 
+        jugador3.mostrarFicha();
 
-        // Cambiar la posición de un jugador
-        jugador3.cambiarPosicion(Posicion.DELANTERO); // Cambiar la posición de María García a DELANTERO
+       
+        jugador3.cambiarPosicion(Posicion.DELANTERO); 
         System.out.println("Después de cambiar la posición de María García:");
-        jugador3.mostrarFicha(); // Mostrar ficha actualizada del jugador 3
+        jugador3.mostrarFicha();
     }
 
 }
-
-

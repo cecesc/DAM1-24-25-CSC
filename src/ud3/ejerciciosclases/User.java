@@ -14,14 +14,13 @@ package ud3.ejerciciosclases;
 import java.time.LocalDateTime;
 
 public class User {
-    private String username; // Nombre de usuario
-    private String password; // Contraseña
-    private String email; // Correo electrónico
-    private LocalDateTime createdAt; // Fecha de creación
-    private LocalDateTime lastLogin; // Último inicio de sesión
-    private boolean enabled; // Estado del usuario
+    private String username;
+    private String password;
+    private String email;
+    private LocalDateTime createdAt;
+    private LocalDateTime lastLogin;
+    private boolean enabled;
 
-    // Constructor que acepta username, password, email y enabled
     public User(String username, String password, String email, boolean enabled) {
         this.username = username;
         this.password = password;
@@ -30,17 +29,14 @@ public class User {
         this.enabled = enabled;
     }
 
-    // Constructor que acepta username y password, email es null
     public User(String username, String password) {
         this(username, password, null, true);
     }
 
-    // Constructor que acepta solo username, sin contraseña
     public User(String username) {
         this(username, null, null, true);
     }
 
-    // Sobrescribir el método toString()
     @Override
     public String toString() {
         return username;

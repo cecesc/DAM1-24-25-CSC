@@ -17,17 +17,15 @@ public String urlOpenStreetMaps();
 */
 package ud3.ejerciciosclases;
 
-
 import java.time.LocalDateTime;
 
 public class Viaje {
-    private User conductor; // Conductor del viaje
-    private PuntoGeografico origen; // Punto de origen
-    private PuntoGeografico destino; // Punto de destino
-    private LocalDateTime fechaHora; // Fecha y hora del viaje
-    private int plazas; // Número de plazas ofrecidas
+    private User conductor;
+    private PuntoGeografico origen;
+    private PuntoGeografico destino;
+    private LocalDateTime fechaHora;
+    private int plazas;
 
-    // Constructor que permite crear un viaje con todos sus atributos
     public Viaje(User conductor, PuntoGeografico origen, PuntoGeografico destino, LocalDateTime fechaHora, int plazas) {
         this.conductor = conductor;
         this.origen = origen;
@@ -36,7 +34,6 @@ public class Viaje {
         this.plazas = plazas;
     }
 
-    // Método para mostrar la información del viaje
     public void mostrar() {
         System.out.println("Viaje:");
         System.out.println("Conductor: " + conductor);
@@ -46,17 +43,15 @@ public class Viaje {
         System.out.println("Plazas disponibles: " + plazas);
     }
 
-    // Sobrescribir el método toString()
     @Override
     public String toString() {
-        return String.format("%1$td/%1$tm/%1$tY %1$tH:%1$tM - %2$s - %3$s >> %4$s", 
-                             fechaHora, conductor, origen, destino);
+        return String.format("%1$td/%1$tm/%1$tY %1$tH:%1$tM - %2$s - %3$s >> %4$s",
+                fechaHora, conductor, origen, destino);
     }
 
-    // Método para generar URL de OpenStreetMap para direcciones
     public String urlOpenStreetMaps() {
-        return "https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=" + 
-               origen.getLatitud() + "%2C" + origen.getLongitud() + "%3B" + 
-               destino.getLatitud() + "%2C" + destino.getLongitud();
+        return "https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=" +
+                origen.getLatitud() + "%2C" + origen.getLongitud() + "%3B" +
+                destino.getLatitud() + "%2C" + destino.getLongitud();
     }
 }

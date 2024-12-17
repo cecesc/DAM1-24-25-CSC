@@ -19,12 +19,10 @@ public class MarcaPagina {
         }
     }
 
-    // Obtener la última página leída
     public int obtenerPaginaLeida() {
         return paginaLeida;
     }
 
-    // Reiniciar la lectura
     public void reiniciarLectura() {
         paginaLeida = 0;
     }

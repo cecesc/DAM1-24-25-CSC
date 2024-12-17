@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class CalendarioTest {
-    
+
     @Test
     public void testDiasMesFebreroBisiesto() {
         assertEquals(29, Calendario.diasMes(2, 2020));
@@ -108,5 +108,5 @@ public class CalendarioTest {
         Calendario calendario = new Calendario(-1, 12, 1);
         calendario.incrementarMes();
         assertEquals(1, calendario.getAnho());
-    }    
+    }
 }

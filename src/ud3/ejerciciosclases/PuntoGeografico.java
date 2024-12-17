@@ -65,11 +65,10 @@ package ud3.ejerciciosclases;
 import java.util.Random;
 
 public class PuntoGeografico {
-    private double latitud; // Atributo para la latitud
-    private double longitud; // Atributo para la longitud
-    private String etiqueta; // Atributo para la etiqueta del punto
+    private double latitud;
+    private double longitud;
+    private String etiqueta;
 
-    // Constructor que inicializa todos los atributos
     public PuntoGeografico(double latitud, double longitud, String etiqueta) throws IllegalArgumentException {
         if (latitud < -90 || latitud > 90) {
             throw new IllegalArgumentException("La latitud debe estar entre -90 y 90 grados.");
@@ -82,7 +81,6 @@ public class PuntoGeografico {
         this.etiqueta = etiqueta;
     }
 
-
     public double getLatitud() {
         return latitud;
     }
@@ -91,17 +89,14 @@ public class PuntoGeografico {
         return longitud;
     }
 
-    // Constructor por defecto
     public PuntoGeografico() {
         this(0.0, 0.0, "Ecuador y Meridiano de Greenwich");
     }
 
-    // Método para mostrar la información del punto en grados decimales
     public void mostrarGradosDecimales() {
         System.out.println("Punto: " + etiqueta + " | Latitud: " + latitud + " | Longitud: " + longitud);
     }
 
-    // Método estático para generar un punto geográfico aleatorio
     public static PuntoGeografico generarAleatorio() {
         Random random = new Random();
         double latitud = -90 + (90 - (-90)) * random.nextDouble();
@@ -109,25 +104,21 @@ public class PuntoGeografico {
         return new PuntoGeografico(latitud, longitud, "Punto Aleatorio");
     }
 
-    // Método para generar URL de Google Maps
     public String urlGoogleMaps() {
         return "https://www.google.es/maps/@" + latitud + "," + longitud + ",12z";
     }
 
-    // Método para generar URL de OpenStreetMap
     public String urlOpenStreetMaps() {
         return "https://www.openstreetmap.org/#map=14/" + latitud + "/" + longitud;
     }
 
-    // Método para generar URL de Nominatim en formato XML
     public String urlNominatimXml() {
-        return "https://nominatim.openstreetmap.org/reverse?format=xml&lat=" + latitud + "&lon=" + longitud + "&zoom=14";
+        return "https://nominatim.openstreetmap.org/reverse?format=xml&lat=" + latitud + "&lon=" + longitud
+                + "&zoom=14";
     }
 
-    // Método para generar URL de Nominatim en formato JSON
     public String urlNominatimJson() {
         return "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + latitud + "&lon=" + longitud;
-    
-    
+
     }
 }

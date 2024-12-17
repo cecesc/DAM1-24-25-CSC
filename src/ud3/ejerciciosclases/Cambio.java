@@ -28,7 +28,7 @@ public class Cambio {
         int moneda2 = cantidad / 2;
         cantidad %= 2;
 
-        int moneda1 = cantidad; // Lo que queda es la cantidad de monedas de 1
+        int moneda1 = cantidad;
 
         // Mostrar el resultado
         if (billete100 > 0) {
