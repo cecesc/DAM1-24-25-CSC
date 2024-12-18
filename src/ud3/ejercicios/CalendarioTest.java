@@ -1,4 +1,4 @@
-package ud3.ejerciciosclases;
+package ud3.ejercicios;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;

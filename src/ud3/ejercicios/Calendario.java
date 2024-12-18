@@ -10,7 +10,7 @@ Implementa getters para obtener los atributos de un objeto Calendario.
 Por simplicidad, solo tendremos en consideración que existen meses con distinto número de días, pero no tendremos en cuenta los años bisiestos
 */
 
-package ud3.ejerciciosclases;
+package ud3.ejercicios;
 
 public class Calendario {
     private int anho, mes, dia;

@@ -1,8 +1,5 @@
 /*PuntoGeografico. Investiga en Internet el funcionamiento del sistema GPS y las coordenadas de latitud y longitud. Puedes utilizar el siguiente prompt en chatGPT:
 
-Prompt. Explícame el funcionamiento de la latitud y longitud en las coordenadas geográficas. 
-
-
 Implementa la clase PuntoGeografico con las siguientes especificaciones:
 Atributos privados para almacenar la latitud y longitud y una cadena de caracteres a modo de nombre o etiqueta.
 Un constructor que permita introducir los valores de todos los atributos y que devuelva una excepción si las coordenadas de latitud o longitud no son válidas.
@@ -12,51 +9,17 @@ Un método que muestre por pantalla la información del punto en formato de grad
 
 public void mostrarGradosDecimales();
 
-
-Un método estático que devuelva un punto geográfico cuya latitud y longitud se generen aleatoriamente.
-
 public PuntoGeografico generarAleatorio();
-
-
-Un método que devuelve una cadena de caracteres como la siguiente:
-
 https://www.google.es/maps/@42.3716382,-8.6897279,12z  
 
-
-Donde los valores coloreados se sustituyan por la latitud y longitud del punto.
-
 public String urlGoogleMaps();
-
-Un método que devuelve una cadena de caracteres como la siguiente:
-
 https://www.openstreetmap.org/#map=14/42.3716382/-8.6897279      
 
-
-Donde los valores coloreados se sustituyan por la latitud y longitud del punto.
-
 public String urlOpenStreetMaps();
-
-
-Investiga el funcionamiento de la API https://nominatim.org/ basada en OpenStreetMaps.
-
-
-Añade a la clase los siguientes métodos 
-
-Un método que devuelve una cadena de caracteres como la siguiente:
-
 https://nominatim.openstreetmap.org/reverse?format=xml&lat=42.3716382&lon=-8.6897279&zoom=14  
 
-
-Donde los valores coloreados se sustituyan por la latitud y longitud del punto.
-
 public String urlNominatimXml();
-
-Un método que devuelve una cadena de caracteres como la siguiente:
-
 https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=42.3716382&lon=-8.6897279 
-
-
-Donde los valores coloreados se sustituyan por la latitud y longitud del punto.
 
 public String urlNominatimJson();*/
 
