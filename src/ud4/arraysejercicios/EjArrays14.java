@@ -1,3 +1,4 @@
+package ud4.arraysejercicios;
 public class EjArrays14 {
     public static int[][] traspuesta(int[][] matriz) {
         if (matriz == null || matriz.length == 0) {

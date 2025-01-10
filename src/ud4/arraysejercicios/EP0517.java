@@ -1,3 +1,5 @@
+package ud4.arraysejercicios;
+
 public class EP0517 {
     public static int[] suma(int[] t, int numElementos) {
         if (t == null || t.length < numElementos || numElementos <= 0) {

@@ -1,3 +1,4 @@
+package ud4.arraysejercicios;
 public class EjArrays18 {
     public static boolean esOrtogonal(int[][] matriz) {
         if (matriz == null || matriz.length == 0 || matriz.length != matriz[0].length) {

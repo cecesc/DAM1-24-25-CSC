@@ -1,3 +1,5 @@
+package ud4.arraysejercicios;
+
 public class EP0520 {
     public static int[] fusionOrdenada(int[] t1, int[] t2) {
         if (t1 == null || t2 == null) {

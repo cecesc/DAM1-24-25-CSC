@@ -1,3 +1,4 @@
+package ud4.arraysejercicios;
 public class EjArrays13 {
     public static boolean esDiagonal(int[][] t) {
         if (t == null || t.length == 0 || t.length != t[0].length) {

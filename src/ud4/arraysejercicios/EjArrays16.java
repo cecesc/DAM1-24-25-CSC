@@ -1,3 +1,4 @@
+package ud4.arraysejercicios;
 public class EjArrays16 {
     public static int[][] multiplicar(int[][] t1, int[][] t2) {
         if (t1 == null || t2 == null || t1.length == 0 || t2.length == 0 || t1[0].length != t2.length) {

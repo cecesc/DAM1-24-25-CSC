@@ -1,15 +1,17 @@
+package ud4.arraysejercicios;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class EP0514 {
     public static void main(String[] args) {
         ArrayList<Double> sueldos = new ArrayList<>();
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        java.util.Scanner sc = new java.util.Scanner(System.in);
         double sueldo;
 
         System.out.println("Introduce los sueldos (introduce -1 para finalizar):");
         while (true) {
-            sueldo = scanner.nextDouble();
+            sueldo = sc.nextDouble();
             if (sueldo == -1) break;
             sueldos.add(sueldo);
         }
@@ -28,5 +30,7 @@ public class EP0514 {
         System.out.println("Sueldo máximo: " + max);
         System.out.println("Sueldo mínimo: " + min);
         System.out.println("Media de los sueldos: " + media);
+
+        sc.close();
     }
 }

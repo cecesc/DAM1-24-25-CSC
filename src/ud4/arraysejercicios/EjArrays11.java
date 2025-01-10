@@ -1,3 +1,4 @@
+package ud4.arraysejercicios;
 import java.util.Scanner;
 
 public class EjArrays11 {

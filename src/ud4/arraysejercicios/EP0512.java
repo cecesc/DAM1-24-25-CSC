@@ -1,3 +1,4 @@
+package ud4.arraysejercicios;
 import java.util.Random;
 
 public class EP0512 {

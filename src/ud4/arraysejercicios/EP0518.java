@@ -1,7 +1,9 @@
+package ud4.arraysejercicios;
+
 import java.util.Scanner;
 
 public class EP0518 {
-    public static boolean esMatrizMagica(int[][] matriz) {
+  /*   public static boolean esMatrizMagica(int[][] matriz) {
         if (matriz == null || matriz.length == 0 || matriz.length != matriz[0].length) {
             return false; // No es cuadrada o es nula/vacía
         }
@@ -62,4 +64,5 @@ public class EP0518 {
             System.out.println("La matriz no es mágica.");
         }
     }
-}
+*/}
+

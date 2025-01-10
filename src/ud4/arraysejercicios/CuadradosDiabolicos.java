@@ -1,3 +1,4 @@
+package ud4.arraysejercicios;
 public class CuadradosDiabolicos {
     public static boolean esCuadradoEsoterico(int[][] t) {
         if (t == null || t.length == 0 || t.length != t[0].length) {

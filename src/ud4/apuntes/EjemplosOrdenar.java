@@ -15,6 +15,10 @@ public class EjemplosOrdenar {
     }
 
     public static void main(String[] args) {
+       
+            int[] t = { 1, 4, 3, 8, 5, 6 };
+            burbuja(t);
+            System.out.print("Array desordenado: " + java.util.Arrays.toString(t));
         
     }
 }

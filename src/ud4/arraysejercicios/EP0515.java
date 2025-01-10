@@ -1,3 +1,5 @@
+package ud4.arraysejercicios;
+
 import java.util.Scanner;
 
 public class EP0515 {

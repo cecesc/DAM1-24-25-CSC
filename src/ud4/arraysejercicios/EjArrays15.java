@@ -1,3 +1,4 @@
+package ud4.arraysejercicios;
 public class EjArrays15 {
     public static int[][] sumaMatrices(int[][] m1, int[][] m2) {
         if (m1 == null || m2 == null || m1.length == 0 || m2.length == 0 || m1.length != m2.length || m1[0].length != m2[0].length) {

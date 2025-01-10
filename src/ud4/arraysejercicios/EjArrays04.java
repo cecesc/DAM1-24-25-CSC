@@ -1,3 +1,4 @@
+package ud4.arraysejercicios;
 public class EjArrays04 {
     public static void main(String[] args) {
         int[] pares = new int[20];

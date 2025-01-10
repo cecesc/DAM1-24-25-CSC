@@ -1,3 +1,4 @@
+package ud4.arraysejercicios;
 public class EjArrays12 {
     public static void main(String[] args) {
         int[][] matriz = {
