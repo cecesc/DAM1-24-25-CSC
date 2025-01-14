@@ -3,6 +3,7 @@
 package ud4.csc20250110;
 
 import ud4.ArraysUtil;
+import java.util.Scanner;
 
 public class EP0514_Sueldos {
      public static void sueldos(int[] A) {
@@ -20,7 +21,7 @@ public class EP0514_Sueldos {
 
     
     public static void main(String[] args) {
-        java.util.Scanner sc = new java.util.Scanner(System.in);
+       Scanner sc = new Scanner(System.in);
         double sueldo;
 
         System.out.println("Introduce los sueldos ( -1 para finalizar):");
