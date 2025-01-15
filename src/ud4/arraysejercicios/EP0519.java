@@ -1,57 +1,89 @@
 package ud4.arraysejercicios;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class EP0519 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<Integer> dorsales = new ArrayList<>();
-        int dorsal;
+   public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Introduce los dorsales de los corredores (introduce -1 para finalizar):");
-        while (true) {
-            dorsal = scanner.nextInt();
-            if (dorsal == -1) break;
-            dorsales.add(dorsal);
+        // Registrar la llegada de los corredores
+        System.out.println("Introduce el número de corredores que llegan a la meta:");
+        int n = sc.nextInt();
+        int[] ranking = new int[n];
+
+        System.out.println("Introduce los dorsales de los corredores en orden de llegada:");
+        for (int i = 0; i < n; i++) {
+            ranking[i] = sc.nextInt();
         }
 
-        // Procesar dorsales de menores de edad
-        System.out.println("Introduce los dorsales de los corredores menores de edad:");
+        // Mover los menores de edad un puesto hacia adelante
+        System.out.println("Introduce los dorsales de los corredores menores de edad (-1 para finalizar):");
         while (true) {
-            dorsal = scanner.nextInt();
-            if (dorsal == -1) break;
-            if (dorsales.contains(dorsal)) {
-                int index = dorsales.indexOf(dorsal);
-                if (index > 0) {
-                    Collections.swap(dorsales, index, index - 1); // Avanzar un puesto
+            int menor = sc.nextInt();
+            if (menor == -1) {
+                break;
+            }
+            for (int i = 0; i < ranking.length; i++) {
+                if (ranking[i] == menor && i > 0) { // Encontrar el dorsal y moverlo
+                    int temp = ranking[i - 1];
+                    ranking[i - 1] = menor;
+                    ranking[i] = temp;
+                    break;
                 }
             }
         }
 
-        // Procesar dorsales de corredores expulsados
-        System.out.println("Introduce los dorsales de los corredores expulsados por antidopaje:");
+        // Expulsar a los corredores dopados
+        System.out.println("Introduce los dorsales de los corredores positivos en el test antidopaje (-1 para finalizar):");
         while (true) {
-            dorsal = scanner.nextInt();
-            if (dorsal == -1) break;
-            dorsales.remove(Integer.valueOf(dorsal)); // Eliminar corredor
+            int dopado = sc.nextInt();
+            if (dopado == -1) {
+                break;
+            }
+            for (int i = 0; i < ranking.length; i++) {
+                if (ranking[i] == dopado) {
+                    // Mover todos los elementos siguientes una posición hacia adelante
+                    for (int j = i; j < ranking.length - 1; j++) {
+                        ranking[j] = ranking[j + 1];
+                    }
+                    ranking[ranking.length - 1] = 0; // Marcar al final como vacío
+                    break;
+                }
+            }
         }
 
-        // Procesar dorsales de corredores que no pagaron
-        System.out.println("Introduce los dorsales de los corredores que no pagaron:");
-        ArrayList<Integer> noPagados = new ArrayList<>();
+        // Relegar a los últimos puestos a los corredores que no pagaron la inscripción
+        System.out.println("Introduce los dorsales de los corredores que no pagaron la inscripción (-1 para finalizar):");
         while (true) {
-            dorsal = scanner.nextInt();
-            if (dorsal == -1) break;
-            noPagados.add(dorsal);
+            int noPago = sc.nextInt();
+            if (noPago == -1) {
+                break;
+            }
+            for (int i = 0; i < ranking.length; i++) {
+                if (ranking[i] == noPago) {
+                    // Mover el dorsal al final
+                    int temp = ranking[i];
+                    for (int j = i; j < ranking.length - 1; j++) {
+                        ranking[j] = ranking[j + 1];
+                    }
+                    ranking[ranking.length - 1] = temp;
+                    break;
+                }
+            }
         }
-        dorsales.addAll(noPagados); // Añadir al final
 
-        // Mostrar dorsales de los tres primeros
-        System.out.println("Dorsales de los tres primeros corredores:");
-        for (int i = 0; i < Math.min(3, dorsales.size()); i++) {
-            System.out.println("Dorsal: " + dorsales.get(i));
+        // Mostrar los medallistas
+        System.out.println("Medallistas:");
+        if (ranking[0] != 0) {
+            System.out.println("Oro: " + ranking[0]);
         }
+        if (ranking.length > 1 && ranking[1] != 0) {
+            System.out.println("Plata: " + ranking[1]);
+        }
+        if (ranking.length > 2 && ranking[2] != 0) {
+            System.out.println("Bronce: " + ranking[2]);
+        }
+
+        sc.close();
     }
 }
