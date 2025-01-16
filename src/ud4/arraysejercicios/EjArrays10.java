@@ -1,3 +1,6 @@
+/*Escribe un programa en Java que lea una matriz de enteros de 3 filas y 3 columnas del
+usuario y luego calcule la suma de todos los elementos de la matriz. */
+
 package ud4.arraysejercicios;
 import java.util.Scanner;
 
