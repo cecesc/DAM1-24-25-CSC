@@ -1,4 +1,6 @@
-public class MapaDeJuego {
+package ud4.arraysejercicios;
+
+public class EP0516 {
 
     public static boolean sePuedeViajar(boolean[][] mapa, int origen, int destino) {
         int n = mapa.length; // Número de lugares
