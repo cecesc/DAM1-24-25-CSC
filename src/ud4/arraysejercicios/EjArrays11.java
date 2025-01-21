@@ -42,14 +42,15 @@ public class EjArrays11 {
     }
 
     private static void leerMovimiento() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int fila, columna;
         do {
             System.out.print("Jugador " + jugadorActual + ", introduce fila (0-2) y columna (0-2): ");
-            fila = scanner.nextInt();
-            columna = scanner.nextInt();
+            fila = sc.nextInt();
+            columna = sc.nextInt();
         } while (fila < 0 || fila > 2 || columna < 0 || columna > 2 || tablero[fila][columna] != '-');
         tablero[fila][columna] = jugadorActual;
+        sc.close();
     }
 
     private static boolean comprobarVictoria() {
