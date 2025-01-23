@@ -6,7 +6,7 @@ prototipos:
 int[] getPares(int t[])
 int[] getImpares(int t[]) */
 
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 import java.util.Arrays;
 

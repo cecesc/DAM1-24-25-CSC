@@ -1,7 +1,7 @@
 /* Diseñar la función: static int maximo(int t[]) que devuelva el máximo valor 
 contenido en la tabla t. */
 
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 import java.util.Arrays;
 

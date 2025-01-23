@@ -1,4 +1,4 @@
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 import java.util.Arrays;
 import java.util.Collections;

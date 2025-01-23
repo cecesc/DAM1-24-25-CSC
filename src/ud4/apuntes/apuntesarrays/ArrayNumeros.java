@@ -1,4 +1,4 @@
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 import java.util.Scanner;
 
@@ -30,7 +30,8 @@ public class ArrayNumeros {
         // Mostrar resultados
         System.out.println("Media de números positivos: " + sumaPos / contPos); // División entera sin decimales
         System.out.println("Media de números negativos: " + sumaNeg / contNeg); // División entera sin decimales
-        System.out.println("Número de ceros: " + contCeros);
+        System.out.println("Número de ceros: " + contCeros); 
+        sc.close();
     }
         
         private static void leerNumeros(int[] t) {
@@ -38,6 +39,6 @@ public class ArrayNumeros {
             for(int i = 0; i < t.length; i++) {
                 t[i] = sc.nextInt();
             }
-            sc.close();
+           
         }
 }

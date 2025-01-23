@@ -1,4 +1,4 @@
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -22,7 +22,7 @@ public class E0511 {
         }
 
         System.out.println("Enhorabuena");
-
+        sc.close();
     }
 
     static void mostrarPistas(int[] tSecreto, int[] tUsuario) {

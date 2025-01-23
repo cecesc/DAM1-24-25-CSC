@@ -3,7 +3,7 @@ entre 1 y 100. Muestra la suma de todos los números aleatorios que se guardan e
  
 Genera dos métodos para resolver el problema.  */
 
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 import java.util.Random;
 

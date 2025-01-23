@@ -1,4 +1,4 @@
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 public class TresTablas {
     public static void main(String[] args) {

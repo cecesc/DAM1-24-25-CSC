@@ -2,7 +2,7 @@
 decimales. A continuación muestra los números en el mismo orden en que se han 
 introducido.  */
 
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 import java.util.Arrays;
 

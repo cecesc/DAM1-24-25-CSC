@@ -1,7 +1,7 @@
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 import java.util.Arrays;
-import java.util.Collections;
+//import java.util.Collections;
 import java.util.Scanner;
 
 import ud4.ArraysUtil;
@@ -144,7 +144,7 @@ public class EjemplosOrdenar {
         } else {
             System.out.println("El número no se encuentra. Debería insertarse en la posición ... " + (-pos -1));
         }
-        
+        sc.close();
 
     }
 }

@@ -2,7 +2,7 @@
 continuación introducir por teclado esa cantidad de números enteros. Por último, mostrar 
 los números en el orden inverso al introducido */
 
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 import java.util.Arrays;
 

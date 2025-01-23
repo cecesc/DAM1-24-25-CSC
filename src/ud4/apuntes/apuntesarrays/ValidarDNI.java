@@ -1,4 +1,4 @@
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 public class ValidarDNI {
     public static boolean esValidoDNI(int numero, char letra){

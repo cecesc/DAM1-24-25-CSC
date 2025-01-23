@@ -2,7 +2,7 @@
 y devuelve una tabla ordenada de la longitud especificada rellena con números 
 pares aleatorios en el rango desde 2 hasta el valor de fin inclusive.  */
 
-package ud4.apuntes;
+package ud4.apuntes.apuntesarrays;
 
 import java.util.Arrays;
 import java.util.Random;
