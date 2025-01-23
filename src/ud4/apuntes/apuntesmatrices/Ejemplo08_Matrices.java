@@ -1,4 +1,4 @@
-package ud4.apuntesmatrices;
+package ud4.apuntes.apuntesmatrices;
 
 import java.util.Arrays;
 

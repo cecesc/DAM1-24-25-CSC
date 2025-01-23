@@ -1,6 +1,6 @@
 /*Escribe un programa en Java que reciba una matriz de enteros y determine devuelva la fila que 
 tiene la mayor suma de sus elementos */
-package ud4.matricesejercicios;
+package ud4.apuntes.matricesejercicios;
 
 import java.util.Arrays;
 
