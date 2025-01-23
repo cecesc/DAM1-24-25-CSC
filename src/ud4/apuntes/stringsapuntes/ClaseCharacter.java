@@ -14,17 +14,21 @@ public class ClaseCharacter {
         char ch = linea.charAt(0);
         sc.close();
 
-        System.out.println("");
-        System.out.println("Digito" + Character.isDigit(ch));
-        System.out.println("Letra" + Character.isLetter(ch));
-        System.out.println("Digito o letra" + Character.isLetterOrDigit(ch));
-        System.out.println("minuscula" + Character.isLowerCase(ch));
-        System.out.println("En mayuscula seria" + Character.isLowerCase(ch));
-        System.out.println("mayuscula" + Character.isUpperCase(ch));
-        System.out.println("En minuscula seria" + Character.isLowerCase(ch));
-        System.out.println("Caracter de espacio " + Character.isLowerCase(ch));
-        System.out.println("Caracter de espacio en blanco" + Character.isWhitespace(ch));
-        System.out.println("que es" + Character.getName(ch));
+        
+        System.out.println("Análisis del carácter: " + ch);
+        System.out.println("- ¿Es un dígito? " + Character.isDigit(ch));
+        System.out.println("- ¿Es una letra? " + Character.isLetter(ch));
+        System.out.println("- ¿Es un dígito o una letra? " + Character.isLetterOrDigit(ch));
+        System.out.println("- ¿Es minúscula? " + Character.isLowerCase(ch));    
+        if (Character.isLowerCase(ch)) 
+            System.out.println("- - En mayúsculas sería " + Character.toUpperCase(ch));
+        System.out.println("- ¿Es mayúscula? " + Character.isUpperCase(ch));
+        if (Character.isUpperCase(ch)) 
+            System.out.println("- - En minúsculas sería " + Character.toLowerCase(ch));        
+        System.out.println("- ¿Es un caracter de espacio \' \'? " + Character.isSpaceChar(ch));
+        System.out.println("- ¿Es un espacio en blanco? (incluye tabuladores, etc.) " + Character.isWhitespace(ch));
+        if (Character.getName(ch) != null)
+            System.out.println("Este caracter tiene como nombre: " + Character.getName(ch)); 
     }
 
     
