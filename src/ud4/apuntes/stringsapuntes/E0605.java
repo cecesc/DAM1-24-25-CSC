@@ -13,7 +13,8 @@ public class E0605 {
         String cadena = sc.nextLine();
 
         String cadenaInvertida = invertirCadena(cadena);
-        System.out.println(cadenaInvertida); // Salida: odnum aloH
+        System.out.println(cadenaInvertida); 
+        sc.close();
     }
 
     static String invertirCadena(String cad) {

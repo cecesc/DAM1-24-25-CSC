@@ -14,20 +14,20 @@ public class BuscarFilaMayorSuma {
        
     }
 
-    static int[] BuscarFilaMayorSuma(int[][] mtz) {
-        if (mtz == null)
+    static int[] BuscarFilaMayorSuma(int[][] matriz) {
+        if (matriz == null)
             return null;
 
-        if (mtz.length == 0)
+        if (matriz.length == 0)
             return new int[0];
 
         int sumaMax = 0;
         int filaMax = 0;
 
-        for (int i = 0; i < mtz.length; i++) {
+        for (int i = 0; i < matriz.length; i++) {
             int suma = 0;
-            for (int j = 0; j < mtz[i].length; j++) {
-                suma += mtz[i][j];
+            for (int j = 0; j < matriz[i].length; j++) {
+                suma += matriz[i][j];
             }
 
             System.out.println("Suma fila " + i + " = " + suma);
@@ -39,7 +39,7 @@ public class BuscarFilaMayorSuma {
            
 
         }
-        return mtz[filaMax];
+        return matriz[filaMax];
     }
 
     static void mostrar(int[][] t) {
