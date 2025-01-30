@@ -1,33 +1,31 @@
 package ud4.matricesejercicios;
 
-import java.util.Random;
 
 public class Matriculas {
-    public static void main(String[] args) {
-        String letras = "BCDFGHJKLMNPRSTVXYZ";
-        Random rdm = new Random();
-        int numeros= rdm.nextInt(9999) + 1;
-        String matriculas (numeros, letras);
-    }
 
-    static boolean esMatriculaValida(String matricula){
-               
-        do {
-            String matriculas;
-        } while (matricula.equals(""));
-        char ch = matricula.charAt(0);
-      
-       
-        Character.isDigit(matricula);
-
-
-
-      return true;
-}
-    }
-        
-        
-
+        public static boolean esMatriculaValida(String matricula) {
+            if (matricula.length() != 7) {
+                return false;
+            }
     
-
+            for (int i = 0; i < 4; i++) {
+                if (!Character.isDigit(matricula.charAt(i))) {
+                    return false;
+                }
+            }
+    
+            for (int i = 4; i < 7; i++) {
+                if (!esLetraValida(matricula.charAt(i))) {
+                    return false;
+                }
+            }
+    
+            return true;
+        }
+    
+        private static boolean esLetraValida(char ch) {
+            ch = Character.toUpperCase(ch);
+            return (ch >= 'B' && ch <= 'Z' && ch != 'E' && ch != 'I' && ch != 'O' && ch != 'U' && ch != 'Ñ' && ch != 'Q');
+        }
+    }
 
