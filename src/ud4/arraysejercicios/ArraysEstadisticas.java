@@ -1,7 +1,5 @@
 package ud4.arraysejercicios;
 
-import static org.junit.Assume.assumeNoException;
-
 import java.util.Arrays;
 
 public class ArraysEstadisticas {

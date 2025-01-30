@@ -1,4 +1,4 @@
-package ud4.stringsapuntes;
+package ud4.apuntes.stringsapuntes;
 
 import org.junit.jupiter.api.Test;
 
