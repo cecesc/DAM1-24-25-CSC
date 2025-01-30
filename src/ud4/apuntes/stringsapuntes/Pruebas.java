@@ -1,4 +1,4 @@
-package ud4.apuntes.stringsapuntes;
+package ud4.stringsapuntes;
 
 public class Pruebas {
     public static void main(String[] args) {
