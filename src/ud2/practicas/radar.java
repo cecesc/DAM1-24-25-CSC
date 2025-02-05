@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Scanner;
 
-public class Radar {
+public class radar {
     public static int excesoVelocidade(double distancia, int tiempo, int limite) {
         double mediaVelocidad = distancia * 3600 / tiempo;
         double excesoVelocidad = mediaVelocidad - limite;
