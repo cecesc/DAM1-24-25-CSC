@@ -18,7 +18,7 @@ public class EP0514 {
 
         if (sueldos.isEmpty()) {
             System.out.println("No se han introducido sueldos.");
-            return;
+        
         }
 
         Collections.sort(sueldos, Collections.reverseOrder());

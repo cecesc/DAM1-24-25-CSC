@@ -1,3 +1,7 @@
+/*Escribir un programa que muestre todos los caracteres Unicode junto a su code
+point, cuyo valor esté comprendido entre \u0000 y \uFFFF.
+¿Qué caracteres se representan en la consola? */
+
 package ud4.apuntes.stringsapuntes;
 
 public class E0601 {

@@ -1,3 +1,13 @@
+/*E0610. Realizar un programa que lea una frase del teclado y nos indique si es
+palíndroma, es decir, que la frase sea igual leyendo de izquierda a derecha, que de
+derecha a izquierda, sin tener en cuenta los espacios. Un ejemplo de frase palíndroma es:
+“Dábale arroz a la zorra el abad”
+Las vocales con tilde hacen que los algoritmos consideren una frase palindroma como si
+no lo fuese. Por esto, supondremos que el usuario introduce la frase sin tildes.
+Implementa el siguiente método:
+public static Boolean esPalindromo(String str)
+Mejora el método para que se permitan las tildes y la diéresis. */
+
 package ud4.apuntes.stringsapuntes;
 
 import java.util.Arrays;
