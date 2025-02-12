@@ -8,6 +8,7 @@ public class HalconMilenario {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el número de filas y columnas
+        System.out.println("Ingrese el número de filas y columnas (0 0 para terminar):");
         int F = scanner.nextInt(); // Número de filas
         int C = scanner.nextInt(); // Número de columnas
 
@@ -16,6 +17,7 @@ public class HalconMilenario {
             int startX = -1, startY = -1, endX = -1, endY = -1;
 
             // Leer el campo de asteroides
+            System.out.println("Ingrese el campo de asteroides:");
             for (int i = 0; i < F; i++) {
                 String line = scanner.next();
                 for (int j = 0; j < C; j++) {
@@ -42,6 +44,7 @@ public class HalconMilenario {
             }
 
             // Leer el siguiente caso
+            System.out.println("Ingrese el número de filas y columnas (0 0 para terminar):");
             F = scanner.nextInt(); // Número de filas
             C = scanner.nextInt(); // Número de columnas
         }

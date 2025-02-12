@@ -2,7 +2,7 @@ package ud4.practicas;
 
 import java.util.Objects;
 
-public class Wordle {
+/*public class Wordle {
     private String palabra;
     private int vecesOculta;
     private int vecesAcertada;
@@ -77,3 +77,4 @@ public class Wordle {
         return Objects.hash(palabra);
     }
 }
+*/

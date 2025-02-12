@@ -8,10 +8,12 @@ public class DesgasteBombines {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el número de días
+        System.out.println("Ingrese el número de días (0 para terminar):");
         int n = scanner.nextInt();
 
         while (n != 0) {
             int[] desgastes = new int[n]; // Arreglo para los desgastes
+            System.out.println("Ingrese el desgaste de cada día:");
             for (int i = 0; i < n; i++) {
                 desgastes[i] = scanner.nextInt(); // Leer el desgaste de cada día
             }
@@ -49,8 +51,7 @@ public class DesgasteBombines {
                 System.out.println(mejorDia);
             }
 
-            // Leer el siguiente número de días
-            n = scanner.nextInt();
+
         }
 
         scanner.close();

@@ -8,12 +8,14 @@ public class EspiralGalactica {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el primer tamaño de la matriz
+        System.out.println("Ingrese el tamaño de la matriz (0 para terminar):");
         int N = scanner.nextInt(); // Tamaño de la matriz
 
         while (N != 0) { // Continuar mientras N no sea 0
             int[][] matriz = new int[N][N];
 
             // Leer la matriz
+            System.out.println("Ingrese los elementos de la matriz:");
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < N; j++) {
                     matriz[i][j] = scanner.nextInt();
@@ -22,9 +24,10 @@ public class EspiralGalactica {
 
             // Contar estrellas en la espiral
             int totalEstrellas = contarEstrellasEnEspiral(matriz, N);
-            System.out.println(totalEstrellas);
+            System.out.println("Total de estrellas en la espiral: " + totalEstrellas);
 
             // Leer el siguiente tamaño de la matriz
+            System.out.println("Ingrese el tamaño de la matriz (0 para terminar):");
             N = scanner.nextInt(); // Tamaño de la matriz
         }
 
@@ -49,7 +52,10 @@ public class EspiralGalactica {
 
         // Contar estrellas en la espiral
         for (int i = 0; i < N * N; i++) {
-            totalEstrellas += matriz[x][y]; // Sumar estrellas en la posición actual
+            // Sumar estrellas en la posición actual
+            if (x >= 0 && x < N && y >= 0 && y < N) {
+                totalEstrellas += matriz[x][y];
+            }
 
             // Mover en la dirección actual
             for (int j = 0; j < pasos; j++) {

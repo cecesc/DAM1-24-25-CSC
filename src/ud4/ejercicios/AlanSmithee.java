@@ -5,23 +5,23 @@ import java.util.Scanner;
 public class AlanSmithee {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        int casos = scanner.nextInt(); // Leer el número de casos de prueba
-        scanner.nextLine(); // Consumir el salto de línea
+        // Solicitar al usuario que ingrese la primera frase
+        System.out.println("Ingrese la primera frase:");
+        String frase1 = sc.nextLine();
 
-        for (int i = 0; i < casos; i++) {
-            String frase1 = scanner.nextLine(); // Leer la primera frase
-            String frase2 = scanner.nextLine(); // Leer la segunda frase
+        // Solicitar al usuario que ingrese la segunda frase
+        System.out.println("Ingrese la segunda frase:");
+        String frase2 = sc.nextLine();
 
-            if (sonAnagramas(frase1, frase2)) {
-                System.out.println("SI");
-            } else {
-                System.out.println("NO");
-            }
+        if (sonAnagramas(frase1, frase2)) {
+            System.out.println("SI");
+        } else {
+            System.out.println("NO");
         }
 
-        scanner.close();
+        sc.close();
     }
 
     private static boolean sonAnagramas(String str1, String str2) {
@@ -35,7 +35,7 @@ public class AlanSmithee {
         }
 
         // Contar la frecuencia de cada letra
-        int[] contador = new int[26]; // Hay 26 letras en el alfabeto inglés
+        int[] contador = new int[27];
 
         for (char c : str1.toCharArray()) {
             contador[c - 'a']++; // Incrementar el contador para la letra

@@ -8,11 +8,9 @@ public class ReinasAtacadas {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el tamaño del tablero y el número de reinas
-        int n, m;
-
-        // Leer hasta que se encuentre "0 0"
-        n = scanner.nextInt();
-        m = scanner.nextInt();
+        System.out.print("Ingrese el tamaño del tablero y el número de reinas (0 0 para terminar): ");
+        int n = scanner.nextInt(); // Tamaño del tablero
+        int m = scanner.nextInt(); // Número de reinas
 
         while (n != 0 || m != 0) {
             // Arreglos para rastrear filas, columnas y diagonales
@@ -23,6 +21,7 @@ public class ReinasAtacadas {
 
             boolean atacadas = false; // Bandera para verificar si hay reinas atacadas
 
+            System.out.println("Ingrese las coordenadas de las reinas (x y):");
             for (int i = 0; i < m; i++) {
                 int x = scanner.nextInt(); // Leer coordenada X
                 int y = scanner.nextInt(); // Leer coordenada Y
@@ -46,9 +45,7 @@ public class ReinasAtacadas {
                 System.out.println("NO");
             }
 
-            // Leer el siguiente tamaño del tablero y número de reinas
-            n = scanner.nextInt();
-            m = scanner.nextInt();
+
         }
 
         scanner.close();

@@ -57,11 +57,12 @@ public class SiguienteMatricula {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Ingrese las matrículas (9999 ZZZ para terminar):");
         // Leer la primera matrícula
         String matricula = scanner.nextLine();
 
         while (!matricula.equals("9999 ZZZ")) {
-            System.out.println(siguienteMatricula(matricula));
+            System.out.println("Siguiente matrícula: " + siguienteMatricula(matricula));
             matricula = scanner.nextLine(); // Leer la siguiente matrícula
         }
 

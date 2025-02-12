@@ -7,33 +7,29 @@ public class Modas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Leer el primer número que indica el tamaño del conjunto
-        int n = scanner.nextInt();
+        System.out.println("Ingrese los números (0 para terminar):");
+        int[] conteo = new int[10001]; // Suponiendo que los números están en el rango de 0 a 10000
+        int maxOcurrencias = 0;
+        int moda = 0;
 
-        while (n != 0) {
-            int[] conteo = new int[10001]; // Suponiendo que los números están en el rango de 0 a 10000
-            int maxOcurrencias = 0;
-            int moda = 0;
-
-            // Leer los valores y contar las ocurrencias
-            for (int i = 0; i < n; i++) {
-                int valor = scanner.nextInt();
-                conteo[valor]++;
-
-                // Verificar si este valor tiene más ocurrencias
-                if (conteo[valor] > maxOcurrencias) {
-                    maxOcurrencias = conteo[valor];
-                    moda = valor;
-                }
+        // Leer los valores y contar las ocurrencias
+        while (true) {
+            int valor = scanner.nextInt();
+            if (valor == 0) {
+                break; // Terminar si se recibe 0
             }
+            conteo[valor]++;
 
-            // Imprimir la moda
-            System.out.println(moda);
-
-            // Leer el siguiente número que indica el tamaño del siguiente conjunto
-            n = scanner.nextInt();
+            // Verificar si este valor tiene más ocurrencias
+            if (conteo[valor] > maxOcurrencias) {
+                maxOcurrencias = conteo[valor];
+                moda = valor;
+            }
         }
 
-        scanner.close();
+        // Imprimir la moda
+        System.out.println("La moda es: " + moda);
+
+        scanner.close(); // Cerrar el escáner al final
     }
 }

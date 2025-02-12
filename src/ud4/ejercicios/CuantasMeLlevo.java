@@ -1,5 +1,6 @@
 package ud4.ejercicios;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CuantasMeLlevo {
@@ -7,19 +8,30 @@ public class CuantasMeLlevo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            String input = scanner.nextLine(); // Leer la línea de entrada
-            if (input.equals("0 0")) {
+        System.out.println("Ingrese el número de pares de números:");
+        int n = scanner.nextInt(); // Leer el número de pares
+
+        String[] entradas = new String[n]; // Crear un arreglo para almacenar las entradas
+
+        // Leer las entradas
+        System.out.println("Ingrese los pares de números (formato: num1 num2):");
+        for (int i = 0; i < n; i++) {
+            entradas[i] = scanner.nextLine(); // Leer cada línea de entrada
+        }
+
+        // Procesar cada par de números
+        for (String entrada : entradas) {
+            if (entrada.equals("0 0")) {
                 break; // Terminar si se recibe "0 0"
             }
 
-            String[] numeros = input.split(" "); // Separar los dos números
-            String num1 = numeros[0];
-            String num2 = numeros[1];
+            String[] parNumeros = entrada.split(" "); // Separar los dos números
+            String num1 = parNumeros[0];
+            String num2 = parNumeros[1];
 
             // Contar acarreos
             int acarreoCount = contarAcarreos(num1, num2);
-            System.out.println(acarreoCount);
+            System.out.println("Número de acarreos: " + acarreoCount);
         }
 
         scanner.close(); // Cerrar el escáner al final

@@ -95,6 +95,7 @@ public class Tetris {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el número de columnas y piezas
+        System.out.print("Ingrese el número de columnas y piezas: ");
         int C = scanner.nextInt(); // Número de columnas
         int N = scanner.nextInt(); // Número de piezas
 
@@ -104,7 +105,9 @@ public class Tetris {
             for (int i = 0; i < N; i++) {
                 int I = scanner.nextInt(); // Identificador de la pieza
                 int R = scanner.nextInt(); // Rotación
-                int P = scanner.nextInt(); // Pos // Obtener la pieza y su rotación
+                int P = scanner.nextInt(); // Posición
+
+                // Obtener la pieza y su rotación
                 int[][] pieza = rotarPieza(I - 1, R);
                 int ancho = pieza[0].length;
                 int altura = pieza.length;
@@ -122,12 +125,14 @@ public class Tetris {
             }
 
             // Imprimir las alturas finales
+            System.out.print("Alturas finales: ");
             for (int h : alturas) {
                 System.out.print(h + " ");
             }
             System.out.println();
 
             // Leer nuevamente el número de columnas y piezas para la siguiente iteración
+            System.out.print("Ingrese el número de columnas y piezas: ");
             C = scanner.nextInt();
             N = scanner.nextInt();
         }

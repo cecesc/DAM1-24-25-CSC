@@ -1,7 +1,7 @@
 package ud4.ejercicios;
 
 import java.util.Scanner;
-
+/*
 public class Snake {
 
     public static void main(String[] args) {
@@ -157,4 +157,4 @@ public class Snake {
 
         scanner.close(); // Cerrar el escáner al final
     }
-}
+}*/

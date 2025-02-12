@@ -7,28 +7,43 @@ public class PiezaPerdida {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Leer el número de piezas
-        int n = scanner.nextInt();
+        System.out.println("-- Sistema de Detección de Piezas Faltantes --");
 
-        while (n != 0) {
-            // Calcular la suma esperada de las piezas
-            int sumaEsperada = n * (n + 1) / 2;
-            int sumaActual = 0;
+        int n;
+        do {
+            System.out.print("\n¿Cuántas piezas debería haber? (0 para salir): ");
+            n = scanner.nextInt();
 
-            // Leer los números de las piezas y calcular la suma actual
-            for (int i = 0; i < n - 1; i++) {
-                sumaActual += scanner.nextInt();
+            if(n == 0) {
+                System.out.println("Saliendo del sistema...");
+                break;
             }
 
-            // La pieza que falta es la diferencia entre la suma esperada y la suma actual
-            int piezaFaltante = sumaEsperada - sumaActual;
+            // Crear array para almacenar las piezas
+            int[] piezas = new int[n - 1];
 
-            // Imprimir el resultado
-            System.out.println(piezaFaltante);
+            System.out.print("Introduce los números de las piezas disponibles (" + (n-1) + " números separados por espacios): ");
 
-            // Leer el siguiente número de piezas
-            n = scanner.nextInt();
-        }
+            // Leer todas las piezas
+            for(int i = 0; i < n - 1; i++) {
+                piezas[i] = scanner.nextInt();
+            }
+
+            // Calcular suma total esperada
+            int sumaEsperada = n * (n + 1) / 2;
+
+            // Calcular suma actual
+            int sumaActual = 0;
+            for(int num : piezas) {
+                sumaActual += num;
+            }
+
+            // Determinar pieza faltante
+            int faltante = sumaEsperada - sumaActual;
+
+            System.out.println("\n¡Alerta! La pieza faltante es: " + faltante);
+
+        } while(n != 0);
 
         scanner.close();
     }

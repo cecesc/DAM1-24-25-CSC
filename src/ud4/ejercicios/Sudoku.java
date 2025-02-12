@@ -6,12 +6,15 @@ public class Sudoku {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el número de casos de prueba: ");
         int casos = scanner.nextInt(); // Leer el número de casos de prueba
         scanner.nextLine(); // Consumir la línea restante
 
         for (int caso = 0; caso < casos; caso++) {
             int[][] sudoku = new int[9][9];
 
+            System.out.println("Ingrese el Sudoku (9 líneas de 9 números cada una):");
             // Leer el Sudoku
             for (int i = 0; i < 9; i++) {
                 String[] line = scanner.nextLine().split(" ");

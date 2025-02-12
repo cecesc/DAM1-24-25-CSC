@@ -7,6 +7,7 @@ public class SombrasCamping {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Ingrese el número de columnas, filas y árboles (0 0 0 para terminar):");
         // Leer el primer conjunto de datos
         int c = scanner.nextInt(); // Número de columnas
         int f = scanner.nextInt(); // Número de filas
@@ -17,6 +18,7 @@ public class SombrasCamping {
             boolean[][] sombra = new boolean[f][c];
 
             // Leer las posiciones de los árboles
+            System.out.println("Ingrese las posiciones de los árboles (columna fila):");
             for (int i = 0; i < a; i++) {
                 int col = scanner.nextInt() - 1; // Convertir a índice 0
                 int row = scanner.nextInt() - 1; // Convertir a índice 0
@@ -50,9 +52,10 @@ public class SombrasCamping {
             }
 
             // Imprimir el resultado
-            System.out.println(parcelasConSombra);
+            System.out.println("Parcelas con sombra: " + parcelasConSombra);
 
             // Leer el siguiente conjunto de datos
+            System.out.println("Ingrese el número de columnas, filas y árboles (0 0 0 para terminar):");
             c = scanner.nextInt(); // Número de columnas
             f = scanner.nextInt(); // Número de filas
             a = scanner.nextInt(); // Número de árboles

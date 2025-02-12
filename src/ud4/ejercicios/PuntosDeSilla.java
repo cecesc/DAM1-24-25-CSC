@@ -8,6 +8,7 @@ public class PuntosDeSilla {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el primer caso de prueba
+        System.out.print("Ingrese el número de filas y columnas (0 0 para terminar): ");
         int F = scanner.nextInt(); // Número de filas
         int C = scanner.nextInt(); // Número de columnas
 
@@ -15,6 +16,7 @@ public class PuntosDeSilla {
             int[][] matriz = new int[F][C];
 
             // Leer la matriz
+            System.out.println("Ingrese los elementos de la matriz:");
             for (int i = 0; i < F; i++) {
                 for (int j = 0; j < C; j++) {
                     matriz[i][j] = scanner.nextInt();
@@ -73,6 +75,7 @@ public class PuntosDeSilla {
             }
 
             // Leer el siguiente caso de prueba
+            System.out.print("Ingrese el número de filas y columnas (0 0 para terminar): ");
             F = scanner.nextInt(); // Número de filas
             C = scanner.nextInt(); // Número de columnas
         }

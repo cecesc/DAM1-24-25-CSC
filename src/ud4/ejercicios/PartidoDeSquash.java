@@ -7,17 +7,22 @@ public class PartidoDeSquash {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Leer la primera línea de entrada
+        // Leer la línea de entrada del partido
         String partido = scanner.nextLine();
 
         while (!partido.equals("F")) {
             // Inicializar variables
             int setsA = 0, setsB = 0;
             int puntosA = 0, puntosB = 0;
-            StringBuilder resultado = new StringBuilder();
+            String resultado = ""; // Usar una cadena para almacenar el resultado
             boolean saqueA = true; // A comienza sacando
 
             for (char punto : partido.toCharArray()) {
+                // Terminar si se recibe 'F'
+                if (punto == 'F') {
+                    break;
+                }
+
                 // Determinar quién ganó el punto
                 if (punto == 'A') {
                     if (saqueA) {
@@ -36,13 +41,13 @@ public class PartidoDeSquash {
                 // Verificar si alguien ganó el set
                 if (puntosA >= 9 && puntosA - puntosB >= 2) {
                     setsA++;
-                    resultado.append(puntosA).append("-").append(puntosB).append(" ");
+                    resultado += puntosA + "-" + puntosB + " "; // Concatenar el resultado
                     puntosA = 0;
                     puntosB = 0;
                     saqueA = true; // A comienza sacando el siguiente set
                 } else if (puntosB >= 9 && puntosB - puntosA >= 2) {
                     setsB++;
-                    resultado.append(puntosA).append("-").append(puntosB).append(" ");
+                    resultado += puntosA + "-" + puntosB + " "; // Concatenar el resultado
                     puntosA = 0;
                     puntosB = 0;
                     saqueA = false; // B comienza sacando el siguiente set
@@ -50,16 +55,18 @@ public class PartidoDeSquash {
             }
 
             // Imprimir el resultado final
-            if (resultado.length() > 0) {
+            if (!resultado.isEmpty()) {
                 // Eliminar el último espacio
-                resultado.setLength(resultado.length() - 1);
+                resultado = resultado.trim();
+            } else {
+                resultado = "0-0"; // Si no hay sets, mostrar 0-0
             }
-            System.out.println(resultado.toString());
+            System.out.println(resultado);
 
             // Leer la siguiente línea de entrada
             partido = scanner.nextLine();
         }
 
-        scanner.close();
+        scanner.close(); // Cerrar el escáner al final
     }
 }

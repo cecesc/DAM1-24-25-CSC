@@ -7,10 +7,12 @@ public class PanEnLasBodas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Leer la primera línea de entrada
+        // Leer la entrada
+        System.out.println("Ingrese el número de sillas y la disposición (ej. 5 I.D..):");
         String entrada = scanner.nextLine();
 
-        while (!entrada.isEmpty()) {
+        // Procesar la entrada
+        if (!entrada.isEmpty()) {
             String[] partes = entrada.split(" ");
             int n = Integer.parseInt(partes[0]);
             String mesa = partes[1];
@@ -37,11 +39,8 @@ public class PanEnLasBodas {
             } else {
                 System.out.println("ALGUNO NO COME");
             }
-
-            // Leer la siguiente línea de entrada
-            entrada = scanner.nextLine();
         }
 
-        scanner.close();
+        scanner.close(); // Cerrar el escáner al final
     }
 }

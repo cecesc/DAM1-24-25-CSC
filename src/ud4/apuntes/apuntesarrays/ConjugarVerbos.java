@@ -2,7 +2,7 @@
 package ud4.apuntes.apuntesarrays;
 
 import java.util.*;
-
+/*
 public class ConjugarVerbos {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -24,3 +24,4 @@ public class ConjugarVerbos {
     }
 
 }
+*/

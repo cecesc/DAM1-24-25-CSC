@@ -8,23 +8,28 @@ public class PresupuestandoSemaforos {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el ancho y alto del pueblo
+        System.out.print("Ingrese el ancho del pueblo (0 para terminar): ");
         int ancho = scanner.nextInt(); // Ancho del pueblo
+        System.out.print("Ingrese el alto del pueblo (0 para terminar): ");
         int alto = scanner.nextInt(); // Alto del pueblo
 
         while (ancho != 0 && alto != 0) {
             char[][] pueblo = new char[alto][ancho];
 
             // Leer el plano del pueblo
+            System.out.println("Ingrese el plano del pueblo (cada fila en una línea):");
             for (int i = 0; i < alto; i++) {
                 pueblo[i] = scanner.next().toCharArray();
             }
 
             // Contar el número de semáforos necesarios
             int semaforos = contarSemaforos(pueblo, ancho, alto);
-            System.out.println(semaforos);
+            System.out.println("Número de semáforos necesarios: " + semaforos);
 
             // Leer el siguiente caso
+            System.out.print("Ingrese el ancho del pueblo (0 para terminar): ");
             ancho = scanner.nextInt(); // Ancho del pueblo
+            System.out.print("Ingrese el alto del pueblo (0 para terminar): ");
             alto = scanner.nextInt(); // Alto del pueblo
         }
 

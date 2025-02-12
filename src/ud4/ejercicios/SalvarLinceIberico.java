@@ -7,10 +7,12 @@ public class SalvarLinceIberico {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Ingrese el número de descripciones de carreteras: ");
         int numCarreteras = scanner.nextInt(); // Leer el número de descripciones de carreteras
         scanner.nextLine(); // Consumir el salto de línea
 
         for (int i = 0; i < numCarreteras; i++) {
+            System.out.print("Ingrese la descripción de la carretera " + (i + 1) + ": ");
             String carreteraStr = scanner.nextLine(); // Leer la descripción de la carretera
             char[] carretera = carreteraStr.toCharArray(); // Convertir la cadena a un arreglo de caracteres
             int tunelesNecesarios = 0;
@@ -28,7 +30,7 @@ public class SalvarLinceIberico {
                 }
             }
 
-            System.out.println(tunelesNecesarios); // Imprimir el número de túneles necesarios
+            System.out.println("Número de túneles necesarios: " + tunelesNecesarios); // Imprimir el número de túneles necesarios
         }
 
         scanner.close();

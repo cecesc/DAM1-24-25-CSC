@@ -8,13 +8,15 @@ public class Sobres {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Leer el número de sobres y el número de sobres a seleccionar
+        System.out.print("Ingrese el número de sobres (0 para terminar): ");
         int n = scanner.nextInt(); // Número de sobres
         while (n != 0) {
+            System.out.print("Ingrese el número de sobres a seleccionar: ");
             int k = scanner.nextInt(); // Número de sobres a seleccionar
             int[] sobres = new int[n]; // Arreglo para los sobres
 
             // Leer el dinero en cada sobre
+            System.out.println("Ingrese el dinero en cada sobre:");
             for (int i = 0; i < n; i++) {
                 sobres[i] = scanner.nextInt();
             }
@@ -34,9 +36,10 @@ public class Sobres {
             }
 
             // Imprimir los resultados
-            System.out.println(Arrays.toString(resultados).replaceAll("[\\[\\],]", "").replaceAll(" ", " "));
+            System.out.println("Máximos en cada ventana de tamaño " + k + ": " + Arrays.toString(resultados).replaceAll("[\\[\\],]", "").replaceAll(" ", " "));
 
             // Leer el siguiente número de sobres
+            System.out.print("Ingrese el número de sobres (0 para terminar): ");
             n = scanner.nextInt();
         }
 

@@ -8,15 +8,18 @@ public class DivisionTierra {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el grado del polinomio
+        System.out.println("Ingrese el grado del polinomio (20 para terminar):");
         int grado = scanner.nextInt();
 
         while (grado != 20) {
             // Leer los coeficientes del polinomio
             int[] coeficientes = new int[grado + 1];
+            System.out.println("Ingrese los coeficientes del polinomio:");
             for (int i = 0; i <= grado; i++) {
-                coeficientes[i] = scanner.nextInt();
+                coeficientes[i] = scanner.nextInt(); // Leer el coeficiente
             }
 
+            System.out.println("Ingrese el número de rectángulos:");
             int n = scanner.nextInt(); // Número de rectángulos
             double areaCain = 0.0;
             double base = 1.0 / n;
@@ -49,6 +52,7 @@ public class DivisionTierra {
             }
 
             // Leer el siguiente grado del polinomio
+            System.out.println("Ingrese el grado del polinomio (20 para terminar):");
             grado = scanner.nextInt();
         }
 
@@ -58,9 +62,8 @@ public class DivisionTierra {
     // Método para evaluar el polinomio en un punto x
     private static double evaluatePolynomial(int[] coeficientes, double x) {
         double result = 0.0;
-        for (int i = 0; i < coeficientes.length; i++) {
-            result += coeficientes[i] * Math.pow(x, coeficientes.length - 1 - i);
-        }
+        for (int i = 0; i < coeficientes.length; i++) result += coeficientes[i] * Math.pow(x, coeficientes.length - 1 - i);
+
         return result;
-    }
+}
 }

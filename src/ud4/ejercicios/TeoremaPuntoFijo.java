@@ -7,9 +7,11 @@ public class TeoremaPuntoFijo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Ingrese el número de moléculas (0 para terminar): ");
         int n = scanner.nextInt(); // Leer el número de moléculas
         while (n != 0) {
             int[] movimiento = new int[n]; // Arreglo para el movimiento de las moléculas
+            System.out.println("Ingrese los movimientos de las moléculas:");
             for (int i = 0; i < n; i++) {
                 movimiento[i] = scanner.nextInt() - 1; // Leer el movimiento y ajustar a índice 0
             }
@@ -36,9 +38,10 @@ public class TeoremaPuntoFijo {
             }
 
             // Imprimir el resultado
-            System.out.println(mcm);
+            System.out.println("El MCM de los ciclos es: " + mcm);
 
             // Leer el siguiente número de moléculas
+            System.out.print("Ingrese el número de moléculas (0 para terminar): ");
             n = scanner.nextInt();
         }
 

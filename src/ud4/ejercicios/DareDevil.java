@@ -8,6 +8,7 @@ public class DareDevil {
         Scanner scanner = new Scanner(System.in);
 
         int F, C; // Declarar las variables fuera del bucle
+        System.out.println("Ingrese el número de filas y columnas (0 0 para terminar):");
         F = scanner.nextInt(); // Leer el número de filas
         C = scanner.nextInt(); // Leer el número de columnas
 
@@ -15,14 +16,17 @@ public class DareDevil {
             char[][] sala = new char[F][C];
 
             // Leer el mapa de la sala
+            System.out.println("Ingrese el mapa de la sala:");
             for (int i = 0; i < F; i++) {
                 sala[i] = scanner.next().toCharArray();
             }
 
+            System.out.println("Ingrese el número de consultas:");
             int N = scanner.nextInt(); // Número de consultas
 
             // Procesar cada consulta
             for (int i = 0; i < N; i++) {
+                System.out.println("Ingrese la fila, columna y dirección (IZQUIERDA, DERECHA, ARRIBA, ABAJO):");
                 int fila = scanner.nextInt() - 1; // Convertir a índice 0
                 int columna = scanner.nextInt() - 1; // Convertir a índice 0
                 String direccion = scanner.next();
@@ -38,6 +42,7 @@ public class DareDevil {
             System.out.println("---"); // Separador al final de cada caso de prueba
 
             // Leer nuevamente el número de filas y columnas para la siguiente iteración
+            System.out.println("Ingrese el número de filas y columnas (0 0 para terminar):");
             F = scanner.nextInt();
             C = scanner.nextInt();
         }
@@ -68,21 +73,21 @@ public class DareDevil {
             case "ARRIBA":
                 for (int i = fila - 1; i >= 0; i--) {
                     distancia++;
-                    if (sala[i][columna] == 'X') {
+                    if (sala[i][columna] == 'X')
                         return distancia;
-                    }
                 }
+
                 break;
             case "ABAJO":
                 for (int i = fila + 1; i < sala.length; i++) {
-                    distancia++;
-                    if (sala[i][columna] == 'X') {
-                        return distancia;
-                    }
-                }
-                break;
+                 distancia++;
+                if (sala[i][columna] == 'X') {
+                return distancia;
+            }
         }
+        break;
+    }
 
         return -1; // Si no se encuentra ningún villano
-    }
+}
 }

@@ -1,6 +1,5 @@
 package ud4.ejercicios;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class PruebaDelNueve {
@@ -11,6 +10,7 @@ public class PruebaDelNueve {
         for (char c : numero.toCharArray()) {
             int digito = Character.isDigit(c) ? c - '0' : c - 'A' + 10;
             suma += digito;
+            // Mantener la suma dentro de los límites de la base
             while (suma >= base) {
                 suma -= base;
             }
@@ -20,9 +20,12 @@ public class PruebaDelNueve {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el número de casos de prueba: ");
         int casosPrueba = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < casosPrueba; i++) {
+            System.out.print("Ingrese la base, dividendo, divisor, cociente y resto (separados por espacios): ");
             String[] entrada = scanner.nextLine().split(" ");
             int base = Integer.parseInt(entrada[0]);
             String dividendo = entrada[1];

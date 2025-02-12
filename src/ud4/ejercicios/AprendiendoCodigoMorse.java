@@ -1,7 +1,6 @@
 package ud4.ejercicios;
 
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class AprendiendoCodigoMorse {
 
@@ -37,21 +36,26 @@ public class AprendiendoCodigoMorse {
         morseCode[24] = "-.--"; // Y
         morseCode[25] = "--.."; // Z
 
-        while (scanner.hasNextLine()) {
-            String palabra = scanner.nextLine().trim();
-            if (palabra.isEmpty()) break; // Terminar si la línea está vacía
+        // Solicitar al usuario que ingrese una palabra
+        System.out.println("Ingrese una palabra:");
+        String palabra = scanner.nextLine(); // Leer la palabra
 
-            char primeraLetra = Character.toUpperCase(palabra.charAt(0));
-            int index = primeraLetra - 'A'; // Obtener el índice correspondiente a la letra
+        if (palabra.equals("")) {
+            System.out.println("No se ingresó ninguna palabra.");
+            scanner.close();
+            return; // Terminar si la línea está vacía
+        }
 
-            // Generar el código Morse de la palabra
-            String codigoGenerado = generarCodigoMorse(palabra);
+        char primeraLetra = Character.toUpperCase(palabra.charAt(0));
+        int index = primeraLetra - 'A'; // Obtener el índice correspondiente a la letra
 
-            if (codigoGenerado.equals(morseCode[index])) {
-                System.out.println(palabra + " OK");
-            } else {
-                System.out.println(palabra + " X");
-            }
+        // Generar el código Morse de la palabra
+        String codigoGenerado = generarCodigoMorse(palabra);
+
+        if (codigoGenerado.equals(morseCode[index])) {
+            System.out.println(palabra + " OK");
+        } else {
+            System.out.println(palabra + " X");
         }
 
         scanner.close();
@@ -59,17 +63,17 @@ public class AprendiendoCodigoMorse {
 
     // Método para generar el código Morse a partir de la palabra
     private static String generarCodigoMorse(String palabra) {
-        StringBuilder codigo = new StringBuilder();
-        for (char c : palabra.toCharArray()) {
-            char letra = Character.toUpperCase(c);
+        String codigo = ""; // Inicializar el código como una cadena vacía
+        for (int i = 0; i < palabra.length(); i++) {
+            char letra = Character.toUpperCase(palabra.charAt(i));
             if ("AEIOU".indexOf(letra) != -1) { // Si es vocal
                 if (letra == 'O') {
-                    codigo.append("-"); // Vocal 'O' se convierte en raya
+                    codigo += "-"; // Vocal 'O' se convierte en raya
                 } else {
-                    codigo.append("."); // Otras vocales se convierten en punto
+                    codigo += "."; // Otras vocales se convierten en punto
                 }
             }
         }
-        return codigo.toString();
+        return codigo; // Devolver el código Morse generado
     }
 }

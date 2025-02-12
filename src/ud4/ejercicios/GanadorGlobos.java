@@ -8,6 +8,7 @@ public class GanadorGlobos {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el número de equipos y globos
+        System.out.println("Ingrese el número de equipos y globos (0 0 para terminar):");
         int numEquipos = scanner.nextInt();
         int numGlobos = scanner.nextInt();
 
@@ -15,6 +16,7 @@ public class GanadorGlobos {
             int[] globosPorEquipo = new int[numEquipos + 1]; // Índices de 1 a numEquipos
 
             // Leer los globos entregados
+            System.out.println("Ingrese los globos entregados (equipo y color):");
             for (int i = 0; i < numGlobos; i++) {
                 int equipo = scanner.nextInt();
                 String color = scanner.next(); // Leer el color, pero no lo necesitamos
@@ -40,14 +42,11 @@ public class GanadorGlobos {
             if (empate) {
                 System.out.println("EMPATE");
             } else {
-                System.out.println(ganador);
+                System.out.println("El ganador es el equipo: " + ganador);
             }
 
-            // Leer el siguiente número de equipos y globos
-            numEquipos = scanner.nextInt();
-            numGlobos = scanner.nextInt();
         }
 
-        scanner.close();
+        scanner.close(); // Cerrar el escáner al final
     }
 }

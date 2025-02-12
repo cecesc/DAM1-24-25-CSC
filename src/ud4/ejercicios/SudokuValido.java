@@ -6,6 +6,8 @@ public class SudokuValido {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el número de casos de prueba: ");
         int casosPrueba = scanner.nextInt();
         scanner.nextLine(); // Consumir la línea restante
 
@@ -15,6 +17,7 @@ public class SudokuValido {
             char[][] sudoku = new char[9][9];
             int celdasRellenas = 0;
 
+            System.out.println("Ingrese el Sudoku (9 líneas, use '-' para celdas vacías):");
             for (int i = 0; i < 9; i++) {
                 String linea = scanner.nextLine().trim();
                 sudoku[i] = linea.toCharArray();

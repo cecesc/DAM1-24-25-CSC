@@ -17,12 +17,10 @@ public class EscaleraDeColor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            String linea = scanner.nextLine();
-            if (linea.equals("0")) {
-                break;
-            }
+        System.out.println("Ingrese las cartas (0 para terminar):");
+        String linea = scanner.nextLine();
 
+        while (!linea.equals("0")) {
             String[] cartas = linea.split(" ");
             int[] valores = new int[cartas.length];
             String palo = null;
@@ -40,36 +38,38 @@ public class EscaleraDeColor {
 
             if (palo == null) {
                 System.out.println("NADA");
-                continue;
-            }
+            } else {
+                // Ordenar los valores de las cartas
+                Arrays.sort(valores);
+                int cartaFaltante = -1;
 
-            // Ordenar los valores de las cartas
-            Arrays.sort(valores);
-            int cartaFaltante = -1;
+                // Verificar si se puede formar una escalera
+                for (int i = 0; i < valores.length - 1; i++) {
+                    int actual = valores[i];
+                    int siguiente = valores[i + 1];
+                    if (siguiente - actual > 1) {
+                        // Hay un hueco, podemos colocar la carta faltante
+                        cartaFaltante = actual + 1;
+                        break;
+                    }
+                }
 
-            // Verificar si se puede formar una escalera
-            for (int i = 0; i < valores.length - 1; i++) {
-                int actual = valores[i];
-                int siguiente = valores[i + 1];
-                if (siguiente - actual > 1) {
-                    // Hay un hueco, podemos colocar la carta faltante
-                    cartaFaltante = actual + 1;
-                    break;
+                // Verificar si se puede añadir un As después de un K
+                if (cartaFaltante == -1 && contains(valores, 13) && !contains(valores, 14)) {
+                    cartaFaltante = 14; // As
+                }
+
+                // Verificar si la carta faltante es válida
+                if (cartaFaltante != -1 && cartaFaltante <= 14 && !contains(valores, cartaFaltante)) {
+                    String valorFaltante = getValorString(cartaFaltante);
+                    System.out.println(valorFaltante + palo);
+                } else {
+                    System.out.println("NADA");
                 }
             }
 
-            // Verificar si se puede añadir un As después de un K
-            if (cartaFaltante == -1 && contains(valores, 13) && !contains(valores, 14)) {
-                cartaFaltante = 14; // As
-            }
-
-            // Verificar si la carta faltante es válida
-            if (cartaFaltante != -1 && cartaFaltante <= 14 && !contains(valores, cartaFaltante)) {
-                String valorFaltante = getValorString(cartaFaltante);
-                System.out.println(valorFaltante + palo);
-            } else {
-                System.out.println("NADA");
-            }
+            System.out.println("Ingrese las cartas (0 para terminar):");
+            linea = scanner.nextLine();
         }
 
         scanner.close();

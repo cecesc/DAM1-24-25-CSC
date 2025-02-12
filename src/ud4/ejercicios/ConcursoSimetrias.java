@@ -8,6 +8,7 @@ public class ConcursoSimetrias {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el primer caso de prueba
+        System.out.print("Ingrese el ancho y alto de la figura (0 0 para terminar): ");
         int tx = scanner.nextInt(); // Ancho
         int ty = scanner.nextInt(); // Alto
 
@@ -16,6 +17,7 @@ public class ConcursoSimetrias {
             char[][] figura = new char[ty][tx];
 
             // Leer la figura
+            System.out.println("Ingrese la figura:");
             for (int i = 0; i < ty; i++) {
                 figura[i] = scanner.next().toCharArray();
             }
@@ -25,11 +27,12 @@ public class ConcursoSimetrias {
             System.out.println(esCorrecto ? "CORRECTO" : "TRAMPOSO");
 
             // Leer el siguiente caso de prueba
+            System.out.print("Ingrese el ancho y alto de la figura (0 0 para terminar): ");
             tx = scanner.nextInt(); // Ancho
             ty = scanner.nextInt(); // Alto
         }
 
-        scanner.close();
+        scanner.close(); // Cerrar el escáner al final
     }
 
     private static boolean verificarSimetria(char[][] figura, int tx, int ty) {
