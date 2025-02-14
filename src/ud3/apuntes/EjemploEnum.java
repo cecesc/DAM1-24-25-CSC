@@ -19,6 +19,8 @@ public class EjemploEnum {
         Persona p = new Persona("Pepe", Sexo.HOMBRE);
         Persona pp = new Persona("Marta", "MUJER");
 
+        System.out.println(p);
+        System.out.println(pp);
         System.out.println("FIN");
         sc.close();
     }

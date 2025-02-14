@@ -49,7 +49,8 @@ public class EjemploPoo {
       Persona p4 = new Persona("Claudia", 8, 1.2);
       Persona p5 = new Persona ("Pepe");
       
-
+      System.out.println(p4);
+      System.out.println(p5);
       System.out.println("FIN");
    }
 }
