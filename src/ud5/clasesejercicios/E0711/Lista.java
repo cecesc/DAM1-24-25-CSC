@@ -9,7 +9,7 @@ public class Lista {
         this.numeros = numeros;
 
         for (int i = 0; i < this.numeros; i++) {
-            int suna =+ numeros;
+            int suma =+ numeros;
              
         }
 
@@ -22,7 +22,7 @@ public class Lista {
 
     public static void main(String[] args) {
         System.out.println();
-        
+
     }
 
    

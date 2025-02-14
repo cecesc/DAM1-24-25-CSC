@@ -48,6 +48,7 @@ public class Ventas {
         media /= 6;
 
         System.out.println(diaSemana(diaMax) + " " + diaSemana(diaMin) + " " + (recaudacion > media ? "SI" : "NO"));
+        sc.close();
             }
         
         private static String diaSemana(int dia) {

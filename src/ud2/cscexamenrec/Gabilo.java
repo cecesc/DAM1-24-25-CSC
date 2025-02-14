@@ -26,6 +26,6 @@ public class Gabilo {
         } while (alt > altcamion);
             System.out.println("El camion puede pasar");
         
-
+sc.close();
     }
 }
