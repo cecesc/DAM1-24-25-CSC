@@ -4,29 +4,40 @@ import java.time.LocalDate;
 
 import ud5.clasesejercicios.E0710.maquinista.Locomotora;
 import ud5.clasesejercicios.E0710.maquinista.Tren;
-import ud5.clasesejercicios.E0710.personal.JefeEstacion;
-import ud5.clasesejercicios.E0710.personal.Maquinista;
-import ud5.clasesejercicios.E0710.personal.Mecanico;
+import ud5.clasesejercicios.E0710.personal.*;
 
 public class App {
-public static void main(String[] args) {
-    Maquinista maquinista= new Maquinista("Maria", "555555555J", 10000, "A");
-    System.out.println(maquinista);
+    public static void main(String[] args) {
+        Maquinista maquinista = new Maquinista("María", "555555555X", 40000, "A");
 
-    Mecanico mecanico= new Mecanico("Pepe", "999999999", Mecanico.Especialidad.MOTOR);
-       System.out.println(mecanico);
+        Mecanico mecanicoPepe = new Mecanico("Pepe", "666666666", Especialidad.FRENOS);
+        Mecanico mecanico2 = new Mecanico("Juan", "666666666", Especialidad.valueOf("HIDRAULICA"));
 
+        JefeEstacion jefe = new JefeEstacion("Lola", "33333333Z", LocalDate.of(2023, 10, 1));
 
-    JefeEstacion jefe = new JefeEstacion("Vanesa", "555555555J", LocalDate.of(2020, 2, 20));
+        // Vagon solo es visible por clases vecinas
+        Locomotora locomotora = new Locomotora("1111AAA", 5000, 2010, mecanicoPepe);
+
+/*       
+
+        Tren tren2 = new Tren(locomotora, maquinista, 5);
+ 
+        try {
+            Tren tren3 = new Tren(locomotora, maquinista, 50);
+        } catch (Exception e) {
+            System.out.println("No se puede crear el tren. " + e.getMessage());
+        }
+*/        
+        Tren tren = new Tren(locomotora, maquinista);
+        tren.addVagon(1, 10000, 5000, "Madera");
+        tren.addVagon(2, 20000, 15000, "Hierro");
+        tren.addVagon(3, 8000, 6000, "Pasajeros");
+
+        System.out.println(tren);
         System.out.println(jefe);
 
-    //Vagón solo es visible para clases vecinas
+       mecanicoPepe.revisar(locomotora);
+        mecanico2.revisar(locomotora);
 
-    Locomotora locomotora = new Locomotora("8448JFM", 50000, 2002, mecanico);
-    System.out.println(locomotora);
-
-    Tren tren = new Tren(locomotora, null, maquinista);
-        System.out.println(tren);
-
-}
+    }
 }

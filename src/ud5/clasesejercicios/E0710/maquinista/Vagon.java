@@ -14,7 +14,14 @@ class Vagon {
     }
 
     public Vagon(int id) {
-        this(id, 1000, 0, "Variada");
+        this(id, 10000, 0, "VARIADA");
     }
+
+    @Override
+    public String toString() {
+        return "Vagon [id=" + id + ". Carga=" + cargaActual + "/" +  cargaMaxima+ ", Mercancia="
+                + tipoMercancia + "]";
+    }    
+
 
 }

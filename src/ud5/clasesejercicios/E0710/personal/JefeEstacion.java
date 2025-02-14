@@ -1,6 +1,8 @@
 package ud5.clasesejercicios.E0710.personal;
 
 import java.time.LocalDate;
+import java.time.Period;
+
 
 public class JefeEstacion {
     String nombre;
@@ -13,8 +15,20 @@ public class JefeEstacion {
         this.fechaNombramiento = fechaNombramiento;
     }
 
+    public int getAntiguedad(){
+        Period p = Period.between(fechaNombramiento, LocalDate.now());
+        return p.getYears();
+
+
+        
+
+    }
+
+    @Override
+    public String toString() {
+        return "Jefe de estacion" + nombre + ", dni=" + dni + ", getAntigüedad()=" + getAntiguedad() + "]";
+    }
 
 
 
-    
 }
