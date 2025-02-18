@@ -1,6 +1,6 @@
 //Autora: Celia Sanmartin Chapela
 package ud4.cscexamen;
-
+/* 
 import java.util.Scanner;
 import java.util.Random;
 
@@ -106,3 +106,4 @@ public class BuscaTesouro {
         }
     }
 }
+*/

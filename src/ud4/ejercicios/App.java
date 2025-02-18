@@ -1,3 +1,5 @@
+package ud4.ejercicios;
+
 import java.util.Arrays;
 
 public class App {
