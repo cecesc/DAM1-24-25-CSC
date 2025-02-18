@@ -1,6 +1,10 @@
+package ud4.ejercicios;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
+
+/* 
 public class App2 {
     public static void main(String[] args) {
         System.out.println("Escoge un progama.");
@@ -173,3 +177,5 @@ public class App2 {
         return validacion;
     }
 }
+
+*/
