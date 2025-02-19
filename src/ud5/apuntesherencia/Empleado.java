@@ -1,51 +1,53 @@
 package ud5.apuntesherencia;
 
-public class Empleado extends Persona {
+public class Empleado extends Persona{
     double salario;
     String estatura;
 
-    Empleado() {
+    Empleado(){
 
     }
 
-    Empleado(String nombre, double salario) {
+    Empleado(String nombre, double salario){
         this.nombre = nombre;
         this.salario = salario;
     }
 
     public Empleado(String nombre, int edad, String estatura, double salario) {
-        super(nombre, edad);
         this.estatura = estatura;
-        this.salario = salario;
+        this.salario = salario;        
+        super(nombre, edad);
     }
 
     @Override
-    void mostrarDatos() {
-        System.out.println("EMPLEADOS:");
-        super.mostrarDatos();
+    public void mostrarDatos() {
+        System.out.println("EMPLEADO:");
+        System.out.println(nombre);
+        System.out.println(estatura);
+        //super.mostrarDatos();
         //System.out.println(getApellido2());
         System.out.println(salario + " euros anuales.");
-
     }
+    
 
     public static void main(String[] args) {
-        Empleado pepe = new Empleado("Pepe", 10000);
-        Empleado maria = new Empleado("Maria", 25, "M", 30000);
-        System.out.println(maria.edad);
-        pepe.saludar();
+        Empleado maria = new Empleado("María", 30000);
+        Empleado pepe = new Empleado("Pepe", 25, "XL", 30000);
+//        System.out.println(pepe.edad);
+//        pepe.saludar();
 
         System.out.println(pepe.estatura);
-        maria.mostrarDatos();
+        pepe.mostrarDatos();
         
-        Persona p= pepe ;
-        System.out.println(p.estatura);
+        Persona p = pepe;
+        System.out.println(p.estatura);        
         p.mostrarDatos();
+        System.out.println(p.getClass().getSimpleName());
 
-        
-        Empleado maricarmen = (Empleado) p;
-        System.out.println(maricarmen.estatura);
-        maricarmen.mostrarDatos();
-
-
+        Empleado nuevoPepe = (Empleado) p;
+        System.out.println(nuevoPepe.estatura);        
+        nuevoPepe.mostrarDatos();
+    
     }
 }
+

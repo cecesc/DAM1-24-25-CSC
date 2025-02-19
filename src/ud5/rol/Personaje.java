@@ -4,11 +4,7 @@ import java.util.Random;
 
 public class Personaje {
     String nombre;
-
-    enum raza {
-        HUMANO, ELFO, ENANO, HOBBIT, ORCO, TROLL
-    };
-
+    enum raza { HUMANO, ELFO, ENANO, HOBBIT, ORCO, TROLL };
     raza raza;
     int nivel = 1;
     int experiencia = 0;
@@ -20,9 +16,17 @@ public class Personaje {
 
     int puntoVida = 50 + constitucion;
 
-    public Personaje(String nombre, raza raza) {
+    public Personaje(String nombre, raza raza) throws Exception {
+        // if () {
+        // throw new IllegalArgumentException("Elementos de raza inválidos");
+        // }
         this.nombre = nombre;
         this.raza = raza;
+    }
+
+    public Personaje(String nombre) {
+        this.nombre = nombre;
+        this.raza = raza.HUMANO;
     }
 
     void mostrar() {
