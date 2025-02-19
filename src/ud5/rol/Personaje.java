@@ -8,20 +8,25 @@ public class Personaje {
     raza raza;
     int nivel = 1;
     int experiencia = 0;
-
+    int fuerza, agilidad, constitucion
     Random rdn = new Random();
-    int fuerza = rdn.nextInt(100) + 1;
-    int agilidad = rdn.nextInt(100) + 1;
-    int constitucion = rdn.nextInt(100) + 1;
 
-    int puntoVida = 50 + constitucion;
+    
 
-    public Personaje(String nombre, raza raza) throws Exception {
-        // if () {
-        // throw new IllegalArgumentException("Elementos de raza inválidos");
-        // }
+    public Personaje(String nombre, Raza raza) throws IllegalArgumentException {
+        if (nombre == null || nombre.isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
+        if (raza == null) {
+            throw new IllegalArgumentException("La raza no puede ser nula.");
+        }
         this.nombre = nombre;
         this.raza = raza;
+
+        this.fuerza = rdn.nextInt(100) + 1;
+        this.agilidad = rdn.nextInt(100) + 1;
+        this.constitucion = rdn.nextInt(100) + 1;
+        this.puntoVida = 50 + constitucion;
     }
 
     public Personaje(String nombre) {
