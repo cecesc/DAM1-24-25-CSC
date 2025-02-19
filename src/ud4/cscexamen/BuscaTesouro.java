@@ -74,7 +74,7 @@ import java.util.Random;
                 System.out.printf("Has perdido!! Has agotado el máximo de intentos.%n%n");
         }
     
-        private static int leerEntero(int min, int max) {
+         static int leerEntero(int min, int max) {
             int num = -1;
             boolean numCorrecto = false;
             Scanner sc = new Scanner(System.in);

@@ -4,39 +4,41 @@ import java.util.Random;
 
 public class Personaje {
     String nombre;
-    Raza raza;
+
+    enum raza {
+        HUMANO, ELFO, ENANO, HOBBIT, ORCO, TROLL
+    };
+
+    raza raza;
     int nivel = 1;
     int experiencia = 0;
-    int puntoVida = 50;
 
     Random rdn = new Random();
     int fuerza = rdn.nextInt(100) + 1;
     int agilidad = rdn.nextInt(100) + 1;
     int constitucion = rdn.nextInt(100) + 1;
 
-    public Personaje(String nombre, Raza raza, int nivel, int experiencia, int puntoVida, int fuerza,
-            int agilidad, int constitucion) {
+    int puntoVida = 50 + constitucion;
+
+    public Personaje(String nombre, raza raza) {
         this.nombre = nombre;
         this.raza = raza;
-        this.nivel = nivel;
-        this.experiencia = experiencia;
-        this.puntoVida = puntoVida;
-
-        this.fuerza = fuerza;
-        this.agilidad = agilidad;
-        this.constitucion = constitucion;
     }
 
-    public static void mostrar(String nombre, Raza raza, int fuerza, int agilidad, int constitucion, int nivel,
-            int experiencia, int puntoVida) {
-        System.out.println("Nombre: " + nombre + "Raza: " + raza + "Fuerza: " + fuerza + "Agilidad: " + agilidad
-                + "Constitucion: " + constitucion + "Nivel: " + nivel + "Experiencia: " + experiencia
-                + "Puntos de vida: " + puntoVida);
+    void mostrar() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Raza: " + raza);
+        System.out.println("Nivel: " + nivel);
+        System.out.println("Experiencia: " + experiencia);
+        System.out.println("Puntos de vida: " + puntoVida);
+        System.out.println("Fuerza: " + fuerza);
+        System.out.println("Agilidad: " + agilidad);
+        System.out.println("Constitucion: " + constitucion);
+
     }
 
     @Override
     public String toString() {
-        return nombre + "(" + puntoVida + "/" + puntoVida + ")";
+        return nombre + "  ( " + puntoVida + " / " + puntoVida + " )";
     }
-
 }

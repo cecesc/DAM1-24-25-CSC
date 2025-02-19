@@ -1,36 +1,22 @@
-package ud3.apuntes;
+package ud5.apuntesherencia;
 
 public class Persona {
     // Datos
-    private String nombre;
-    private String apellido1;
-    private String apellido2;
-    private int edad;
-    private double estatura = 1.80;
-    private final String dni = null;
+    String nombre;
+    String apellido1;
+    String apellido2;
+    int edad;
+    double estatura = 1.80;
+    final String dni = null;
     enum Sexo {HOMBRE, MUJER, NO_BINARIO}
-    private Sexo sexo;
-    DiaDeLaSemana diaPreferido;
+    Sexo sexo;
+
 
     public static int contadorPersonas;
 
     // CONSTRUCTORES
     public Persona() {
     }
-
-    
-
-    public String getNombre() {
-        return nombre;
-    }
-
-
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-
 
     public Persona(String nombre, Sexo sexo) {
         this.nombre = nombre;
@@ -66,6 +52,22 @@ public class Persona {
         apellido2 = a2;
         edad = e;
         contadorPersonas++;
+    }
+
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+
+    void mostrarDatos(){
+        System.out.println(nombre);
+        System.out.println(edad);
+        System.out.println(estatura);
+
     }
 
     public String nombreCompleto() {
