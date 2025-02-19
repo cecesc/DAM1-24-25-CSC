@@ -1,5 +1,7 @@
 package ud4.ejercicios;
 
+
+/*
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -144,7 +146,6 @@ public class App2 {
             }
         }
     }
-
     public static boolean caminoValido() {
         System.out.println("\n==================");
         System.out.println("JUEGO DE LABERINTO");
@@ -177,5 +178,4 @@ public class App2 {
         return validacion;
     }
 }
-
 */

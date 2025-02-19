@@ -1,4 +1,4 @@
-package ud4.practicas;
+package ud4.practicas.agenda;
 import java.util.ArrayList;
 import java.util.Scanner;
 
