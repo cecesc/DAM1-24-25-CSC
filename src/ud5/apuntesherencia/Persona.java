@@ -8,9 +8,12 @@ public class Persona {
     int edad;
     double estatura = 1.80;
     final String dni = null;
-    enum Sexo {HOMBRE, MUJER, NO_BINARIO}
-    Sexo sexo;
 
+    enum Sexo {
+        HOMBRE, MUJER, NO_BINARIO
+    }
+
+    Sexo sexo;
 
     public static int contadorPersonas;
 
@@ -46,6 +49,11 @@ public class Persona {
 
     // Otros Métodos
 
+    @Override
+    public String toString() {
+        return "Persona [nombre=" + nombre + ", edad=" + edad + "]";
+    }
+
     public void inicializar(String n, String a1, String a2, int e) {
         nombre = n;
         apellido1 = a1;
@@ -53,7 +61,6 @@ public class Persona {
         edad = e;
         contadorPersonas++;
     }
-
 
     public String getApellido2() {
         return apellido2;
@@ -63,7 +70,7 @@ public class Persona {
         this.apellido2 = apellido2;
     }
 
-    void mostrarDatos(){
+    void mostrarDatos() {
         System.out.println(nombre);
         System.out.println(edad);
         System.out.println(estatura);

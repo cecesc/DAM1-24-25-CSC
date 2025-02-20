@@ -1,11 +1,16 @@
 package ud5.apuntesherencia;
 
-public class Estudiante extends Persona{
+public class Estudiante extends Persona {
     String curso;
 
     public Estudiante(String nombre, String curso) {
         super(nombre);
         this.curso = curso;
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante [nombre=" + nombre + ", curso=" + curso + "]";
     }
 
     @Override
@@ -22,11 +27,18 @@ public class Estudiante extends Persona{
         p[2] = new Estudiante("Pablo", "DAM");
         p[3] = new Empleado("Sandra", 29, "M", 34000);
         p[4] = new Estudiante("Juan", "ASIR");
-        
-        for(int i = 0; i < 5; i++){
-            p[i].mostrarDatos();        
+
+        System.out.println("POLIMORFISMO: mostrarDatos()");
+        for (Persona per : p) {
+            per.mostrarDatos();
         }
-                
+
+        System.out.println("POLIMORFISMO: toString ");
+        for (Persona per : p) {
+            System.out.println(per);
+
+        }
+
     }
-    
+
 }
