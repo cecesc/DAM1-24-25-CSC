@@ -7,7 +7,7 @@ public class Persona {
     String apellido2;
     int edad;
     double estatura = 1.80;
-    final String dni = null;
+    String dni;
 
     enum Sexo {
         HOMBRE, MUJER, NO_BINARIO
