@@ -8,7 +8,7 @@ public static double SVE(double radio){
     double superficie= (4*Math.PI)* Math.pow(radio, 2);
     double volumen= (4*Math.PI/3)* Math.pow(radio, 3);
 
-    System.out.printf("La superficie de esta es fera es de %.2f y el volumen es de %.2f", superficie, volumen);
+    System.out.printf("La superficie de esta esfera es de %.2f y el volumen es de %.2f", superficie, volumen);
 
     return radio;
 }
