@@ -4,17 +4,13 @@ public class Hora {
     byte hora;
     byte minuto;
 
-    public Hora(byte hora, byte minuto) {
-        if(!setHora(hora)){
-            throw new IllegalArgumentException("El minuto debe de estar entre 0 y 23");
+    public Hora(int hora, int minuto) {
+        if (!setHora(hora)) {
+            throw new IllegalArgumentException("La hora debe estar entre 0 y 23");
         }
-        if(!setMinuto(minuto)){
-            throw new IllegalArgumentException("El minuto debe de estar entre 0 y 59");
+        if (!setMinuto(minuto)) {
+            throw new IllegalArgumentException("El minuto debe estar entre 0 y 59");
         }
-    }
-
-    void dec(){
-        
     }
 
     void inc() {
@@ -28,7 +24,7 @@ public class Hora {
         }
     }
 
-    boolean setMinuto(byte valor) {
+    boolean setMinuto(int valor) {
         if (valor >= 0 && valor < 60) {
             minuto = (byte)valor;
             return true;
@@ -36,7 +32,7 @@ public class Hora {
             return false;
     }
 
-    boolean setHora(byte valor) {
+    boolean setHora(int valor) {
         if (valor >= 0 && valor < 24) {
             hora = (byte)valor;
             return true;
@@ -50,9 +46,12 @@ public class Hora {
     }
 
     public static void main(String[] args) {
-        Hora hora = new Hora(8, 03);
+        Hora hora = new Hora(88, 10);
         System.out.println(hora);
         hora.inc();
+        System.out.println(hora);
+        hora.setMinuto(59);
+        System.out.println(hora);
     }
 
 }
