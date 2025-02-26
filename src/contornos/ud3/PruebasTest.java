@@ -9,18 +9,12 @@ public class PruebasTest {
     void testEsNumeroPerfecto() {
     boolean resultadoEsperado= true;
     Pruebas prueba = new Pruebas();
-    boolean resultado= Pruebas.esNumeroPerfecto(5);
+    boolean resultado= Pruebas.esNumeroPerfecto(28);
            
     }
 
 
     
-    @Test
-    void contarParesImpares() {
-    boolean resultadoEsperado= true;
-    Pruebas prueba = new Pruebas();
-    boolean resultado= Pruebas.contarParesImpares();
-           
-    }
+    
 
 }

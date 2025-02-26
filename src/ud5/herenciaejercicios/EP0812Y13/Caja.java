@@ -1,38 +1,50 @@
 package ud5.herenciaejercicios.EP0812Y13;
 
 public class Caja {
-    int ancho;
-    int alto;
-    int fondo;
+    int ancho, alto, fondo;
     String etiqueta;
-    public enum Unidad {cm , m}
-    public Unidad unidad;
-    final int MAX_ETIQUETA=30;
-    public static double volumen=0;
 
+    enum Unidad {cm, m};
 
+    Caja(int ancho, int alto, int fondo, Unidad unidad) {
+        int multiplicador = switch (unidad) {
+            case cm -> 1;
+            case m -> 100;
+            default -> 0;
+        };
 
-    public Caja(int ancho, int alto, int fondo, Unidad unidad) {
-        this.ancho = ancho;
-        this.alto = alto;
-        this.fondo = fondo;
-        this.unidad = unidad;
+        if (multiplicador == 0)
+            throw new IllegalArgumentException("La unidad de medida es incorrecta");
+        else if (ancho <= 0 || alto <= 0 || fondo <= 0)
+            throw new IllegalArgumentException("Ancho, alto o fondo incorrecto");
+
+        this.ancho = ancho * multiplicador;
+        this.alto = alto * multiplicador;
+        this.fondo = fondo * multiplicador;
     }
 
-    public double getVolumen(){
-         volumen = ancho*alto*fondo;
-        return volumen;
+    // Volumen
+    double getVolumen() {
+        return ancho * alto * fondo / 1000000;
     }
 
-    public void setEtiqueta(String etiqueta){
-        
+    public void setEtiqueta(String etiqueta) {
+        if (etiqueta != null && etiqueta.length() <= 30)
+            this.etiqueta = etiqueta;
     }
 
     @Override
     public String toString() {
-        return "Caja [ancho=" + ancho + ", alto=" + alto + ", fondo=" + fondo + "]";
+        return "Caja de " + ancho + "x" + alto + "x" + fondo
+                + " (" + etiqueta + ")";
     }
 
+    public static void main(String[] args) {
+        Caja caja1 = new Caja(100, 100, 100, Unidad.cm);
+        caja1.setEtiqueta("Para: IES Chan do Monte");
+        System.out.println(caja1);
+        System.out.println("Volumen: " + caja1.getVolumen());
+    }
 
-   
 }
+

@@ -13,8 +13,8 @@ public class CajasCarton extends Caja {
         Caja caja= new Caja(5, 5, 5, Unidad.m);
         System.out.println(caja);
         caja.getVolumen();
-        System.out.printf("El volumen de la caja para los repartidores: %.2f %s" + volumen*0.80, Unidad.m);
+        System.out.printf("El volumen de la caja para los repartidores: %.2f %s" + caja.getVolumen() *0.80, Unidad.m);
     }
 
-
 }
+
