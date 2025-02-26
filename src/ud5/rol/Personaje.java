@@ -3,22 +3,22 @@ package ud5.rol;
 import java.util.Random;
 
 public class Personaje {
-    String nombre;
+    public String nombre;
 
     enum raza {
         HUMANO, ELFO, ENANO, HOBBIT, ORCO, TROLL
     };
 
-    raza raza;
+    static raza raza;
     int nivel = 1;
     int experiencia = 0;
 
     Random rdn = new Random();
-    int fuerza = rdn.nextInt(100) + 1;
-    int agilidad = rdn.nextInt(100) + 1;
-    int constitucion = rdn.nextInt(100) + 1;
+    public int fuerza = rdn.nextInt(100) + 1;
+    public int agilidad = rdn.nextInt(100) + 1;
+    public int constitucion = rdn.nextInt(100) + 1;
 
-    int puntoVida = 50 + constitucion;
+    public int puntoVida = 50 + constitucion;
     final int MAX_VIDA = constitucion + 50;
     boolean vivo = true;
 
@@ -38,7 +38,7 @@ public class Personaje {
         this.raza = raza.HUMANO;
     }
 
-    void mostrar() {
+    protected void mostrar() {
         System.out.println("Nombre: " + nombre);
         System.out.println("Raza: " + raza);
         System.out.println("Nivel: " + nivel);
