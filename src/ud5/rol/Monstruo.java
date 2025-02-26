@@ -74,15 +74,20 @@ public class Monstruo extends Personaje {
     public String toString() {
         return nombre + "-" + monstruo + "  ( " + puntosVidaOrco + " )";
     }
-    
+
     @Override
     void mostrar() {
-        System.out.println("Nombre: " + nombre);
+        if ( monstruo == Monstruos.Dragon) {
+            System.out.println("Nombre: " + nombre);
         System.out.println("Monstruo: " + monstruo);
         System.out.println("Puntos de vida: " + puntosVidaDragon);
         System.out.println("Velocidad: " + velocidadDragon);
         System.out.println("Potencia de ataque: " + ataqueDragon);
         System.out.println("Aguante de defensa: " + defensaDragon);
+        }else if (monstruo == Monstruos.Orco) {
+            
+        }
+        
     }
 
     public static void main(String[] args) {
