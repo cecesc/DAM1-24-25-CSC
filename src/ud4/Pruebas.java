@@ -9,5 +9,6 @@ public class Pruebas {
         String titulo = sc.nextLine();
         titulo = "<p>"+ titulo + "</p>";
         System.out.println(titulo);
+        sc.close();
     }
 }

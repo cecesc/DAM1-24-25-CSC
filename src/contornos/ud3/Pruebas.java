@@ -68,6 +68,7 @@ public class Pruebas {
                 // NODO 6
                 contImpares++;
             } // NODO 7
+            sc.close();
         }
 
         // NODO 8

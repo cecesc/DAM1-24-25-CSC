@@ -1,6 +1,6 @@
 package ud4.ejercicios;
 
-import java.util.Scanner;
+
 /*
 public class Snake {
 

@@ -71,6 +71,8 @@ public class BuscaTesouro {
             System.out.printf("Enhorabuena!! Has encontrado el tesoro en %d intentos.%n%n", intentos);
         else
             System.out.printf("Has perdido!! Has agotado el máximo de intentos.%n%n");
+
+
     }
 
     static int leerEntero(int min, int max) {
@@ -92,11 +94,11 @@ public class BuscaTesouro {
                 System.out.printf("Debe ser un número entero entre %d y %d%n", min, max);
                 sc.nextLine();
             }
-            
         } while (!numCorrecto);
+        
 
         return num;
+        
     }
-
 
 }
