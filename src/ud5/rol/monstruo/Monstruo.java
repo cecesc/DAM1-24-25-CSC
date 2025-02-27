@@ -58,8 +58,9 @@ public class Monstruo extends Personaje {
             return new Troll();
         return new Dragon();
     }
-
+//Prueba
     public static int rnd(int min, int max) {
         return new Random().nextInt(max - min + 1) + min;
+
     }
 }
