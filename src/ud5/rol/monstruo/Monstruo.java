@@ -43,8 +43,8 @@ public class Monstruo extends Personaje {
     }
 
     public static void main(String[] args) {
-        Monstruo m = generaMonstruoAleatorio();
-        System.out.println("Monstruo generado: " + m);
+        Monstruo monster = generaMonstruoAleatorio();
+        System.out.println(monster);
     }
 
     public static Monstruo generaMonstruoAleatorio() {

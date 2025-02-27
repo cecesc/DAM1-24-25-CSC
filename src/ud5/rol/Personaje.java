@@ -9,7 +9,7 @@ public class Personaje {
         HUMANO, ELFO, ENANO, HOBBIT, ORCO, TROLL
     };
 
-    static raza raza;
+    public  raza raza;
     int nivel = 1;
     int experiencia = 0;
 
