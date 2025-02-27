@@ -1,6 +1,7 @@
 package ud5.rol;
 
 import java.util.Random;
+import ud5.rol.Personaje.raza;
 
 public class AppCombateGrupos {
     public static void main(String[] args) {
@@ -20,10 +21,11 @@ public class AppCombateGrupos {
 
     public static Personaje[] generarGrupo(String nombreGrupo) {
         Random rdn = new Random();
-        String[] nombres = { "Aragorn", "Legolas", "Gimli", "Frodo", "Boromir", "Sam" };
-        Personaje.raza[] razas = Personaje.raza.values();
+        String[] nombres = { "Valquiria", "Casstel", "Draken", "Nicktos", "Bordomir", "Seraphea", "Strormentor",
+                "Hados" };
+        Personaje.raza[] razas = raza.values();
 
-        int numPersonajes = rdn.nextInt(4) + 3; // Entre 3 y 6 personajes
+        int numPersonajes = rdn.nextInt(4) + 3;
         Personaje[] grupo = new Personaje[numPersonajes];
 
         for (int i = 0; i < numPersonajes; i++) {
@@ -44,7 +46,6 @@ public class AppCombateGrupos {
     }
 
     public static void combatir(Personaje[] grupo1, Personaje[] grupo2) {
-        Random rdn = new Random();
 
         while (grupoVivo(grupo1) && grupoVivo(grupo2)) {
             for (int i = 0; i < grupo1.length; i++) {
@@ -56,8 +57,10 @@ public class AppCombateGrupos {
                     int daño = grupo1[i].atacar(enemigo);
                     System.out.println(grupo1[i].getNombre() + " ataca a " + enemigo.getNombre() + " y causa " + daño
                             + " de daño.");
+                    System.out.println();
                     if (!enemigo.estaVivo()) {
                         System.out.println(enemigo.getNombre() + " ha muerto.");
+                        System.out.println();
                     }
                 }
             }
@@ -71,8 +74,10 @@ public class AppCombateGrupos {
                     int daño = grupo2[i].atacar(enemigo);
                     System.out.println(grupo2[i].getNombre() + " ataca a " + enemigo.getNombre() + " y causa " + daño
                             + " de daño.");
+                    System.out.println();
                     if (!enemigo.estaVivo()) {
                         System.out.println(enemigo.getNombre() + " ha muerto.");
+                        System.out.println();
                     }
                 }
             }
@@ -80,9 +85,11 @@ public class AppCombateGrupos {
 
         System.out.println("\n=== FIN DEL COMBATE ===");
         if (grupoVivo(grupo1)) {
-            System.out.println("El equipo 1 ha ganado.");
+            System.out.println("El equipo A ha ganado.");
+            System.out.println();
         } else {
-            System.out.println("El equipo 2 ha ganado.");
+            System.out.println("El equipo B ha ganado.");
+            System.out.println();
         }
     }
 

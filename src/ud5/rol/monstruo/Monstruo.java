@@ -2,14 +2,20 @@ package ud5.rol.monstruo;
 
 import java.util.Random;
 
-import ud5.rol.Personaje;
-
-public class Monstruo extends Personaje {
+public class Monstruo {
     String nombre;
-    int ataque, defensa, velocidad, puntosVida, maxVida;
+    int ataque; 
+    int defensa;
+    int velocidad;
+    int puntosVida;
+    int agilidad;
+    int puntoVida;
 
-    public Monstruo(String nombre, int ataque, int defensa, int velocidad, int puntosVida) {
-        super(nombre);
+    public Monstruo(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Monstruo( int ataque, int defensa, int velocidad, int puntosVida) {
         this.ataque = ataque;
         this.defensa = defensa;
         this.velocidad = velocidad;
@@ -29,12 +35,12 @@ public class Monstruo extends Personaje {
         return false;
     }
 
-    public int atacar(Personaje enemigo) {
+    public int atacar(Monstruo monster) {
         Random rdn = new Random();
         int puntAtaque = rdn.nextInt(100) + 1 + ataque;
-        int puntDefensa = rdn.nextInt(100) + 1 + enemigo.agilidad;
-        int daño = Math.max(0, Math.min(puntAtaque - puntDefensa, enemigo.puntoVida));
-        enemigo.perderVida(daño);
+        int puntDefensa = rdn.nextInt(100) + 1 + monster.agilidad;
+        int daño = Math.max(0, Math.min(puntAtaque - puntDefensa, monster.puntoVida));
+        monster.perderVida(daño);
         return daño;
     }
 
