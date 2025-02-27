@@ -1,4 +1,4 @@
-package ud5.rol.monstruo;
+package ud5.monstruo;
 
 import java.util.Random;
 

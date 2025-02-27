@@ -1,4 +1,4 @@
-package ud5.rol.monstruo;
+package ud5.monstruo;
 
 public class Dragon extends Monstruo {
     public Dragon() {

@@ -1,4 +1,4 @@
-package ud5.rol.monstruo;
+package ud5.monstruo;
 
 public class Orco extends Monstruo {
     public Orco() {

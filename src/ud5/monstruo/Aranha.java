@@ -1,4 +1,4 @@
-package ud5.rol.monstruo;
+package ud5.monstruo;
 
 public class Aranha extends Monstruo {
     public Aranha() {
