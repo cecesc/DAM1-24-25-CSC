@@ -32,7 +32,7 @@ public class AppCombateSingular {
             if (!defensor.estaVivo()) {
                 System.out.printf("%s ha muerto! Fin del combate.\n\n", defensor.getNombre());
             }
-           
+        
         }
 
         System.out.println("Después del combate:");
