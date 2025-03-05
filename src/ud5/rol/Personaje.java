@@ -5,7 +5,7 @@ import java.util.Random;
 public class Personaje {
     public String nombre;
 
-    enum raza {
+    public enum raza {
         HUMANO, ELFO, ENANO, HOBBIT, ORCO, TROLL
     };
 
@@ -110,5 +110,29 @@ public class Personaje {
     public int getPuntoVida() {
         return puntoVida;
     }
+
+    @Override
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    Personaje that = (Personaje) obj;
+    return nombre.equals(that.nombre) && raza == that.raza;
+}
+
+public static Personaje[] sortAgilidadDesc(Personaje[] personajes) {
+    // Ordenamos los personajes por agilidad de forma descendente
+    Personaje[] copia = personajes.clone();
+    for (int i = 0; i < copia.length; i++) {
+        for (int j = i + 1; j < copia.length; j++) {
+            if (copia[i].agilidad < copia[j].agilidad) {
+                Personaje temp = copia[i];
+                copia[i] = copia[j];
+                copia[j] = temp;
+            }
+        }
+    }
+    return copia;
+}
+
 
 }

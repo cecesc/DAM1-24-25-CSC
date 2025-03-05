@@ -12,7 +12,7 @@ public class Lista {
     public int length() {
         return elementos.length;
     }
-    
+
     public void insertarFinal(Integer e) {
         elementos = Arrays.copyOf(elementos, elementos.length + 1);
         elementos[elementos.length - 1] = e;
@@ -32,16 +32,15 @@ public class Lista {
         elementos = aux;
     }
 
-
-    public void insertarFinal(Lista l){
+    public void insertarFinal(Lista l) {
         elementos = Arrays.copyOf(elementos, elementos.length + l.length());
         System.arraycopy(l.elementos, 0, elementos, elementos.length - l.length(), l.length());
     }
 
-    public Integer eliminarEn(int i){
+    public Integer eliminarEn(int i) {
         Integer e = null;
-        
-        if (i >= 0 && i < elementos.length){
+
+        if (i >= 0 && i < elementos.length) {
             e = elementos[i];
             Integer[] aux = Arrays.copyOf(elementos, elementos.length - 1);
             System.arraycopy(elementos, i + 1, aux, i, elementos.length - i - 1);
@@ -51,15 +50,15 @@ public class Lista {
         return e;
     }
 
-    public Integer valorEn(int i){
+    public Integer valorEn(int i) {
         return (i >= 0 && i < elementos.length) ? elementos[i] : null;
     }
 
-    public int buscar(Integer e){
+    public int buscar(Integer e) {
         int i = 0;
         int pos = -1;
         while (i < elementos.length && pos == -1) {
-            if (elementos[i] == e) 
+            if (elementos[i] == e)
                 pos = i;
             i++;
         }
@@ -67,29 +66,33 @@ public class Lista {
         return pos;
     }
 
-    public void mostrar(){
-        System.out.println(Arrays.toString(elementos));
+    /*
+     * public void mostrar(){
+     * System.out.println(Arrays.toString(elementos));
+     * }
+     */
+
+    @Override
+    public String toString() {
+        return Arrays.toString(elementos);
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
 
+        Lista otra = (Lista) obj;
 
+        return Arrays.equals(this.elementos, otra.elementos);
+    }
 
-    public static Lista concatena(Lista l1, Lista l2){
-        
-        // 1. CopyOf + ArrayCopy return
-
-        
-        // 2. Usando insertarFinal
-
-        Lista l = l1;
-
+    public static Lista concatena(Lista l1, Lista l2) {
+        Lista l = new Lista();
+        l.insertarFinal(l1);
         l.insertarFinal(l2);
-
         return l;
     }
 }
-
-
-
-
-
