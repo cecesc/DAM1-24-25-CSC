@@ -34,5 +34,9 @@ programadora da historia");
  MullerTraballadora[] mulleres = {marieCurie, fridaKahlo, rosaParks, adaLovelace};
 }
 
+ @Override
+    public String toString() {
+        return nome + "  foi unha ";
+    }
 
 }

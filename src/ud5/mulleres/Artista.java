@@ -9,5 +9,9 @@ apelidos, int anoNacemento, String estilo) {
         this.estilo = estilo;
     }
 
+ @Override
+    public String toString() {
+        return nome + "  destacou na arte co estilo: " + estilo;
+    }
 
 }

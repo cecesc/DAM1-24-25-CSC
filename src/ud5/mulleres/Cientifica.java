@@ -9,4 +9,10 @@ apelidos, int anoNacemento, String descubrimiento) {
         this.descubrimiento = descubrimiento;
     }
 
+
+@Override
+    public String toString() {
+        return nome + "  foi unha científica pioneira que descubriu: " + descubrimiento;
+    }
+
 }
