@@ -6,13 +6,10 @@ public class App2Armas {
     public static void main(String[] args) {
         System.out.println("2. Armas y Armaduras");
         System.out.println("====================");
-        System.out.println();
 
-        // Crear personajes
         PersonajeEx valkiria = new PersonajeEx("Valkiria", raza.HUMANO);
         PersonajeEx arturo = new PersonajeEx("Arturo", raza.HUMANO);
 
-        // Crear armas y armaduras
         Armadura yelmoHierro = new Armadura("Yelmo de hierro", 1.5, 50, Armadura.Tipo.YELMO);
         yelmoHierro.setDefensa(5);
 
@@ -31,18 +28,15 @@ public class App2Armas {
 
         Arma espadon = new Arma("Espadón a dos manos", 5.0, 1000, 50, true);
 
-        // Equipar objetos a Valkiria
         valkiria.equipar(yelmoHierro);
         valkiria.equipar(cotaMalla);
         valkiria.equipar(espadaLarga);
         valkiria.equipar(escudoMadera);
 
-        // Equipar objetos a Arturo
         arturo.equipar(yelmoPlata);
         arturo.equipar(coraza);
         arturo.equipar(espadon);
 
-        // Mostrar equipos
         System.out.println("Equipo de combate de Valkiria:");
         valkiria.mostrarEquipo();
         System.out.println();
