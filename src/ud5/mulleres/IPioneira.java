@@ -1,6 +1,7 @@
 package ud5.mulleres;
 
-public interface IPioneira{
+public interface IPioneira {
 
-    getDescubrimentoOuAporte()
+    String getDescubrimentoOuAporte();
+
 }

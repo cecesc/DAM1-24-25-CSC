@@ -1,6 +1,6 @@
 package ud5.mulleres;
 
-public interface IActivista{
+public interface IActivista {
 
-    getCausaDefendida()
+    String getCausaDefendida();
 }
