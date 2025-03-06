@@ -1,6 +1,6 @@
 package ud5.clasesejercicios;
 
-public class Pila {
+public class Pila extends Lista {
     private Lista lista;
 
     public Pila() {
