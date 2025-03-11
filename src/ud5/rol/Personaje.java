@@ -120,7 +120,6 @@ public boolean equals(Object obj) {
 }
 
 public static Personaje[] sortAgilidadDesc(Personaje[] personajes) {
-    // Ordenamos los personajes por agilidad de forma descendente
     Personaje[] copia = personajes.clone();
     for (int i = 0; i < copia.length; i++) {
         for (int j = i + 1; j < copia.length; j++) {

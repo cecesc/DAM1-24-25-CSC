@@ -6,11 +6,15 @@ public class Armadura extends Item {
     private int defensa;
     private Tipo tipo;
 
-    public Armadura(String nombre, double peso, int precio, int defensa, Tipo tipo) {
+    public Armadura(String nombre, double peso, int precio, Tipo tipo) {
         super(nombre, peso, precio);
-        this.defensa = defensa;
         this.tipo = tipo;
     }
+
+    public void setDefensa(int defensa) {
+    this.defensa = defensa;
+    }
+
 
     public int getDefensa() {
         return defensa;

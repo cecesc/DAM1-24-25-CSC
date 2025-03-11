@@ -1,8 +1,8 @@
 package ud5.rol;
 
 public class Arma extends Item {
-    private int ataque;
-    private boolean dosManos;
+    public int ataque;
+    public boolean dosManos = false;
 
     public Arma(String nombre, double peso, int precio, int ataque, boolean dosManos) {
         super(nombre, peso, precio);
@@ -14,7 +14,7 @@ public class Arma extends Item {
         return ataque;
     }
 
-    public boolean isDosManos() {
+    public boolean esDosManos() {
         return dosManos;
     }
 }
