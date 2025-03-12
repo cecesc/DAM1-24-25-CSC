@@ -6,47 +6,74 @@ import org.junit.jupiter.api.Test;
 public class PasswordValidatorTest {
 
     @Test
-    void testPasswordTooShort() {
-        assertFalse(PasswordValidator.isValid("Ab1")); // Menos de 8 caracteres
+    void testPassword() {
+        assertFalse(PasswordValidator.isValid("Abcdefgh12"));
     }
 
     @Test
-    void testPasswordWithoutUpperCase() {
-        assertFalse(PasswordValidator.isValid("abcdefgh1")); // Sin mayúsculas
+    void testNoUpperCase() {
+        assertFalse(PasswordValidator.isValid("abcdef12")); 
     }
 
     @Test
-    void testPasswordWithoutDigit() {
-        assertFalse(PasswordValidator.isValid("ABCDEFGH")); // Sin números
+    void testNoDigit() {
+        assertFalse(PasswordValidator.isValid("Abcdefgh"));
     }
 
     @Test
-    void testPasswordValid() {
-        assertTrue(PasswordValidator.isValid("Abcdefg1")); // Correcta
+    void testValidPassword() {
+        assertTrue(PasswordValidator.isValid("Abcdef1")); 
     }
 
     @Test
-    void testPasswordWithOnlyNumbers() {
-        assertFalse(PasswordValidator.isValid("12345678")); // Solo números
+    void testValidMaxLength() {
+        assertFalse(PasswordValidator.isValid("A1bcdefg")); 
+    }
+
+
+    @Test
+    void testInvalidLongPassword() {
+        assertFalse(PasswordValidator.isValid("Abcdefghij1"));
     }
 
     @Test
-    void testPasswordWithOnlyUppercase() {
-        assertFalse(PasswordValidator.isValid("ABCDEFGH")); // Solo mayúsculas
+    void testEmptyString() {
+        assertFalse(PasswordValidator.isValid("")); 
     }
 
     @Test
-    void testPasswordWithMixedCaseButNoNumber() {
-        assertFalse(PasswordValidator.isValid("Abcdefgh")); // Mayúscula pero sin número
+    void testOnlyUpperCaseAndDigits() {
+        assertTrue(PasswordValidator.isValid("A1B2C3D")); 
+    }
+
+
+    @Test
+    void testOnlySpecialCharacters() {
+        assertFalse(PasswordValidator.isValid("@#$%^&*")); 
     }
 
     @Test
-    void testPasswordWithMixedCaseAndNumber() {
-        assertTrue(PasswordValidator.isValid("A1bcdefg")); // Cumple todos los requisitos
+    void testOnlyNumbers() {
+        assertFalse(PasswordValidator.isValid("12345678"));
     }
 
     @Test
-    void testPasswordWithLongValidPassword() {
-        assertTrue(PasswordValidator.isValid("Password123")); // Más de 8 caracteres, válido
+    void testOnlyLowerCase() {
+        assertFalse(PasswordValidator.isValid("abcdefgh")); 
+    }
+
+    @Test
+    void testOnlyUpperCase() {
+        assertFalse(PasswordValidator.isValid("ABCDEFGH"));
+    }
+
+    @Test
+    void testMultipleUpperCaseAndDigits() {
+        assertTrue(PasswordValidator.isValid("A1B2c3D")); 
+    }
+
+    @Test
+    void testPasswordSpaces() {
+        assertFalse(PasswordValidator.isValid("A1b cdef")); 
     }
 }
