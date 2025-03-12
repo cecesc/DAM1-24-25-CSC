@@ -1,4 +1,4 @@
-package ud5.apuntesinterfaz;
+package ud5.apuntesinterfaces;
 
 import java.util.Comparator;
 
@@ -9,5 +9,4 @@ public class ComparaSociosFecha implements Comparator {
         Socio s2 = (Socio) o2;
         return s1.fechaAlta.compareTo(s2.fechaAlta);
     }
-
 }
