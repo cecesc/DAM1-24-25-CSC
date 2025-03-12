@@ -2,7 +2,7 @@ package contornos.ud3;
 
 public class PasswordValidator {
     public static boolean isValid(String password) {
-        if (password.length() <= 8) { //>=
+        if (password.length() >= 8) { 
             return false;
         }
         boolean hasUpperCase = false;
@@ -12,12 +12,9 @@ public class PasswordValidator {
                 hasUpperCase = true;
             }
             if (Character.isDigit(c)) {
-                hasDigit = false; //true
+                hasDigit = true;
             }
         }
         return hasUpperCase || hasDigit; 
     }
 }
-
-
-
