@@ -8,3 +8,15 @@ public class TemperatureConverter {
 }
 
 // Correxido: 9.0 / 5.0 en vez de 5 / 9
+
+/*
+            (1)
+             ↓  
+            (2) 
+             ↓  
+            (3) 
+
+  
+  
+ 
+ */
