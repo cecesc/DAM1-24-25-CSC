@@ -1,6 +1,9 @@
 package ud5.inmobiliaria;
 
-public class Inmueble {
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class Inmueble implements Comparable {
     public String direccion;
     int precioAlquiler;
     int precioVenta;
@@ -37,4 +40,67 @@ public class Inmueble {
                 + " baños \n Precio de Venta: " + precioVenta + " € \n Precio de Alquiler: " + precioAlquiler + " €";
     }
 
+    
+    @Override
+    public int compareTo(Inmueble otro) {
+        return this.direccion.compareTo(otro.direccion);
+    }
+
+    public static void mostrarInmuebles(Inmueble[] t) {
+        for (Inmueble i : t) {
+            System.out.println(i);
+        }
+    }
+
+    public static void sortMetrosDesc(Inmueble[] t) {
+        Arrays.sort(t, Comparator.comparingInt((Inmueble i) -> i.metroCuadrado).reversed());
+    }
+
+    public static void sortHabMetrosDesc(Inmueble[] t) {
+        Arrays.sort(t, Comparator.comparingInt((Inmueble i) -> i.habitaciones)
+                .thenComparingInt(i -> i.metroCuadrado)
+                .reversed());
+    }
+
+    public static void sortPrecioAlquilerAsc(Inmueble[] t) {
+        Arrays.sort(t, Comparator.comparingInt(i -> (i.precioAlquiler > 0 ? i.precioAlquiler : Integer.MAX_VALUE)));
+    }
+
+    public static void sortPrecioVentaAsc(Inmueble[] t) {
+        Arrays.sort(t, Comparator.comparingInt(i -> (i.precioVenta > 0 ? i.precioVenta : Integer.MAX_VALUE)));
+    }
 }
+/*package ud5.inmobiliaria;
+
+
+
+    @Override
+    public int compareTo(Inmueble otro) {
+        return this.direccion.compareTo(otro.direccion);
+    }
+
+    public static void mostrarInmuebles(Inmueble[] t) {
+        for (Inmueble i : t) {
+            System.out.println(i);
+        }
+    }
+
+    public static void sortMetrosDesc(Inmueble[] t) {
+        Arrays.sort(t, Comparator.comparingInt((Inmueble i) -> i.metroCuadrado).reversed());
+    }
+
+    public static void sortHabMetrosDesc(Inmueble[] t) {
+        Arrays.sort(t, Comparator.comparingInt((Inmueble i) -> i.habitaciones)
+                .thenComparingInt(i -> i.metroCuadrado)
+                .reversed());
+    }
+
+    public static void sortPrecioAlquilerAsc(Inmueble[] t) {
+        Arrays.sort(t, Comparator.comparingInt(i -> (i.precioAlquiler > 0 ? i.precioAlquiler : Integer.MAX_VALUE)));
+    }
+
+    public static void sortPrecioVentaAsc(Inmueble[] t) {
+        Arrays.sort(t, Comparator.comparingInt(i -> (i.precioVenta > 0 ? i.precioVenta : Integer.MAX_VALUE)));
+    }
+}
+ */
