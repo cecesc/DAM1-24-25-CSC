@@ -9,10 +9,25 @@ public class Piso extends Inmueble {
     }
 
     @Override
-    String detalle() {
-        return "Piso en " + direccion + ". \n " + metroCuadrado + " m2, " + habitaciones + " hab, " + baños + " baños, "
-                + planta + "ª planta. \n Precio de Venta: " + precioVenta + " € \n Precio de Alquiler: "
-                + precioAlquiler + " €";
+    public String detalle() {
+        String detalle = "Piso en " + getDireccion() + ".\n" + getMetrosCuadrados() + " m2, " +
+                getHabitaciones() + " hab, " + getAseos() + " baños, " +
+                getPlanta() + "ª planta.\n";
+        if (getPrecioAlquiler() != 0) {
+            detalle += "Precio de alquiler: " + getPrecioAlquiler() + "\n";
+        }
+        if (getPrecioVenta() != 0) {
+            detalle += "Precio de venta: " + getPrecioVenta() + "\n";
+        }
+        return detalle;
+    }
+
+    public int getPlanta() {
+        return planta;
+    }
+
+    public void setPlanta(int planta) {
+        this.planta = planta;
     }
 
 }

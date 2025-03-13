@@ -10,9 +10,23 @@ public class Casa extends Inmueble {
     }
 
     @Override
-    String detalle() {
-        return "Casa en " + direccion + ". \n " + metroCuadrado + " m2, " + habitaciones + " hab, " + baños
-                + " baños, con terreno de " + terreno + " m2 \n Precio de Venta: " + precioVenta
-                + " € \n Precio de Alquiler: " + precioAlquiler + " €";
+    public String detalle() {
+        String detalle = "Casa en " + getDireccion() + ".\n" + getMetrosCuadrados() + " m2, " +
+                getHabitaciones() + " hab, " + getAseos() + " baños, con terreno de " +
+                getMetrosCuadradosFinca() + " m2.\n";
+        if (getPrecioAlquiler() != 0) {
+            detalle += "Precio de alquiler: " + getPrecioAlquiler() + "\n";
+        }
+        if (getPrecioVenta() != 0) {
+            detalle += "Precio de venta: " + getPrecioVenta() + "\n";
+        }
+        return detalle;
     }
+
+    
+    public int getMetrosCuadradosFinca() {
+        return terreno;
+    }
+
+    
 }

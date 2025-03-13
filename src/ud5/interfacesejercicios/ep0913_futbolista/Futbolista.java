@@ -19,8 +19,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import ud5.apuntesinterfaces.Socio;
-
 public class Futbolista implements Comparable {
     String dni;
     String nombre;
@@ -54,8 +52,8 @@ public class Futbolista implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        Futbolista futb =(Futbolista) o;
-        int resultado= dni.compareTo(futb.dni);
+        Futbolista futb = (Futbolista) o;
+        int resultado = dni.compareTo(futb.dni);
         return resultado;
     }
 
@@ -68,8 +66,6 @@ public class Futbolista implements Comparable {
         Futbolista otro = (Futbolista) obj;
         return dni.equals(otro.dni);
     }
-
-    
 
     public static Comparator getCompNombre() {
         return new Comparator() {
@@ -111,18 +107,23 @@ public class Futbolista implements Comparable {
 
         System.out.println("Ordenados por DNI:");
         Collections.sort(futbolistas);
-        for (Object f : futbolistas) System.out.println(f);
+        for (Object f : futbolistas)
+            System.out.println(f);
 
         System.out.println("\nOrdenados por Nombre:");
         Collections.sort(futbolistas, getCompNombre());
-        for (Object f : futbolistas) System.out.println(f);
+        for (Object f : futbolistas)
+            System.out.println(f);
 
         System.out.println("\nOrdenados por Edad:");
-        Collections.sort(futbolistas, getCompEdad());
-        for (Object f : futbolistas) System.out.println(f);
+        Collections.sort(futbolistas, new ComparadorPorEdad());
+        for (Object f : futbolistas)
+            System.out.println(f);
 
         System.out.println("\nOrdenados por Edad y Nombre:");
-        Collections.sort(futbolistas, getCompEdadNombre());
-        for (Object f : futbolistas) System.out.println(f);
+        Collections.sort(futbolistas, new ComparadorPorEdadNombre());
+        for (Object f : futbolistas)
+            System.out.println(f);
+
     }
 }
