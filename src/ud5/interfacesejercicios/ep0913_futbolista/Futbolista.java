@@ -86,22 +86,3 @@ public class Futbolista implements Comparable {
     }
 
 }
-/* static class ComparadorPorNombre implements Comparator<Futbolista> {
-        public int compare(Futbolista a, Futbolista b) {
-            return a.nombre.compareTo(b.nombre);
-        }
-    }
-
-    static class ComparadorPorEdad implements Comparator<Futbolista> {
-        public int compare(Futbolista a, Futbolista b) {
-            return Integer.compare(a.edad, b.edad);
-        }
-    }
-
-    static class ComparadorPorEdadNombre implements Comparator<Futbolista> {
-        public int compare(Futbolista a, Futbolista b) {
-            int cmp = Integer.compare(a.edad, b.edad);
-            return cmp != 0 ? cmp : a.nombre.compareTo(b.nombre);
-        }
-    }
-} */
