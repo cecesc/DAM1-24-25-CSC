@@ -36,6 +36,8 @@ public abstract class Inmueble {
                 + " baños \n Precio de Venta: " + precioVenta + " € \n Precio de Alquiler: " + precioAlquiler + " €";
     }
 
+   
+
     static void mostrarInmuebles(Inmueble[] t) {
         for (int i = 0; i < t.length; i++) {
             System.out.println(t[i].toString());
