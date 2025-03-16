@@ -19,7 +19,7 @@ public class AppClase {
         int id = 2181;
         int pos = Arrays.binarySearch(praias, new Praia(id));
 
-        System.out.println("\nPRAIA CON id = " + id + " - " + praias[pos]);
+        System.out.println("\nPRAIA CON id = " + praias[pos]);
 
         System.out.print("\nDetalles: ");
         praias[pos].mostrarDetalles();
@@ -30,5 +30,5 @@ public class AppClase {
 
     }
 
-  
+
 }

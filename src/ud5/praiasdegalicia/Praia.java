@@ -1,4 +1,8 @@
 package ud5.praiasdegalicia;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Praia implements Comparable{
     private int id;
     private String nome;
@@ -86,18 +90,37 @@ public class Praia implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        return 0;
-    }
-
-    public void mostrarDetalles(){
-        System.out.println("Detalles: "+ id+ " - " + nome + " - " + concello + " - " + provincia + " - ("
-        + lat + ", " + lon + ")");
-    }
-
-    public  void imprimirLista(){
-        System.out.println(id+ " - " + nome + " - " + concello + " - " + provincia + " - ("
-        + lat + ", " + lon + ")");
+        if (o instanceof Praia) {
+            Praia other = (Praia) o; 
+            return Integer.compare(this.id, other.id);
+        }
+        throw new ClassCastException("El objeto no es una Praia");
     }
     
+
+    public void mostrarDetalles() {
+        System.out.println( +id+ " - " + nome + " - " + concello + " - " + provincia + " - ("
+        + lat + ", " + lon + ")");
+    }
+
+    public static void imprimirLista(Praia[] praias, int limit) {
+        for (int i = 0; i < Math.min(limit, praias.length); i++) {
+            System.out.println(praias[i]);
+        }
+    }
+    
+    public static Praia[] sortLatitudNorteSur(Praia[] p) {
+        Praia[] sortedPraias = p.clone(); // Clonamos el array original
+        Arrays.sort(sortedPraias, Comparator.comparingDouble(Praia::getLat));
+        return sortedPraias;
+    }
+
+    public static Praia[] sortProvinciaConcelloNome(Praia[] p) {
+        Praia[] sortedPraias = p.clone(); // Clonamos el array original
+        Arrays.sort(sortedPraias, Comparator.comparing(Praia::getProvincia)
+                .thenComparing(Praia::getConcello)
+                .thenComparing(Praia::getNome));
+        return sortedPraias;
+    }
 
 }
