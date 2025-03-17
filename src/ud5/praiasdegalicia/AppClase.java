@@ -13,7 +13,7 @@ public class AppClase {
         // muestra 
         System.out.println("\n\nPRAIAS ORDENADAS POR id");
         System.out.println("=======================");
-        Praia.imprimirLista(praias, 10);
+        Praia.imprimirLista(praias);
 
         // Buscar una playa por id y la muestra
         int id = 2181;
