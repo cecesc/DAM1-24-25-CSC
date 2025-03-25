@@ -1,6 +1,7 @@
 package ud5;
 
-public class test {
+public class Pregunta {
+    String Enunciado;
     
 }
 /*Examen Test
