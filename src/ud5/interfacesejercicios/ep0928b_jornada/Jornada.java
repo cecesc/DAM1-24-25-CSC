@@ -29,11 +29,17 @@ public String toString() {
     return dni + " - " + fecha + " - " + getMinutosTrabajados() + " minutos";
 }
 
+@Override
+public int compareTo(Object o) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+}
 
+/* 
 @Override
 public int compareTo(Object o) {
      Jornada empl = (Jornada) o;
     int cmp = this.dni.compareTo(empl.dni);
     return cmp != 0 ? cmp : this.fecha.compareTo(o.fecha);
-}
+}*/
 }

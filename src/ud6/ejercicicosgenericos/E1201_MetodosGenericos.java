@@ -10,9 +10,8 @@ public class E1201_MetodosGenericos {
         for (U e : tabla) {
             if (e == null)
                 cont++;
-
-            return cont;
         }
+                return cont;
     }
 
     public static <U> U[] add(U e, U[] t) {
@@ -42,7 +41,7 @@ public class E1201_MetodosGenericos {
     public static <U,V> Object[] concatenar2(U[] t1, V[] t2){
         U[] t3 = Arrays.copyOf(t1, t1.length+t2.length);
         for (int i = 0; i < t2.length; i++) {
-            t3[t1.length +i] =t2[i];
+            t3[t1.length +i] =(U) t2[i];
         }
         return t3;
     }
