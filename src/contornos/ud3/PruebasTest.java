@@ -10,7 +10,6 @@ public class PruebasTest {
     boolean resultadoEsperado= true;
     Pruebas prueba = new Pruebas();
     boolean resultado= Pruebas.esNumeroPerfecto(28);
-           
     }
 
 

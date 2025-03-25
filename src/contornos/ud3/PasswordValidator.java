@@ -21,3 +21,9 @@ public class PasswordValidator {
         return hasUpperCase && hasDigit;
     }
 }
+
+
+// Error 1: Debe ser >= 8 caracteres, pero el código usa <= en la condición incorrectamente
+// Error 2: Se usa `isLowerCase`, pero debería ser `isUpperCase`
+// Error 3: `hasDigit` se está estableciendo en `false` en lugar de `true`
+// Error 4: Se usa `|` en vez de `&&`, lo que puede dar resultados incorrectos
