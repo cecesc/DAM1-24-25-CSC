@@ -15,8 +15,8 @@ public class Cliente extends Host implements Comparator<Cliente> {
 
     // Tu código aquí
 
-    public Cliente(String nombre, String mac, String ip, SO so, String resolucion) {
-        super(nombre, mac, ip);
+    public Cliente(String nombre,String ip , String mac, SO so, String resolucion) {
+        super(nombre, ip,mac);
         this.so = so;
         this.resolucion = resolucion;
     }
@@ -77,11 +77,11 @@ public class Cliente extends Host implements Comparator<Cliente> {
         System.out.println("\nClientes ordenados por SO:");
         System.out.println("============================");
         Arrays.sort(clientes, getCompNombre().reversed());
-        for (Cliente c : clientes) {
-            System.out.println(c);
+        for (Cliente t : clientes) {
+            System.out.println(t);
         }
         
-        System.out.println("\nClientes ordenados por Resolucion:");
+        System.out.println("\nClientes ordenados por Resolución:");
         System.out.println("====================================");
         Arrays.sort(clientes, getCompResolu());
         for (Cliente c : clientes) {
