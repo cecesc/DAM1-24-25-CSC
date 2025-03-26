@@ -10,3 +10,7 @@ public class ComparadorPorEdad implements Comparator {
         return Integer.compare(s1.edad, s2.edad);
     }
 }
+/* static class ComparadorPorEdad implements Comparator<Alumno> {
+        public int compare(Alumno a, Alumno b) {
+            return Integer.compare(a.edad, b.edad);
+        } */

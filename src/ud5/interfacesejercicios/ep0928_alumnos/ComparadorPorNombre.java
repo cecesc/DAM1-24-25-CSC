@@ -12,3 +12,7 @@ public class ComparadorPorNombre implements Comparator {
     }
     }
 
+/*static class ComparadorPorNombre implements Comparator<Alumno> {
+        public int compare(Alumno a, Alumno b) {
+            return a.nombre.compareTo(b.nombre);
+        } */

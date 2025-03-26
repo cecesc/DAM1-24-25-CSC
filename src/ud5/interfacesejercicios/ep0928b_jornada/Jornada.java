@@ -3,9 +3,7 @@ package ud5.interfacesejercicios.ep0928b_jornada;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-import ud5.interfacesejercicios.ep0913_futbolista.Futbolista;
-
-public class Jornada implements Comparable {
+public class Jornada implements Comparable<Jornada> {
 String dni;
 Date fecha;
 int horaEntrada;
@@ -30,16 +28,8 @@ public String toString() {
 }
 
 @Override
-public int compareTo(Object o) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+public int compareTo(Jornada otra) {
+    int cmp = this.dni.compareTo(otra.dni);
+    return cmp != 0 ? cmp : this.fecha.compareTo(otra.fecha);
 }
-
-/* 
-@Override
-public int compareTo(Object o) {
-     Jornada empl = (Jornada) o;
-    int cmp = this.dni.compareTo(empl.dni);
-    return cmp != 0 ? cmp : this.fecha.compareTo(o.fecha);
-}*/
 }

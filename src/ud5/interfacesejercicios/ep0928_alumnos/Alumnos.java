@@ -26,7 +26,12 @@ class Alumno implements Comparable {
         int resultado = apellido.compareTo(alum.apellido);
         return resultado;
     }
-
+/*
+class Alumno implements Comparable<Alumno>
+ @Override
+    public int compareTo(Alumno otro) {
+        return this.apellido.compareTo(otro.apellido);
+    } */
 
     static class ComparadorPorNota implements Comparator<Alumno> {
         public int compare(Alumno a, Alumno b) {
