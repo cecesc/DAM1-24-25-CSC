@@ -35,6 +35,12 @@ class Contenedor<T> {
         Contenedor<Persona> c2 = new Contenedor<>(); // Contenedor de
         c2.guardar(new Persona());
 
+        Contenedor<? extends Number> cComodin = c;
+        cComodin = c1;
+        // cComodin = c2; // Error: CComodin solo puede referenciar contenedores de números
+
+
+
 
     }
 }

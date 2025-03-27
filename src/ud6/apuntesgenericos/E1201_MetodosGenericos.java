@@ -77,7 +77,8 @@ public class E1201_MetodosGenericos {
         System.out.println(Arrays.toString(masNumeros));
 
         //Integer[] concatena1 = concatenar(numeros, personas); // Error de Compilación porque numeros y personas no son del mismo tipo
-        //Object[] concatena2 = concatenar(numeros, personas); // Error de ejecución. (ArrayStoreException) Java deduce que el tipo U es Object? 
+        //Integer[] concatena12 = concatenar2(numeros, personas); // Error de Compilación porque numeros y personas no son del mismo tipo
+        Object[] concatena2 = concatenar(numeros, personas); // Error de ejecución. (ArrayStoreException) Java deduce que el tipo U es Object? 
         Object[] concatena3 = concatenar2(numeros, personas);
 
         System.out.println("FIN");

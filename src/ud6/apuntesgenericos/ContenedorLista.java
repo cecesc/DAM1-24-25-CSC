@@ -7,33 +7,32 @@ import ud5.apuntesherencia.Persona;
 public class ContenedorLista<T> {
     T[] objetos;
 
+    
     public ContenedorLista(T[] t) {
         objetos = t;
     }
 
-    void insertarAlPrincipio(T nuevo) {
-        objetos = Arrays.copyOf(objetos, objetos.length + 1);
-        System.arraycopy(nuevo, 0, objetos, 1, objetos.length);
+    void insertarAlPrincipio(T nuevo){
+        objetos = Arrays.copyOf(objetos,objetos.length + 1); 
+        System.arraycopy(objetos, 0, objetos, 1, objetos.length);
         objetos[0] = nuevo;
     }
-
-    void insertarAlFinal(T nuevo) {
-        objetos = Arrays.copyOf(objetos, objetos.length + 1);
+    void insertarAlFinal(T nuevo){
+        objetos = Arrays.copyOf(objetos,objetos.length + 1);
         objetos[objetos.length - 1] = nuevo;
     }
-
-    T extraerDelPrincipio() {
+    T extraerDelPrincipio(){
+        
+        
+        
         return null;
     }
-
-    T extraerDelFinal() {
+    T extraerDelFinal(){
         return null;
     }
-
-    void ordenar() {
+    void ordenar(){
 
     }
-
     @Override
     public String toString() {
         return Arrays.toString(objetos);
@@ -44,13 +43,15 @@ public class ContenedorLista<T> {
         lista.insertarAlFinal(1);
         lista.insertarAlFinal(2);
         lista.insertarAlFinal(3);
-    System.out.println(lista);
-    
-    ContenedorLista<Persona> listaP = new ContenedorLista<>(new Persona[0]);
-        listaP.insertarAlFinal(new Persona("Pepe"));
-        listaP.insertarAlFinal(new Persona("Maria"));
-        listaP.insertarAlFinal(new Persona("Juan"));
-    System.out.println(lista);
-    
+        System.out.println(lista);
+
+        ContenedorLista<Persona> listaP = new ContenedorLista<>(new Persona[0]);
+        listaP.insertarAlFinal(new Persona("Pepe", 36));
+        listaP.insertarAlFinal(new Persona("Maria",10));
+        listaP.insertarAlFinal(new Persona("Lola",40));
+        System.out.println(listaP);
+
     }
+    
+
 }
