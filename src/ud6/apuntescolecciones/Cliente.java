@@ -10,15 +10,15 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 // Clase Cliente para ejemplos posteriores.
-public class Cliente implements Comparable<Cliente>{
+public class Cliente implements Comparable<Cliente> {
     String dni;
     String nombre;
     LocalDate fechaNacimiento;
-    
+
     public Cliente(String dni, String nombre, String fechaNacimiento) {
         this.dni = dni;
         this.nombre = nombre;
-        DateTimeFormatter formatoFechas= DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatoFechas = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.fechaNacimiento = LocalDate.parse(fechaNacimiento, formatoFechas);
     }
 
@@ -28,7 +28,7 @@ public class Cliente implements Comparable<Cliente>{
 
     @Override
     public boolean equals(Object obj) {
-        return dni.equals(((Cliente)obj).dni);
+        return dni.equals(((Cliente) obj).dni);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class Cliente implements Comparable<Cliente>{
     }
 
     public static void main(String[] args) {
-        Collection<Cliente> clientes = new ArrayList<>();  
+        Collection<Cliente> clientes = new ArrayList<>();
         System.out.println(clientes.size());
         clientes.add(new Cliente("34534534Z", "Pepe", "20/12/2000"));
         clientes.add(new Cliente("34534534Z", "Pepe", "20/12/2000"));
@@ -59,15 +59,16 @@ public class Cliente implements Comparable<Cliente>{
         for (Cliente cliente : clientes) {
             System.out.println(cliente.nombre);
 
-            /* ERROR: Con un bucle for each no podemos borrar elementos de la colección
-              if (cliente.nombre.equals("Pepe"))
-                clientes.remove(cliente);
-            */
+            /*
+             * ERROR: Con un bucle for each no podemos borrar elementos de la colección
+             * if (cliente.nombre.equals("Pepe"))
+             * clientes.remove(cliente);
+             */
         }
 
         System.out.println("IMPRESIÓN CON ITERADOR");
         Iterator<Cliente> it = clientes.iterator();
-        while (it.hasNext()){
+        while (it.hasNext()) {
             Cliente c = it.next();
             System.out.println(c.nombre);
             if (c.nombre.equals("Pepe")) {
@@ -76,12 +77,8 @@ public class Cliente implements Comparable<Cliente>{
         }
 
         System.out.println("Colección sin Pepes");
-        System.out.println(clientes);        
-
+        System.out.println(clientes);
 
     }
 
-
 }
-
-
