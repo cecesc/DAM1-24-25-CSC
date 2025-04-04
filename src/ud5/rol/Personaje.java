@@ -9,6 +9,19 @@ public class Personaje {
         HUMANO, ELFO, ENANO, HOBBIT, ORCO, TROLL
     };
 
+    
+
+    public Personaje(String nombre, ud5.rol.Personaje.raza raza, int nivel, int experiencia, int fuerza, int agilidad,
+            int puntoVida) {
+        this.nombre = nombre;
+        this.raza = raza;
+        this.nivel = nivel;
+        this.experiencia = experiencia;
+        this.fuerza = fuerza;
+        this.agilidad = agilidad;
+        this.puntoVida = puntoVida;
+    }
+
     public raza raza;
     int nivel = 1;
     int experiencia = 0;
