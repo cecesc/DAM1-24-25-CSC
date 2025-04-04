@@ -3,7 +3,7 @@ package ud6.apuntescolecciones;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
+/* 
 public class E1211 {
     public static void main(String[] args) {
         ContenedorM<Integer> numeros = new ContenedorM<>();
@@ -78,3 +78,4 @@ class Cromo implements Comparable<Cromo> {
     }
 
 }
+*/

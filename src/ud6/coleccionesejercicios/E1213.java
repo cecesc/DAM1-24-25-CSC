@@ -1,6 +1,6 @@
 package ud6.coleccionesejercicios;
 
-public class Actividad1213 {
+public class E1213 {
     public static void main(String[] args) {
         System.out.println("SORTEO DE LA PRIMITIVA (Integer)");
         Sorteo<Integer> primitiva = new Sorteo<>();

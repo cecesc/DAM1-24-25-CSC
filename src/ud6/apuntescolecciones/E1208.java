@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.Random;
 
 public class E1208 {
-private static final int MAX =20
+private static final int MAX =20; 
 
     public static void main(String[] args) {
         Collection<Integer> numeros = new ArrayList<>();
