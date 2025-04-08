@@ -8,20 +8,6 @@ public class Personaje {
     public enum raza {
         HUMANO, ELFO, ENANO, HOBBIT, ORCO, TROLL
     };
-
-    
-
-    public Personaje(String nombre, ud5.rol.Personaje.raza raza, int nivel, int experiencia, int fuerza, int agilidad,
-            int puntoVida) {
-        this.nombre = nombre;
-        this.raza = raza;
-        this.nivel = nivel;
-        this.experiencia = experiencia;
-        this.fuerza = fuerza;
-        this.agilidad = agilidad;
-        this.puntoVida = puntoVida;
-    }
-
     public raza raza;
     int nivel = 1;
     int experiencia = 0;
@@ -35,6 +21,33 @@ public class Personaje {
     final int MAX_VIDA = constitucion + 50;
     boolean vivo = true;
 
+
+    
+    
+    public Personaje(String nombre, raza raza, int fuerza, int agilidad, int constitucion, int nivel,
+    int experiencia, int puntoVida) {
+
+if (fuerza <= 0 || agilidad <= 0 || constitucion <= 0 || nivel <= 0 || experiencia < 0 || puntoVida <= 0)
+    throw new IllegalArgumentException(
+            "Las características físicas del personaje, el nivel y puntos de vida no pueden ser menores que 1, y la experiencia no puede ser menor que 0.");
+
+this.nombre = nombre;
+this.raza = raza;
+this.fuerza = (short) fuerza;
+this.agilidad = (short) agilidad;
+this.constitucion = (short) constitucion;
+this.nivel = (byte) nivel;
+this.experiencia = experiencia;
+this.puntoVida = (short) puntoVida;
+}
+
+public Personaje(String nombre, raza raza, int fuerza, int agilidad, int constitucion) {
+this(nombre, raza, fuerza, agilidad, constitucion, 1, 0, constitucion);
+}
+
+
+    
+
     public Personaje(String nombre, raza raza) throws IllegalArgumentException {
         if (nombre == null || nombre.isEmpty()) {
             throw new IllegalArgumentException("El nombre no puede estar vacío.");
@@ -46,10 +59,6 @@ public class Personaje {
         this.raza = raza;
     }
 
-    public Personaje(String nombre) {
-        this.nombre = nombre;
-        this.raza = raza.HUMANO;
-    }
 
     protected void mostrar() {
         System.out.println("Nombre: " + nombre);

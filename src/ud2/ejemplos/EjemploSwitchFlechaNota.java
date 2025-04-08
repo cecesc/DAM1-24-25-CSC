@@ -9,7 +9,11 @@ public class EjemploSwitchFlechaNota {
         int nota = sc.nextInt();
         sc.close();
         switch (nota) {
-            case 0, 1, 2, 3, 4 -> {
+            case 0, 1, 2, 3 -> {
+                System.out.println("Suspenso");
+                System.out.println("Ánimo!");
+            }
+            case 4 -> {
                 System.out.println("Suspenso");
                 System.out.println("Ánimo!");
             }

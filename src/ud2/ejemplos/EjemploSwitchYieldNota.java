@@ -4,21 +4,25 @@ import java.util.Scanner;
 
 public class EjemploSwitchYieldNota {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Introduzca una nota entera entre 0 y 10: ");
-        int nota = sc.nextInt();
-        sc.close();
-        String msg = switch (nota) {
-            case 0, 1, 2, 3, 4 -> {
-                yield "Suspenso \n Ánimo!";
-            }
-            case 5, 6 -> {yield "Bien";}
-            case 7, 8 -> {yield "Notable";}
-            case 9, 10 -> {yield "Sobresaliente";}
-            default -> {yield "Nota inválida";}
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Introduzca una nota entera entre 0 y 10: ");
+            int nota = sc.nextInt();
+            sc.close();
+            switch (nota) {
+                case 0: System.out.println("Suspenso \n Ánimo!");
+                case 1: System.out.println("Suspenso \n Ánimo!");
+                case 2: System.out.println("Suspenso \n Ánimo!");
+                case 3: System.out.println("Suspenso \n Ánimo!");
+                case 4: System.out.println("Suspenso \n Ánimo!");
+                case 5: System.out.println("Bien");
+                case 6: System.out.println("Bien");
+                case 7: System.out.println("Notable");
+                case 8: System.out.println("Notable");
+                case 9: System.out.println("Sobresaliente");
+                case 10: System.out.println("Sobresaliente");
+                default: System.out.println("Nota inválida");
         };
 
-        System.out.println(msg);
     }
 
 }

@@ -1,6 +1,6 @@
 package ud6.apuntescolecciones;
 
-public class Producto {
+class Producto {
     String codigo;
     String nombre;
 
@@ -13,5 +13,4 @@ public class Producto {
     public String toString() {
         return codigo + "-" + nombre;
     }
-
 }
