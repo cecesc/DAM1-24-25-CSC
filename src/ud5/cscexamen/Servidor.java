@@ -2,41 +2,52 @@
 package ud5.cscexamen;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Servidor extends Host {
-    Servidor[] listServicios; 
-    String nombreServicio;
-    int puerto;
-    String protocolo;
-    Object obj;
+    Servicio[] servicios;
 
-    public Servidor(String nombre, String mac, String ip) {
-        super(nombre, mac, ip);
+    public Servidor(String nombre, String ip, String mac) {
+        super(nombre, ip, mac);
+        servicios = new Servicio[0];
     }
 
-    boolean addServicio(String nombreServicio, int puerto, String protocolo) {
-        Servidor other = (Servidor) obj;
-        if (other == null)
-            return false;
-        if (nombreServicio.equals(other.nombreServicio))
-            return false;
-        if (puerto != other.puerto)
-            return true;
-        if (protocolo != null) {
-            if (other.protocolo != null)
-                return false;
-        } else if (!protocolo.equals(other.protocolo))
-            return false;
-        return true;
+    public boolean addServicio(String nombre, int puerto, String protocolo) {
+        // Tu código aquí
+        Servicio nuevoServicio = new Servicio(nombre, puerto, protocolo);
+        for (Servicio servicio : servicios) {
+            if (servicio.equals(nuevoServicio)) {
+                return false; // El servicio ya existe
+            }
         }
-    
-
-
-
-@Override
-    public String toString() {
-        return nombre+" ( "+ip+ ")\n * "+ nombreServicio + " ( " +  puerto + "/" + protocolo+ ")";
+        servicios = Arrays.copyOf(servicios, servicios.length + 1);
+        servicios[servicios.length - 1] = nuevoServicio;
+        return true;
     }
+
+    public int getNumServicios() {
+        return servicios.length;
+    }
+
+    public static Comparator<Servidor> getCompNumServicios() {
+        return new Comparator<Servidor>() {
+            @Override
+            public int compare(Servidor o1, Servidor o2) {
+                return Integer.compare(o1.getNumServicios(), o2.getNumServicios());
+            }
+        };
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder cadena = new StringBuilder(nombre + " (" + ip + ")\n");
+        for (Servicio servicio : servicios) {
+            cadena.append("* ").append(servicio).append("\n");
+        }
+        return cadena.toString();
+    }
+
+
 
     public static void main(String[] args) {
         System.out.println("\nClase Servidor");
@@ -59,8 +70,20 @@ public class Servidor extends Host {
         }
 
         // Tu código aquí
+        System.out.println();
+        Arrays.sort(servidores, new Comparator<>(){
+            @Override
+            public int compare(Servidor o1, Servidor o2) {
+                return o2.servicios.length - o1.servicios.length;
+            }
+            
+        });
+        System.out.println("\nServidores ordenados descendentemente por número de servicios:");
+        System.out.println("==============================================================\n");
+        for (Servidor s : servidores) {
+            System.out.println(s);
+        }
 
     }
 
-    
 }

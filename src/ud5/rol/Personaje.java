@@ -59,6 +59,12 @@ this(nombre, raza, fuerza, agilidad, constitucion, 1, 0, constitucion);
         this.raza = raza;
     }
 
+    
+
+    public Personaje(String nombre) {
+        this.nombre = nombre;
+
+    }
 
     protected void mostrar() {
         System.out.println("Nombre: " + nombre);
