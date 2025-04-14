@@ -4,8 +4,8 @@ package ud5.cscexamen;
 import java.util.Arrays;
 import java.util.Comparator;
 
+public class Cliente extends Host {
 
-public class Cliente extends Host implements Comparator<Cliente> {
     enum SO {WINDOWS, LINUX, MAC, ANDROID, IOS}
     // Tu código aquí
     private SO so;
