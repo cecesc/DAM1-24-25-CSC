@@ -46,10 +46,8 @@ public class Main {
         List<String> saludosClientes = saludar((c) -> "Que pasa, " + c.getNombre() + "?" , tCliente);
         System.out.println(saludosClientes);
 
-        Cliente[] clientes = {new Cliente("Juan", 13), new Cliente("Maria", 10)};
-        Comparator<Cliente> compEdad = (c1, c2) -> c1.edad-c2.edad;
-        System.out.println(max(clientes, compEdad).nombre);
-    
+
+
     }
 
 
@@ -64,10 +62,5 @@ public class Main {
         return saludos;
     }
 
-   // Método E1303
-    public static <T> T max(T[] t, Comparator<T> c){
-        Arrays.sort(t, c);
-        return t[t.length - 1];
-    }
 
 }

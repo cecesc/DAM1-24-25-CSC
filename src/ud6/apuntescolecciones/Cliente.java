@@ -22,6 +22,13 @@ public class Cliente implements Comparable<Cliente> {
         this.fechaNacimiento = LocalDate.parse(fechaNacimiento, formatoFechas);
     }
 
+    
+
+    public Cliente(String nombre) {
+        this.nombre = nombre;
+    }
+
+
     private int edad() {
         return (int) fechaNacimiento.until(LocalDate.now(), ChronoUnit.YEARS);
     }
@@ -89,6 +96,8 @@ public class Cliente implements Comparable<Cliente> {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+
+    
     public static List<Cliente> clientesDeEjemplo() {
         List<Cliente> clientes = new ArrayList<Cliente>();
         clientes.add(new Cliente("34534534Z", "Pepe", "20/12/2000"));
@@ -96,7 +105,7 @@ public class Cliente implements Comparable<Cliente> {
         clientes.add(new Cliente("34555534Z", "María", "20/12/2000"));
         clientes.add(new Cliente("22222234Z", "Lola", "20/12/2000"));
         return clientes;
-    }
+    }    
 
     public static void main(String[] args) {
         Collection<Cliente> clientes = new ArrayList<>();
@@ -146,5 +155,7 @@ public class Cliente implements Comparable<Cliente> {
         System.out.println("De nuevo una lista: " + listaClientes);
 
     }
+
+
 
 }

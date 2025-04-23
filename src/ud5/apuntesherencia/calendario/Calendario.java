@@ -29,7 +29,13 @@ public class Calendario {
 
     private int diasDelMes(int mes, int año) {
         switch (mes) {
-            case 4, 6, 9, 11:
+            case 4:
+                return 30;
+            case 6:
+                return 30;
+            case 9:
+                return 30;
+            case 11:
                 return 30;
             case 2:
                 return esBisiesto(año) ? 29 : 28;
