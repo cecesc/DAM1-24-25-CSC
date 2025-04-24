@@ -97,5 +97,27 @@ package ud6.practicas.festivalmeigas;
 public class Festival {
     public static void main(String[] args) {
         
+    }package ud6.practicas.festivalmeigas;
+
+import java.util.*;
+
+public class FestivalDasMeigasUtils {
+
+    // a. Meigas que comparten un ingrediente nos seus feitizos favoritos
+    public static Map<String, Set<Meiga>> meigasPorIngredienteFavorito(Collection<Meiga> meigas) {
+        Map<String, Set<Meiga>> mapa = new HashMap<>();
+
+        for (Meiga meiga : meigas) {
+            for (Feitizo feitizo : meiga.getFeitizosFavoritos()) {
+                for (String ingrediente : feitizo.ingredientes) {
+                    mapa.putIfAbsent(ingrediente, new HashSet<>());
+                    mapa.get(ingrediente).add(meiga);
+                }
+            }
+        }
+
+        return mapa;
     }
+}
+
 }
