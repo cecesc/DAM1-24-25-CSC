@@ -63,3 +63,23 @@ public class Feitizo {
         return null;
     }
 }
+
+public static List<Feitizo> feitizosPosibles(Set<String> ingredientesDispoñibles) {
+    List<Feitizo> posibles = new ArrayList<>();
+    for (Feitizo f : crearFeitizosExemplo()) {
+        if (ingredientesDispoñibles.containsAll(f.ingredientes)) {
+            posibles.add(f);
+        }
+    }
+    return posibles;
+}
+
+public static Map<String, Integer> ingredientesVecesUsados(Collection<Feitizo> feitizos) {
+    Map<String, Integer> contador = new HashMap<>();
+    for (Feitizo f : feitizos) {
+        for (String ing : f.ingredientes) {
+            contador.put(ing, contador.getOrDefault(ing, 0) + 1);
+        }
+    }
+    return contador;
+}
