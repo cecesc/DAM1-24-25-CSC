@@ -94,14 +94,13 @@ public class Feitizo {
 
 package ud6.practicas.festivalmeigas;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 public class Festival {
-    public static void main(String[] args) {
-        
-    }package ud6.practicas.festivalmeigas;
-
-import java.util.*;
-
-public class FestivalDasMeigasUtils {
 
     // a. Meigas que comparten un ingrediente nos seus feitizos favoritos
     public static Map<String, Set<Meiga>> meigasPorIngredienteFavorito(Collection<Meiga> meigas) {
@@ -120,4 +119,3 @@ public class FestivalDasMeigasUtils {
     }
 }
 
-}

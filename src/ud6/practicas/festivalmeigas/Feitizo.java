@@ -1,7 +1,8 @@
 package ud6.practicas.festivalmeigas;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -21,10 +22,21 @@ public class Feitizo {
         this.dificultade = dificultade;
     }
 
+    @Override
+    public String toString() {
+        return "Feitizo [nomeFeitizo=" + nomeFeitizo + "]";
+    }
+
     // Otros métodos
     public static void main(String[] args) {
         Feitizo[] feitizos = crearFeitizosExemplo();
         System.out.println(ingredientesUnicos(List.of(feitizos)));
+
+        String[] ingredientes = { "auga de río encantada", "pétalos de rosa silvestre", "fume de lareira",
+                "auga do mar", "salicornia", "berberechos místicos", "po de estrela fugaz", "cinza de bidueiro" };
+
+        System.out.println(feitizosPosibles(Set.of(ingredientes), List.of(crearFeitizosExemplo())));
+
     }
 
     public static Feitizo[] crearFeitizosExemplo() {
@@ -48,38 +60,44 @@ public class Feitizo {
     public static Collection<String> ingredientesUnicos(Collection<Feitizo> feitizos) {
         Set<String> ingredientesUnicos = new TreeSet<>();
         for (Feitizo feitizo : feitizos) {
-          for (String i : feitizo.ingredientes) {
-            ingredientesUnicos.add(i);
-          }  
+            ingredientesUnicos.addAll(feitizo.ingredientes);
         }
         return ingredientesUnicos;
     }
 
-    public static List<Feitizo> feitizosPosibles(Set<String> ingredientes) {
-        return null;
+    public static List<Feitizo> feitizosPosibles(Set<String> ingredientes, Collection<Feitizo> feitizos) {
+        List<Feitizo> feitizosPosibles = new ArrayList<>();
+        for (Feitizo feitizo : feitizos) {
+            if (ingredientes.containsAll(feitizo.ingredientes))
+                feitizosPosibles.add(feitizo);
+        }
+        return feitizosPosibles;
     }
 
     public static Map<String, Integer> ingredientesVecesUsados(Collection<Feitizo> feitizos) {
+        Map<String, Integer> contador = new HashMap<>();
+        for (Feitizo f : feitizos) {
+            for (String ing : f.ingredientes) {
+                contador.put(ing, contador.getOrDefault(ing, 0) + 1);
+            }
+        }
+        return contador;
+    }
+
+    public boolean addIngrediente(String ingrediente) {
+        return true;
+    }
+
+    public boolean removeIngrediente(String ingrediente) {
+        return true;
+    }
+
+    public boolean cambiarIngrediente(String ingredienteViejo, String ingredienteNuevo) {
+        return true;
+    }
+
+    public static List<Feitizo> feitizosUsanIngrediente(String ingrediente) {
         return null;
     }
-}
 
-public static List<Feitizo> feitizosPosibles(Set<String> ingredientesDispoñibles) {
-    List<Feitizo> posibles = new ArrayList<>();
-    for (Feitizo f : crearFeitizosExemplo()) {
-        if (ingredientesDispoñibles.containsAll(f.ingredientes)) {
-            posibles.add(f);
-        }
-    }
-    return posibles;
-}
-
-public static Map<String, Integer> ingredientesVecesUsados(Collection<Feitizo> feitizos) {
-    Map<String, Integer> contador = new HashMap<>();
-    for (Feitizo f : feitizos) {
-        for (String ing : f.ingredientes) {
-            contador.put(ing, contador.getOrDefault(ing, 0) + 1);
-        }
-    }
-    return contador;
 }

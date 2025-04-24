@@ -1,7 +1,6 @@
 package ud6.practicas.festivalmeigas;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
