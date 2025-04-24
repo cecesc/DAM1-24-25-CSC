@@ -1,38 +1,53 @@
 package ud6.practicas.festivalmeigas;
 
-import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 
-public class Meiga implements Comparator {
-    @Override
-    public int compare(Object o1, Object o2) {
-        Meiga s1 = (Meiga) o1;
-        Meiga s2 = (Meiga) o2;
-        int resultado = Arrays.compare(s1.ListaFeitizo, s2.ListaFeitizo);
-        return (resultado != 0) ? resultado : s1.nome.compareToIgnoreCase(s2.nome);
-    }
+public class Meiga {
 
-    protected String nome;
-    protected String[] ListaFeitizo;
+    private String nome;
+    private String alcumeMaxico;
+    private Set<Feitizo> feitizosFavoritos = new TreeSet<>(Comparator.comparing(Feitizo::toString));
 
-    public Meiga(String nome, String[] listaFeitizo) {
+    public Meiga(String nome, String alcumeMaxico) {
         this.nome = nome;
-        ListaFeitizo = listaFeitizo;
+        this.alcumeMaxico = alcumeMaxico;
+    }
+
+    public boolean engadirFavorito(Feitizo feitizo) {
+        return feitizosFavoritos.add(feitizo);
+    }
+
+    public Set<Feitizo> getFeitizosFavoritos() {
+        return feitizosFavoritos;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getAlcumeMaxico() {
+        return alcumeMaxico;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Meiga other = (Meiga) obj;
-        if (!Arrays.equals(ListaFeitizo, other.ListaFeitizo))
-            return false;
-        return true;
-
+    public String toString() {
+        return nome + " («" + alcumeMaxico + "»)";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Meiga)) return false;
+        Meiga meiga = (Meiga) o;
+        return nome.equals(meiga.nome) && alcumeMaxico.equals(meiga.alcumeMaxico);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, alcumeMaxico);
+    }
 }
