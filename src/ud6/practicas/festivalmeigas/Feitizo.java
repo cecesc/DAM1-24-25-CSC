@@ -100,4 +100,35 @@ public class Feitizo {
         return null;
     }
 
+public boolean addIngrediente(String ingrediente) {
+    if (ingredientes.contains(ingrediente)) return false;
+    ingredientes = new ArrayList<>(ingredientes); // Hacemos mutable
+    ingredientes.add(ingrediente);
+    return true;
+}
+
+public boolean removeIngrediente(String ingrediente) {
+    if (!ingredientes.contains(ingrediente)) return false;
+    ingredientes = new ArrayList<>(ingredientes); // Hacemos mutable
+    ingredientes.remove(ingrediente);
+    return true;
+}
+
+public boolean cambiarIngrediente(String ingredienteViejo, String ingredienteNovo) {
+    if (!ingredientes.contains(ingredienteViejo) || ingredientes.contains(ingredienteNovo)) return false;
+    ingredientes = new ArrayList<>(ingredientes); // Hacemos mutable
+    int index = ingredientes.indexOf(ingredienteViejo);
+    ingredientes.set(index, ingredienteNovo);
+    return true;
+}
+public static List<Feitizo> feitizosUsanIngrediente(String ingrediente, Collection<Feitizo> feitizos) {
+    List<Feitizo> lista = new ArrayList<>();
+    for (Feitizo f : feitizos) {
+        if (f.ingredientes.contains(ingrediente)) {
+            lista.add(f);
+        }
+    }
+    return lista;
+}
+
 }
