@@ -1,4 +1,4 @@
-package Geografia;
+package ud6.practicas.geografia;
 
 public class Municipio implements Comparable<Municipio> {
 
