@@ -1,28 +1,3 @@
-/*Festival das Meigas
-A vila imaxinaria de San Comadro, en pleno corazón da Galiza máxica, celebra cada ano o
-seu tradicional Festival das Meigas, onde se organizan concursos de feitizos, se
-intercambian ingredientes máxicos e se premia ás meigas máis creativas.
-
-Funcionalidades obrigatorias:
-1. Rexistro de Meigas:
-Cada meiga ten un nome, un alcume máxico, e unha lista de feitizos favoritos.
-Os feitizos non se poderán repetir. As meigas poderanse amosar ordenadas por
-diferentes criterios.
-2. Base de datos de Feitizos:
-Cada feitizo ten un nome, unha lista de ingredientes, e un nivel de dificultade.
-a. A partir de todos os feitizos rexistrados queremos obter unha colección de
-todos os ingredientes únicos empregados no festival.
-b. Xera un listado dos feitizos que se poden facer cunha lista de ingredientes
-dados.
-c. Permite listar os 3 ingredientes máis usados en total (pista: podes usar un
-Map<String, Integer> para contar).
-3. Funcionalidades extra:
-a. Xerar unha lista de meigas que comparten un mesmo ingrediente nun dos
-seus feitizos favoritos.
-b. Implementa un sistema de recomendación: dado un ingrediente, suxerir ás
-meigas un novo feitizo que o use e que non teñan nos seus favoritos.
- */
-
 package ud6.practicas.festivalmeigas;
 
 import java.util.ArrayList;
@@ -34,12 +9,77 @@ import java.util.Map;
 import java.util.Set;
 
 public class Festival {
+    private List<Meiga> meigas;
+    private Set<Feitizo> feitizos;
 
-     // Meigas que comparten un ingrediente nun feitizo favorito
-    public static Map<String, Set<Meiga>> meigasPorIngrediente(Collection<Meiga> meigas) {
+    public Festival() {
+        this.meigas = new ArrayList<>();
+        this.feitizos = new HashSet<>();
+    }
+
+    public void engadirMeiga(Meiga m) {
+        meigas.add(m);
+    }
+
+    public void engadirFeitizo(Feitizo f) {
+        feitizos.add(f);
+    }
+
+    public Meiga buscarMeigaPorNome(String nome) {
+        for (Meiga m : meigas) {
+            if (m.getNomeMeiga().equalsIgnoreCase(nome)) {
+                return m;
+            }
+        }
+        return null;
+    }
+
+    public Feitizo buscarFeitizoPorNome(String nome) {
+        for (Feitizo f : feitizos) {
+            if (f.getNomeFeitizo().equalsIgnoreCase(nome)) {
+                return f;
+            }
+        }
+        return null;
+    }
+
+    public List<Feitizo> feitizosConIngrediente(String ingrediente) {
+        List<Feitizo> resultado = new ArrayList<>();
+        for (Feitizo f : feitizos) {
+            if (f.getIngredientes().contains(ingrediente)) {
+                resultado.add(f);
+            }
+        }
+        return resultado;
+    }
+
+    public void cargarFeitizosFavoritosRandom(int cant) {
+        for (Meiga m : meigas) {
+            Set<Feitizo> rnds = Meiga.getFeitizosRnd(feitizos, cant); // Se obtiene un conjunto de feitizos aleatorios
+            for (Feitizo f : rnds) {
+                m.engadirFeitizoFavorito(f);
+            }
+        }
+    }
+
+    public void cargarInventariosRandom(int maxUnidades) {
+        Set<String> ingredientes = new HashSet<>();
+        for (Feitizo f : feitizos) {
+            ingredientes.addAll(f.getIngredientes());
+        }
+        for (Meiga m : meigas) {
+            Map<String, Integer> inventario = Meiga.getIngredientesRnd(ingredientes, maxUnidades);
+            for (Map.Entry<String, Integer> entry : inventario.entrySet()) {
+                m.engadirIngrediente(entry.getKey(), entry.getValue());
+            }
+        }
+    }
+
+    // Meigas que comparten un ingrediente en un feitizo favorito
+    public Map<String, Set<Meiga>> meigasPorIngrediente() {
         Map<String, Set<Meiga>> mapa = new HashMap<>();
         for (Meiga meiga : meigas) {
-            for (Feitizo f : meiga.getFeitizos()) {
+            for (Feitizo f : meiga.getFeitizosFavoritos()) {
                 for (String ingrediente : f.getIngredientes()) {
                     mapa.putIfAbsent(ingrediente, new HashSet<>());
                     mapa.get(ingrediente).add(meiga);
@@ -49,21 +89,21 @@ public class Festival {
         return mapa;
     }
 
-    // Recomendar un feitizo novo que use un ingrediente dado
-    public static Map<Meiga, List<Feitizo>> recomendarFeitizosPorIngrediente(Collection<Meiga> meigas, Collection<Feitizo> feitizos, String ingrediente) {
-        Map<Meiga, List<Feitizo>> recomendacion = new HashMap<>();
+    // Recomendar un feitizo nuevo que use un ingrediente dado
+    public static Map<Meiga, List<Feitizo>> recomendarFeitizosPorIngrediente(Collection<Meiga> meigas,
+            Collection<Feitizo> feitizos, String ingrediente) {
+        Map<Meiga, List<Feitizo>> recomendados = new HashMap<>();
         for (Meiga meiga : meigas) {
-            List<Feitizo> candidatos = new ArrayList<>();
-            for (Feitizo f : feitizos) {
-                if (f.getIngredientes().contains(ingrediente) && !meiga.getFeitizos().contains(f)) {
-                    candidatos.add(f);
+            List<Feitizo> recomendadosMeiga = new ArrayList<>();
+            for (Feitizo feitizo : feitizos) {
+                if (feitizo.getIngredientes().contains(ingrediente)
+                        && !meiga.getFeitizosFavoritos().contains(feitizo)) {
+                    recomendadosMeiga.add(feitizo);
                 }
             }
-            if (!candidatos.isEmpty()) {
-                recomendacion.put(meiga, candidatos);
-            }
+            recomendados.put(meiga, recomendadosMeiga);
         }
-        return recomendacion;
+        return recomendados;
     }
 
     // Feitizos que comparten ingredientes
@@ -78,28 +118,28 @@ public class Festival {
         return mapa;
     }
 
-    // Recomendar feitizos segundo ingredientes favoritos
     public static List<Feitizo> recomendarPorPreferencias(Meiga meiga, Collection<Feitizo> todosFeitizos) {
-        Set<String> ingredientesFavoritos = new HashSet<>();
-        for (Feitizo f : meiga.getFeitizos()) {
-            ingredientesFavoritos.addAll(f.getIngredientes());
-        }
-
         List<Feitizo> recomendados = new ArrayList<>();
         for (Feitizo f : todosFeitizos) {
-            if (!meiga.getFeitizos().contains(f)) {
-                for (String ing : f.getIngredientes()) {
-                    if (ingredientesFavoritos.contains(ing)) {
-                        recomendados.add(f);
-                        break;
-                    }
+            for (String ing : f.getIngredientes()) {
+                if (meiga.getInventario().containsKey(ing)) {
+                    recomendados.add(f);
+                    break;
                 }
             }
         }
         return recomendados;
     }
 
-    // Ingrediente máis usado
+    public Set<Meiga> getMeigas() {
+        return new HashSet<>(meigas);
+    }
+
+    public Set<Feitizo> getFeitizos() {
+        return new HashSet<>(feitizos);
+    }
+
+    // Ingrediente más usado
     public static String ingredienteMaisUsado(Collection<Feitizo> feitizos) {
         Map<String, Integer> conta = Feitizo.ingredientesVecesUsados(feitizos);
         String maxIng = null;
@@ -112,5 +152,76 @@ public class Festival {
         }
         return maxIng;
     }
-}
 
+    public int contarIngredientesMeiga(Meiga meiga) {
+        Set<String> ingredientesUnicos = new HashSet<>();
+        for (Feitizo f : meiga.getFeitizosFavoritos()) {
+            ingredientesUnicos.addAll(f.getIngredientes());
+        }
+        return ingredientesUnicos.size();
+    }
+
+    public List<Feitizo> recomendarFeitizosLanzables(Meiga meiga, Collection<Feitizo> todosFeitizos) {
+        List<Feitizo> recomendados = new ArrayList<>();
+        for (Feitizo f : todosFeitizos) {
+            if (meiga.getInventario().keySet().containsAll(f.getIngredientes())) {
+                recomendados.add(f);
+            }
+        }
+        return recomendados;
+    }
+
+    public Feitizo obterFeitizoMaisPopular() {
+        Map<Feitizo, Integer> contador = new HashMap<>();
+        for (Meiga meiga : meigas) {
+            for (Feitizo f : meiga.getFeitizosFavoritos()) {
+                contador.put(f, contador.getOrDefault(f, 0) + 1);
+            }
+        }
+        return contador.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse(null); // Retorna el feitizo más popular o null si no hay favoritos
+    }
+
+    public void eliminarFeitizoDeFavoritos(Feitizo feitizo) {
+        for (Meiga meiga : meigas) {
+            meiga.eliminarFeitizoFavorito(feitizo); // Suponiendo que hay un método en Meiga
+        }
+    }
+
+    public List<Meiga> clasificarMeigasPorIngredientesUnicos() {
+        List<Meiga> clasificacion = new ArrayList<>(meigas);
+        clasificacion.sort((m1, m2) -> {
+            int m1Ingredientes = contarIngredientesMeiga(m1);
+            int m2Ingredientes = contarIngredientesMeiga(m2);
+            return Integer.compare(m2Ingredientes, m1Ingredientes); // Orden descendente
+        });
+        return clasificacion;
+    }
+
+    public boolean tieneTodosLosIngredientes(Meiga meiga, Feitizo feitizo) {
+        return meiga.getInventario().keySet().containsAll(feitizo.getIngredientes());
+    }
+
+    public List<Meiga> meigasConIngredientesRaros() {
+        Map<String, Integer> cuentaIngredientes = new HashMap<>();
+        for (Meiga meiga : meigas) {
+            for (String ingrediente : meiga.getInventario().keySet()) {
+                cuentaIngredientes.put(ingrediente, cuentaIngredientes.getOrDefault(ingrediente, 0) + 1);
+            }
+        }
+
+        List<Meiga> resultado = new ArrayList<>();
+        for (Meiga meiga : meigas) {
+            for (String ingrediente : meiga.getInventario().keySet()) {
+                if (cuentaIngredientes.get(ingrediente) == 1) {
+                    resultado.add(meiga);
+                    break;
+                }
+            }
+        }
+        return resultado;
+    }
+
+}

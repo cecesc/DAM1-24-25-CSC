@@ -2,6 +2,7 @@ package ud6.practicas.festivalmeigas;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -123,6 +124,26 @@ public class Feitizo {
         return ingredientes;
     }
 
+    public String getNomeFeitizo() {
+        return nomeFeitizo;
+    }
     
+    public Integer getDificultade() {
+        return dificultade;
+    }
+
+    public List<Feitizo> recomendarFeitizosConPrioridad(Meiga meiga, Collection<Feitizo> todosFeitizos) {
+    List<Feitizo> recomendados = new ArrayList<>();
+    for (Feitizo f : todosFeitizos) {
+        long coincidencias = f.getIngredientes().stream()
+            .filter(ingrediente -> meiga.getInventario().containsKey(ingrediente))
+            .count();
+        if (coincidencias > 0) {
+            recomendados.add(f);
+        }
+    }
+    recomendados.sort(Comparator.comparingInt(f -> -f.getIngredientes().size()));  // Prioriza los feitizos con más ingredientes
+    return recomendados;
+}
 
 }
