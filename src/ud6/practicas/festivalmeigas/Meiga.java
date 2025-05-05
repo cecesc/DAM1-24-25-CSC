@@ -3,6 +3,7 @@ package ud6.practicas.festivalmeigas;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -10,11 +11,16 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
-public class Meiga {
+public class Meiga implements Comparable<Meiga> {
     private String nomeMeiga;
     private String alcume;
     private Set<Feitizo> feitizosFavoritos;
     private Map<String, Integer> inventario;
+
+    @Override
+    public int compareTo(Meiga o) {
+        return this.alcume.compareTo(o.alcume);
+    }
 
     // NOVO: rexistro de feitizos lanzados
     private List<Feitizo> feitizosLanzados;
@@ -34,7 +40,6 @@ public class Meiga {
     public void eliminarFeitizoFavorito(Feitizo f) {
         feitizosFavoritos.remove(f);
     }
-    
 
     public void engadirIngrediente(String ingrediente, int unidades) {
         inventario.put(ingrediente, inventario.getOrDefault(ingrediente, 0) + unidades);
@@ -86,6 +91,38 @@ public class Meiga {
     @Override
     public String toString() {
         return nomeMeiga + " (" + alcume + ")";
+    }
+
+    public int lanzarFeitizos() {
+        int puntos = 0;
+        List<Feitizo> ordenados = new ArrayList<>(feitizosFavoritos);
+        ordenados.sort(Comparator.comparingInt(Feitizo::getDificultade).reversed());
+
+        for (Feitizo f : ordenados) {
+            boolean sePuedeLanzar = true;
+            for (String ing : f.getIngredientes()) {
+                if (!inventario.containsKey(ing) || inventario.get(ing) <= 0) {
+                    sePuedeLanzar = false;
+                    break;
+                }
+            }
+            if (sePuedeLanzar) {
+                for (String ing : f.getIngredientes()) {
+                    int nuevoValor = inventario.get(ing) - 1;
+                    if (nuevoValor == 0) {
+                        inventario.remove(ing);
+                    } else {
+                        inventario.put(ing, nuevoValor);
+                    }
+                }
+                puntos += f.getDificultade();
+                System.out.println(nomeMeiga + " lanza o feitizo: " + f.getNomeFeitizo());
+            } else {
+                System.out.println(nomeMeiga + " NON pode lanzar " + f.getNomeFeitizo());
+            }
+        }
+
+        return puntos;
     }
 
     // Extra: Meigas que comparten ingrediente en feitizos favoritos
@@ -146,7 +183,8 @@ public class Meiga {
 
     // Ingrediente máis usado
     public static String ingredienteMaisUsado(Collection<Feitizo> feitizos) {
-        return Collections.max(Feitizo.ingredientesVecesUsados(feitizos).entrySet(), Map.Entry.comparingByValue()).getKey();
+        return Collections.max(Feitizo.ingredientesVecesUsados(feitizos).entrySet(), Map.Entry.comparingByValue())
+                .getKey();
     }
 
     // NOVO: Total de feitizos lanzados
@@ -156,7 +194,8 @@ public class Meiga {
 
     // NOVO: Dificultade media dos feitizos lanzados
     public double dificultadeMediaLanzados() {
-        if (feitizosLanzados.isEmpty()) return 0.0;
+        if (feitizosLanzados.isEmpty())
+            return 0.0;
         int total = 0;
         for (Feitizo f : feitizosLanzados) {
             total += f.getDificultade();
@@ -166,7 +205,8 @@ public class Meiga {
 
     // NOVO: Feitizo máis usado
     public Feitizo feitizoMaisUsado() {
-        if (feitizosLanzados.isEmpty()) return null;
+        if (feitizosLanzados.isEmpty())
+            return null;
         Map<Feitizo, Integer> conta = new HashMap<>();
         for (Feitizo f : feitizosLanzados) {
             conta.put(f, conta.getOrDefault(f, 0) + 1);

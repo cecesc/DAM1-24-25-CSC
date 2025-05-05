@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Feitizo {
+public class Feitizo implements Comparable<Feitizo> {
 
     // Atributos
     private String nomeFeitizo;
@@ -25,7 +25,12 @@ public class Feitizo {
 
     @Override
     public String toString() {
-        return "Feitizo [nomeFeitizo=" + nomeFeitizo + "]";
+        return nomeFeitizo + "(" + dificultade + ")";
+    }
+
+    @Override
+    public int compareTo(Feitizo o) {
+        return this.nomeFeitizo.compareTo(o.nomeFeitizo);
     }
 
     // Otros métodos
@@ -127,23 +132,29 @@ public class Feitizo {
     public String getNomeFeitizo() {
         return nomeFeitizo;
     }
-    
+
     public Integer getDificultade() {
         return dificultade;
     }
 
     public List<Feitizo> recomendarFeitizosConPrioridad(Meiga meiga, Collection<Feitizo> todosFeitizos) {
-    List<Feitizo> recomendados = new ArrayList<>();
-    for (Feitizo f : todosFeitizos) {
-        long coincidencias = f.getIngredientes().stream()
-            .filter(ingrediente -> meiga.getInventario().containsKey(ingrediente))
-            .count();
-        if (coincidencias > 0) {
-            recomendados.add(f);
+        List<Feitizo> recomendados = new ArrayList<>();
+        for (Feitizo f : todosFeitizos) {
+            long coincidencias = f.getIngredientes().stream()
+                    .filter(ingrediente -> meiga.getInventario().containsKey(ingrediente))
+                    .count();
+            if (coincidencias > 0) {
+                recomendados.add(f);
+            }
         }
+        recomendados.sort(Comparator.comparingInt(f -> -f.getIngredientes().size())); // Prioriza los feitizos con más
+                                                                                      // ingredientes
+        return recomendados;
     }
-    recomendados.sort(Comparator.comparingInt(f -> -f.getIngredientes().size()));  // Prioriza los feitizos con más ingredientes
-    return recomendados;
-}
+
+    public static Collection<String> todosIngredientes(Set<Feitizo> conjuntoFeitizos) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'todosIngredientes'");
+    }
 
 }
