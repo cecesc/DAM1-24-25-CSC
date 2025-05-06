@@ -1,7 +1,6 @@
 package ud6.practicas.festivalmeigas;
 
 import java.util.*;
-import ud6.practicas.genericos.UtilGenerico;
 
 public class Festival {
     private List<Meiga> meigas;
@@ -22,39 +21,6 @@ public class Festival {
             m.getInventario().putAll(Meiga.getIngredientesRnd(Feitizo.todosIngredientes(conjuntoFeitizos), 3));
         }
 
-        Map<Meiga, Integer> puntuacions = new HashMap<>();
-        for (Meiga m : listaMeigas) {
-            int puntos = m.lanzarFeitizos();
-            puntuacions.put(m, puntos);
-        }
-
-        // Clasificación final
-        System.out.println("\nClasificación Final:");
-        List<Map.Entry<Meiga, Integer>> lista = new ArrayList<>(puntuacions.entrySet());
-        lista.sort((e1, e2) -> {
-            int cmp = e2.getValue().compareTo(e1.getValue());
-            if (cmp == 0) {
-                return e1.getKey().getAlcume().compareTo(e2.getKey().getAlcume());
-            }
-            return cmp;
-        });
-        for (Map.Entry<Meiga, Integer> e : lista) {
-            System.out.println(e.getKey() + ": " + e.getValue() + " puntos");
-        }
-
-        // EXTRA
-        System.out.println("\nMeigas con puntuación >= 5:");
-        Collection<Meiga> filtradas = UtilGenerico.filtrarMayores(
-            puntuacions.keySet(),
-            new Meiga("Dummy", "Z") {
-                @Override
-                public int lanzarFeitizos() { return 5; }
-            },
-            Comparator.comparingInt(puntuacions::get)
-        );
-        for (Meiga m : filtradas) {
-            System.out.println(m + " con " + puntuacions.get(m) + " puntos");
-        }
     }
 
     public void engadirMeiga(Meiga m) {

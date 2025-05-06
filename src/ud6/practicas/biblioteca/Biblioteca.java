@@ -21,13 +21,13 @@ public class Biblioteca {
         do {
             opcion = menu();
             switch (opcion) {
-                case 1 -> listarlibros();
-                case 2 -> nuevoLibro();
-                case 3 -> eliminarArticulo();
-                case 4 -> modificarArticulo();
-                case 5 -> entradaLibros();
-                case 6 -> salidaMercancia();
-                case 9 -> modificarCodigo();
+                case 1: listarlibros();
+                case 2: nuevoLibro();
+                case 3: eliminarArticulo();
+                case 4: modificarArticulo();
+                case 5: entradaLibros();
+                case 6: salidaMercancia();
+                case 9: modificarCodigo();
             }
         } while (opcion != 7);
     }
