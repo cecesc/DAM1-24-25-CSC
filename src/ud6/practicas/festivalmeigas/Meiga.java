@@ -3,7 +3,6 @@ package ud6.practicas.festivalmeigas;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -88,43 +87,13 @@ public class Meiga implements Comparable<Meiga> {
         return alcume;
     }
 
+
     @Override
     public String toString() {
         return nomeMeiga + " (" + alcume + ")";
     }
 
-    public int lanzarFeitizos() {
-        int puntos = 0;
-        List<Feitizo> ordenados = new ArrayList<>(feitizosFavoritos);
-        ordenados.sort(Comparator.comparingInt(Feitizo::getDificultade).reversed());
-
-        for (Feitizo f : ordenados) {
-            boolean sePuedeLanzar = true;
-            for (String ing : f.getIngredientes()) {
-                if (!inventario.containsKey(ing) || inventario.get(ing) <= 0) {
-                    sePuedeLanzar = false;
-                    break;
-                }
-            }
-            if (sePuedeLanzar) {
-                for (String ing : f.getIngredientes()) {
-                    int nuevoValor = inventario.get(ing) - 1;
-                    if (nuevoValor == 0) {
-                        inventario.remove(ing);
-                    } else {
-                        inventario.put(ing, nuevoValor);
-                    }
-                }
-                puntos += f.getDificultade();
-                System.out.println(nomeMeiga + " lanza o feitizo: " + f.getNomeFeitizo());
-            } else {
-                System.out.println(nomeMeiga + " NON pode lanzar " + f.getNomeFeitizo());
-            }
-        }
-
-        return puntos;
-    }
-
+   
     // Extra: Meigas que comparten ingrediente en feitizos favoritos
     public static List<Meiga> meigasConIngredienteFavorito(Collection<Meiga> meigas, String ingrediente) {
         List<Meiga> lista = new ArrayList<>();
