@@ -1,11 +1,19 @@
 package ud7.apuntesjavafx;
 
+import java.util.Collection;
+import java.util.Map;
+import java.util.TreeMap;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import java.util.*;
+
+
 
 public class Actividad7 extends Application {
     TextField txtNombre = new TextField("Nombre del alumno");

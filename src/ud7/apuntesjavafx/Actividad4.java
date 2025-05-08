@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Actividad4 extends Application {
-    TextField txtColor = new TextField("Escribe un color (red, blue, #ff0000...)");
+    TextField txtColor = new TextField("Escribe un color");
     Button btnCambiar = new Button("Cambiar color");
     VBox vbox = new VBox(txtColor, btnCambiar);
 
@@ -34,3 +34,4 @@ public class Actividad4 extends Application {
         stage.show();
     }
 }
+ 
