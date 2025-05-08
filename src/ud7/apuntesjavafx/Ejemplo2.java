@@ -1,3 +1,7 @@
+/*Crear una ventana con un campo de texto (TextField) y un botón que, al
+hacer clic imprima el texto por consola. Amplía para que imprima el texto en una etiqueta
+(Label) en la pantalla.
+ */
 package ud7.apuntesjavafx;
 
 
@@ -20,7 +24,7 @@ public static void main(String[] args) {
     Button button = new Button("Saludar");
     Label label = new Label();
     button.setOnAction(e -> {
-        label.setText("Hola "+ TextField.getText());
+        label.setText("Hola "+ TextField.getText()+ ". Encantado de conocerte");
     });
 
     VBox vBox = new VBox(TextField, button, label);
