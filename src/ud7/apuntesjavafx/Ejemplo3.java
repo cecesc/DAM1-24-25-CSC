@@ -38,8 +38,8 @@ public class Ejemplo3 extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         num1.setOnKeyTyped(e -> sumar());
+        num2.setOnKeyTyped(e -> sumar());
 
         btnSumar.setOnAction(e -> sumar());
 
