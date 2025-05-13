@@ -1,3 +1,6 @@
+/*Crear una ventana con un área de texto (TextArea), un campo de texto y un
+botón que, al hacer clic, agregue el texto del campo de texto a la lista de elementos en el
+área de texto. */
 package ud7.apuntesjavafx;
 
 import javafx.application.Application;
@@ -8,7 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Actividad6 extends Application {
+public class Ejemplo6 extends Application {
     TextArea area = new TextArea();
     TextField campo = new TextField("Escribe aquí");
     Button btnAgregar = new Button("Agregar texto");

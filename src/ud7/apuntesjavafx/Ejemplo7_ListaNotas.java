@@ -1,3 +1,7 @@
+/*Crea una aplicación que permita introducir en cuadros de texto
+las notas de un grupo de alumnos, una a una, y que al mismo tiempo las vaya mostrando
+en orden alfabético de nombre de alumno en un control de tipo lista (ListView) y que
+muestre también la media de la clase, la nota más alta y la más baja. */
 package ud7.apuntesjavafx;
 
 import java.util.Collection;
@@ -15,7 +19,7 @@ import javafx.stage.Stage;
 
 
 
-public class Actividad7 extends Application {
+public class Ejemplo7_ListaNotas extends Application {
     TextField txtNombre = new TextField("Nombre del alumno");
     TextField txtNota = new TextField("Nota");
     Button btnAgregar = new Button("Agregar nota");

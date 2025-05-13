@@ -1,3 +1,9 @@
+/*Crear una ventana con una lista desplegable de colores
+(ComboBox) y un botón que, al hacer clic, cambie el color de fondo de la ventana al color
+seleccionado en la lista desplegable.
+Para prescindir del botón y cambiar el color con sólo seleccionarlo en el desplegable,
+investiga el evento onAction del ComboBox que se dispara al modificar la propiedad
+value. */
 package ud7.apuntesjavafx;
 
 import javafx.application.Application;
@@ -6,7 +12,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Actividad5 extends Application {
+public class Ejemplo5_ColorCombo extends Application {
     ComboBox<String> comboColores = new ComboBox<>();
     VBox vbox = new VBox(comboColores);
 
