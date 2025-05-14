@@ -37,7 +37,18 @@ public class EmpresaController implements Initializable {
 
     @FXML
     void actualizar(ActionEvent event) {
+        int id = Integer.parseInt(txtId.getText());
+        int indice = AppEmpresa.empresas.indexOf(new Empresa(id));
+        if (indice != -1) {
+            Empresa e =AppEmpresa.empresas.get(indice);
+            e.setNombre(txtNombre.getText());
+            e.setWeb(txtWeb.getText());
 
+            //Actualizar Listview más quirurgicamente
+            lstEmpresas.getItems().clear();
+            lstEmpresas.getItems().addAll(AppEmpresa.empresas);
+            
+        }
     }
 
     @FXML
