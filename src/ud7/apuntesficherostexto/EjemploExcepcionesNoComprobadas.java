@@ -2,7 +2,7 @@ package ud7.apuntesficherostexto;
 
 import java.util.Scanner;
 
-public class EjemploExepcionesNoComprobadas {
+public class EjemploExcepcionesNoComprobadas {
     public static void main(String[] args) {
         try {
             // Bloque de código susceptible de provocar una excepción
@@ -13,6 +13,7 @@ public class EjemploExepcionesNoComprobadas {
             System.out.println("(3) - Provoca NullPointerException");
             System.out.println("(no entero) - Provoca InputMismatchException");
             System.out.print("Elige una opción: ");
+
             int opcion = sc.nextInt();
             switch (opcion) {
                 case 1:

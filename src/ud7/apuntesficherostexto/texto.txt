@@ -1,1 +1,3 @@
-Programacion y cd
+Programación
+Java
+POO
