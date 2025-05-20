@@ -1,3 +1,11 @@
+/*Crea con un editor el fichero de texto Jugadores.txt y escribe en él los nombres, edades y
+estaturas de los jugadores de un equipo, cada uno en una línea.
+Juan 22 1.77
+Luis 22 1.80
+Pedro 20 1.73
+…
+Implementa un programa que lea del fichero los datos, y genere e imprima una lista de
+objetos de tipo Jugador, calcule la media de la edad y de las estaturas.*/
 package ud7.apuntesficherostexto;
 
 import java.io.BufferedReader;

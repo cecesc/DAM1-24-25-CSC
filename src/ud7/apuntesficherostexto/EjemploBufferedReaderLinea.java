@@ -3,6 +3,7 @@ package ud7.apuntesficherostexto;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOError;
 import java.io.IOException;
 
 public class EjemploBufferedReaderLinea {
@@ -11,7 +12,7 @@ public class EjemploBufferedReaderLinea {
 
     public static void main(String[] args) {
         try {
-            BufferedReader in = new BufferedReader(new FileReader(PATH + "texto.txt"));
+            BufferedReader in = new BufferedReader(new FileReader(PATH + "Enteros.txt"));
             String linea = in.readLine();
             while (linea != null) {
                 System.out.println(linea);
@@ -21,6 +22,8 @@ public class EjemploBufferedReaderLinea {
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }catch (IOError e){
             System.out.println(e.getMessage());
         }
     }

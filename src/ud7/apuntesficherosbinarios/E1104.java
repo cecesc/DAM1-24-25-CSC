@@ -1,3 +1,5 @@
+/* Lee los números enteros (de tipo int) contenidos en el archivo datos.dat
+generado en la actividad E1101 y muéstralos por pantalla */
 package ud7.apuntesficherosbinarios;
 
 import java.io.EOFException;

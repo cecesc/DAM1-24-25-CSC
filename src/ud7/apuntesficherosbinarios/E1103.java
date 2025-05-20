@@ -1,3 +1,7 @@
+/*Pedir un entero n por consola y, a continuación, generar n números aleatorios de
+tipo double, que iremos insertando en una tabla. Guardar la tabla en un archivo binario.
+Implementa un programa que lea la tabla de números guardada en ese fichero de datos y
+los muestre por pantalla. */
 package ud7.apuntesficherosbinarios;
 
 import java.io.FileOutputStream;

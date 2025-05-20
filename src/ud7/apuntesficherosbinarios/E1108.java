@@ -1,3 +1,7 @@
+/*E1108. Implementar un programa que guarde en el fichero socios.dat una tabla de objetos
+Socio. Después se abrirá de nuevo el fichero en modo lectura para recuperar la tabla de
+socios, mostrándose por pantalla.  */
+
 package ud7.apuntesficherosbinarios;
 
 import java.io.FileInputStream;

@@ -1,3 +1,5 @@
+/*Escribe como una cadena, en el fichero binario cancionPirata.dat, la siguiente
+estrofa: */
 package ud7.apuntesficherosbinarios;
 
 import java.io.FileOutputStream;
