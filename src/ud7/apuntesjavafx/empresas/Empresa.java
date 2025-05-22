@@ -2,15 +2,17 @@ package ud7.apuntesjavafx.empresas;
 
 import java.io.Serializable;
 
-public class Empresa  implements Serializable{
+public class Empresa implements Serializable {
     private int id;
     private String nombre;
     private String web;
+    private String direccion;
 
     public Empresa(int id, String nombre, String web) {
         this.id = id;
         this.nombre = nombre;
         this.web = web;
+        this.direccion = "Chan do Monte s/n. Marín";
     }
 
     public Empresa(int id) {

@@ -29,10 +29,9 @@
             <Button layoutX="37.0" layoutY="160.0" mnemonicParsing="false" onAction="#agregar" text="Agregar" />
             <Button layoutX="37.0" layoutY="188.0" mnemonicParsing="false" onAction="#actualizar" text="Actualizar" />
             <Button layoutX="37.0" layoutY="216.0" mnemonicParsing="false" onAction="#borrar" text="Borrar" />
-            <Button layoutX="41.0" layoutY="317.0" mnemonicParsing="false" onAction="#guardarFichero" text="Guardar Fichero" />
-            <ListView fx:id="lstEmpresas" layoutX="263.0" layoutY="23.0" prefHeight="361.0" prefWidth="311.0" />
-            <Button layoutX="157.0" layoutY="317.0" mnemonicParsing="false" onAction="#cargarFichero" text="Cargar Fichero" />
-            
+            <ListView fx:id="lstEmpresas" layoutX="275.0" layoutY="6.0" prefHeight="361.0" prefWidth="311.0" />
+            <Button layoutX="8.0" layoutY="308.0" mnemonicParsing="false" onAction="#guardarFichero" text="Guardar Fichero DAT" />
+            <Button layoutX="147.0" layoutY="308.0" mnemonicParsing="false" onAction="#cargarFichero" text="Cargar Fichero DAT" />
          </children>
       </AnchorPane>
    </center>
@@ -42,9 +41,11 @@
           <Menu mnemonicParsing="false" text="File">
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#abrir" text="Abrir..." />
-              <MenuItem mnemonicParsing="false" onAction="#guardarFichero" text="Guardar" />
-                  <MenuItem mnemonicParsing="false" onAction="#guardarComo" text="Guardar..." />
-                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" onAction="#guardarFichero" text="Guardar" />
+                  <MenuItem mnemonicParsing="false" onAction="#guardarComo" text="Guardar como..." />
+                  <MenuItem mnemonicParsing="false" onAction="#importarJSON" text="Importar JSON..." />
+                  <MenuItem mnemonicParsing="false" onAction="#exportarJSON" text="Exportar JSON..." />
+              <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
