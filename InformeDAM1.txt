@@ -1,0 +1,30 @@
+Informe Avaliación DAM1
+=======================
+Total Alumnado = 8
+
+Alumnado con…:
+- Todo aprobado: 1
+- 1 módulo suspenso: 1
+- 2 módulos suspensos: 1
+- 3 módulos suspensos: 4
+- Máis de 3 módulos suspensos: 1
+
+Listado de alumnos con nota media:
+Marcos: 8,75
+Juana: 8,08
+Lola: 7,38
+Alfonso: 6,57
+María: 6,43
+Víctor: 6,14
+Sandra: 5,88
+Pedro: 4,88
+
+Listado de módulos con número de suspensos:
+Inglés profesional (GS): 0
+Sostibilidade aplicada ao sistema produtivo: 0
+Itinerario persoal para a empregabilidade I: 1
+Contornos de desenvolvemento: 1
+Linguaxes de marcas e sistemas de xestión de información: 4
+Sistemas informáticos: 4
+Bases de datos: 5
+Programación: 6

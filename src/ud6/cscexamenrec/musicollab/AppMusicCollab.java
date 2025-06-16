@@ -4,7 +4,7 @@ package ud6.cscexamenrec.musicollab;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -73,17 +73,58 @@ public class AppMusicCollab {
         }
 
         public static List<Musico> musicosParaCancion(Cancion c, List<Musico> musicos) {
-                return musicos;
-        }
-
-        public static List<Cancion> cancionesPosibles(List<Musico> grupo, List<Cancion> canciones) {
-                List<Cancion> cancionesPosibles = new ArrayList<>();
-                for (Cancion cancion : canciones) {
-                        if (canciones.containsAll(cancion.instrumentosRequeridos)) {
-                                cancionesPosibles.add(cancion);
-                        }
+        List<Musico> resultado = new ArrayList<>();
+        for (Musico m : musicos) {
+            if (m.getRepertorio().contains(c)) {
+                for (String instrumento : c.getInstrumentosRequeridos()) {
+                    if (m.getInstrumentos().contains(instrumento)) {
+                        resultado.add(m);
+                        break;
+                    }
                 }
-                return cancionesPosibles;
+            }
+        }
+        Collections.sort(resultado);
+        return resultado;
+    }
+
+    public static List<Cancion> cancionesPosibles(List<Musico> grupo, List<Cancion> canciones) {
+        List<Cancion> posibles = new ArrayList<>();
+
+        for (Cancion cancion : canciones) {
+            Set<String> instrumentosFaltantes = new HashSet<>(cancion.getInstrumentosRequeridos());
+
+            // Generar lista de músicos que conocen la canción
+            List<Musico> disponibles = new ArrayList<>();
+            for (Musico m : grupo) {
+                if (m.getRepertorio().contains(cancion)) {
+                    disponibles.add(m);
+                }
+            }
+
+            // Asignación de instrumentos
+            Set<Musico> usados = new HashSet<>();
+            for (String instrumento : cancion.getInstrumentosRequeridos()) {
+                boolean asignado = false;
+                for (Musico m : disponibles) {
+                    if (m.getInstrumentos().contains(instrumento)) {
+                        if (!usados.contains(m) || (instrumento.equals("voz") && m.getInstrumentos().size() > 1)) {
+                            instrumentosFaltantes.remove(instrumento);
+                            if (!instrumento.equals("voz")) usados.add(m);
+                            asignado = true;
+                            break;
+                        }
+                    }
+                }
+                if (!asignado) break;
+            }
+
+            if (instrumentosFaltantes.isEmpty()) {
+                posibles.add(cancion);
+            }
         }
 
+        Collections.sort(posibles);
+        return posibles;
+    }
 }
